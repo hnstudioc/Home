@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>HaNull Studio</title>
+</head>
+<body>
+    <h1>HaNull Studio</h1>
+    <p>홈페이지 준비 중입니다.</p>
+</body>
+</html>
