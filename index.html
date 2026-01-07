@@ -1,11 +1,1696 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>HaNull Studio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HaNull Studio - ScreenEagle</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --primary-light: #818cf8;
+            --secondary: #0ea5e9;
+            --accent: #f59e0b;
+            --kakao: #FEE500;
+            --kakao-dark: #3C1E1E;
+            --dark: #1e293b;
+            --gray-dark: #475569;
+            --gray: #64748b;
+            --gray-light: #94a3b8;
+            --light: #f1f5f9;
+            --lighter: #f8fafc;
+            --white: #ffffff;
+            --text-dark: #1e293b;
+            --text-body: #475569;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', 'Noto Sans KR', 'Noto Sans JP', 'Noto Sans SC', sans-serif;
+            background: var(--white);
+            color: var(--text-body);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-body);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Language Selector */
+        .lang-selector {
+            position: relative;
+        }
+
+        .lang-btn {
+            background: var(--light);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            color: var(--text-body);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .lang-btn:hover {
+            background: var(--lighter);
+            border-color: var(--primary);
+        }
+
+        .lang-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 0.5rem;
+            background: var(--white);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            display: none;
+            min-width: 130px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .lang-dropdown.show {
+            display: block;
+        }
+
+        .lang-option {
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            color: var(--text-body);
+            font-weight: 500;
+        }
+
+        .lang-option:hover {
+            background: var(--light);
+        }
+
+        .lang-option.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 6rem 2rem 4rem;
+            background: linear-gradient(180deg, var(--lighter) 0%, var(--white) 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 70%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 60%);
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 50%;
+            height: 80%;
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.06) 0%, transparent 60%);
+            z-index: 0;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 4px 12px rgba(99, 102, 241, 0.2));
+        }
+
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .hero .tagline {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-body);
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 2rem;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .btn-kakao {
+            background: var(--kakao);
+            color: var(--kakao-dark);
+            box-shadow: 0 4px 14px rgba(254, 229, 0, 0.4);
+        }
+
+        .btn-kakao:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(254, 229, 0, 0.5);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-body);
+            margin-bottom: 4rem;
+            font-size: 1.1rem;
+        }
+
+        /* Versions Section */
+        .versions {
+            background: var(--lighter);
+        }
+
+        .versions-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .version-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 24px;
+            border: 2px solid transparent;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .version-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .version-card.global {
+            border-color: var(--primary);
+        }
+
+        .version-card.global::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .version-card.kakao {
+            border-color: var(--kakao);
+        }
+
+        .version-card.kakao::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--kakao);
+        }
+
+        .version-badge {
+            display: inline-block;
+            padding: 0.35rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .version-card.global .version-badge {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary);
+        }
+
+        .version-card.kakao .version-badge {
+            background: rgba(254, 229, 0, 0.3);
+            color: var(--kakao-dark);
+        }
+
+        .version-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+        }
+
+        .version-card .version-desc {
+            color: var(--text-body);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .version-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .version-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem 0;
+            color: var(--text-body);
+            font-size: 0.95rem;
+        }
+
+        .version-features li svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        .version-card.global .version-features li svg {
+            fill: var(--primary);
+        }
+
+        .version-card.kakao .version-features li svg {
+            fill: #3C1E1E;
+        }
+
+        .version-platforms {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .platform-tag {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .platform-tag svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .platform-tag.discord {
+            background: rgba(88, 101, 242, 0.1);
+            color: #5865F2;
+        }
+
+        .platform-tag.telegram {
+            background: rgba(0, 136, 204, 0.1);
+            color: #0088cc;
+        }
+
+        .platform-tag.slack {
+            background: rgba(74, 21, 75, 0.1);
+            color: #4A154B;
+        }
+
+        .platform-tag.kakao {
+            background: rgba(254, 229, 0, 0.3);
+            color: var(--kakao-dark);
+        }
+
+        /* Modes Section */
+        .modes {
+            background: var(--white);
+        }
+
+        .modes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .mode-card {
+            background: var(--lighter);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            transition: all 0.3s;
+        }
+
+        .mode-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            border-color: var(--primary);
+        }
+
+        .mode-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .mode-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: white;
+        }
+
+        .mode-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .mode-card .mode-tagline {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .mode-card p {
+            color: var(--text-body);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .mode-card ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        .mode-card li {
+            color: var(--text-body);
+            font-size: 0.85rem;
+            padding: 0.25rem 0;
+            padding-left: 1.25rem;
+            position: relative;
+        }
+
+        .mode-card li::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--primary);
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            top: 0.6rem;
+        }
+
+        .mode-example {
+            background: var(--white);
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            color: var(--text-body);
+            border-left: 3px solid var(--primary);
+        }
+
+        .mode-example strong {
+            color: var(--primary);
+        }
+
+        /* Alerts Section */
+        .alerts {
+            background: var(--lighter);
+        }
+
+        .alerts-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+        }
+
+        .alert-category {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .alert-category h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .alert-category h3 svg {
+            width: 28px;
+            height: 28px;
+            fill: var(--primary);
+        }
+
+        .alert-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--light);
+        }
+
+        .alert-item:last-child {
+            border-bottom: none;
+        }
+
+        .alert-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .alert-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        .alert-info h4 {
+            color: var(--text-dark);
+            margin-bottom: 0.25rem;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .alert-info p {
+            color: var(--text-body);
+            font-size: 0.9rem;
+        }
+
+        /* Screenshot Section */
+        .screenshot-section {
+            background: var(--white);
+        }
+
+        .screenshot-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .screenshot-info h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .screenshot-info p {
+            color: var(--text-body);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .screenshot-note {
+            background: rgba(245, 158, 11, 0.08);
+            border-left: 3px solid var(--accent);
+            padding: 1rem 1.25rem;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .screenshot-note strong {
+            color: var(--accent);
+        }
+
+        .screenshot-note p {
+            color: var(--text-body);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .screenshot-visual {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .device-mockup {
+            background: var(--lighter);
+            border-radius: 20px;
+            padding: 1.5rem;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .device-mockup:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .device-mockup svg {
+            width: 60px;
+            height: 60px;
+            fill: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .device-mockup span {
+            display: block;
+            color: var(--text-body);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Languages Section */
+        .languages {
+            background: var(--lighter);
+        }
+
+        .languages-image {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .languages-image img {
+            max-width: 600px;
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .lang-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 2rem;
+        }
+
+        .lang-tag {
+            background: var(--white);
+            padding: 0.5rem 1.25rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            color: var(--text-body);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .lang-tag:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .cta h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+            position: relative;
+        }
+
+        .cta p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.95);
+            position: relative;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        .cta .btn-white {
+            background: var(--white);
+            color: var(--primary);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+        }
+
+        .cta .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta .btn-kakao {
+            position: relative;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--white);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo img {
+            height: 32px;
+            width: auto;
+        }
+
+        .footer-logo span {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        footer p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .business-info {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .business-info p {
+            font-size: 0.75rem;
+            color: var(--gray-light);
+            margin: 0.25rem 0;
+            line-height: 1.5;
+        }
+
+        .business-info a {
+            color: var(--gray);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .modes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .alerts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .screenshot-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .screenshot-visual {
+                order: -1;
+            }
+
+            .versions-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .screenshot-info h2 {
+                font-size: 1.5rem;
+            }
+
+            .version-card {
+                padding: 1.75rem;
+            }
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-body);
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>HaNull Studio</h1>
-    <p>홈페이지 준비 중입니다.</p>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <img src="image/HaNull Studio_160x160.png" alt="HaNull Studio">
+                <span>HaNull Studio</span>
+            </a>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#home" data-i18n="nav.home">Home</a></li>
+                    <li><a href="#versions" data-i18n="nav.versions">Versions</a></li>
+                    <li><a href="#modes" data-i18n="nav.modes">Modes</a></li>
+                    <li><a href="#alerts" data-i18n="nav.alerts">Alerts</a></li>
+                    <li><a href="#download" data-i18n="nav.download">Download</a></li>
+                </ul>
+                <div class="lang-selector">
+                    <button class="lang-btn" onclick="toggleLangDropdown()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                        </svg>
+                        <span id="current-lang">EN</span>
+                    </button>
+                    <div class="lang-dropdown" id="lang-dropdown">
+                        <div class="lang-option active" data-lang="en">English</div>
+                        <div class="lang-option" data-lang="ko">한국어</div>
+                        <div class="lang-option" data-lang="ja">日本語</div>
+                        <div class="lang-option" data-lang="zh">中文</div>
+                    </div>
+                </div>
+                <button class="mobile-menu-btn">
+                    <svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <img src="image/ScreenEagle.png" alt="ScreenEagle" class="hero-logo">
+            <h1>ScreenEagle</h1>
+            <p class="tagline" data-i18n="hero.tagline">Screen Motion Detection Utility for Windows</p>
+            <p data-i18n="hero.description">ScreenEagle monitors your screen and alerts you when motion is detected. Perfect for gamers, stream monitors, and automation tasks.</p>
+            <div class="hero-buttons">
+                <a href="#versions" class="btn btn-primary" data-i18n="hero.getStarted">Get Started</a>
+                <a href="#modes" class="btn btn-secondary" data-i18n="hero.learnMore">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Versions Section -->
+    <section class="versions" id="versions">
+        <div class="container">
+            <h2 class="section-title" data-i18n="versions.title">Choose Your Version</h2>
+            <p class="section-subtitle" data-i18n="versions.subtitle">Two versions to match your notification preferences</p>
+            <div class="versions-grid">
+                <!-- Global Version -->
+                <div class="version-card global">
+                    <span class="version-badge" data-i18n="versions.global.badge">Global</span>
+                    <h3 data-i18n="versions.global.title">Global Version</h3>
+                    <p class="version-desc" data-i18n="versions.global.desc">Push notifications via Discord, Telegram, and Slack for worldwide users</p>
+                    <div class="version-platforms">
+                        <span class="platform-tag discord">
+                            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+                            Discord
+                        </span>
+                        <span class="platform-tag telegram">
+                            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+                            Telegram
+                        </span>
+                        <span class="platform-tag slack">
+                            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg>
+                            Slack
+                        </span>
+                    </div>
+                    <ul class="version-features">
+                        <li>
+                            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            <span data-i18n="versions.global.feature1">Send screenshots with alerts</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            <span data-i18n="versions.global.feature2">Multiple platform support</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            <span data-i18n="versions.global.feature3">Available on Gumroad</span>
+                        </li>
+                    </ul>
+                    <a href="https://hnstudio6.gumroad.com/l/ScreenEagle" target="_blank" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                        <span data-i18n="versions.global.button">Get Global Version</span>
+                    </a>
+                </div>
+                <!-- Kakao Version -->
+                <div class="version-card kakao">
+                    <span class="version-badge" data-i18n="versions.kakao.badge">Korea</span>
+                    <h3 data-i18n="versions.kakao.title">Kakao Version</h3>
+                    <p class="version-desc" data-i18n="versions.kakao.desc">KakaoTalk Alimtalk notifications for Korean users</p>
+                    <div class="version-platforms">
+                        <span class="platform-tag kakao">
+                            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 3c-5.52 0-10 3.59-10 8 0 2.83 1.88 5.32 4.72 6.72-.16.57-.54 2.07-.62 2.39-.1.41.15.4.32.29.13-.08 2.04-1.38 2.87-1.94.88.13 1.79.2 2.71.2 5.52 0 10-3.59 10-8s-4.48-8-10-8z"/></svg>
+                            KakaoTalk
+                        </span>
+                    </div>
+                    <ul class="version-features">
+                        <li>
+                            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            <span data-i18n="versions.kakao.feature1">Alimtalk instant notifications</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            <span data-i18n="versions.kakao.feature2">No app installation required</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            <span data-i18n="versions.kakao.feature3">Optimized for Korean users</span>
+                        </li>
+                    </ul>
+                    <a href="#" class="btn btn-kakao" style="width: 100%; justify-content: center;">
+                        <span data-i18n="versions.kakao.button">Get Kakao Version</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modes Section -->
+    <section class="modes" id="modes">
+        <div class="container">
+            <h2 class="section-title" data-i18n="modes.title">3 Detection Modes</h2>
+            <p class="section-subtitle" data-i18n="modes.subtitle">ScreenEagle offers 3 detection modes to fit your needs</p>
+            <div class="modes-grid">
+                <!-- Stop Shot -->
+                <div class="mode-card">
+                    <div class="mode-icon">
+                        <svg viewBox="0 0 24 24"><path d="M6 6h12v12H6z"/></svg>
+                    </div>
+                    <h3>Stop Shot</h3>
+                    <p class="mode-tagline" data-i18n="modes.stopShot.tagline">Triggers an alert when motion stops for a specified duration</p>
+                    <ul>
+                        <li data-i18n="modes.stopShot.feature1">Set duration in days, hours, minutes, and seconds</li>
+                        <li data-i18n="modes.stopShot.feature2">Perfect for monitoring ongoing activities</li>
+                    </ul>
+                    <div class="mode-example">
+                        <strong data-i18n="modes.example">Example:</strong>
+                        <span data-i18n="modes.stopShot.example">Alert when a video stream freezes, game character stops moving, or a machine stops running</span>
+                    </div>
+                </div>
+                <!-- Start Shot -->
+                <div class="mode-card">
+                    <div class="mode-icon">
+                        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                    <h3>Start Shot</h3>
+                    <p class="mode-tagline" data-i18n="modes.startShot.tagline">Triggers an alert when new motion is detected</p>
+                    <ul>
+                        <li data-i18n="modes.startShot.feature1">Instant alert when movement begins</li>
+                        <li data-i18n="modes.startShot.feature2">Ideal for security monitoring</li>
+                    </ul>
+                    <div class="mode-example">
+                        <strong data-i18n="modes.example">Example:</strong>
+                        <span data-i18n="modes.startShot.example">Alert when someone enters the frame, an application window changes, or a download starts</span>
+                    </div>
+                </div>
+                <!-- Cycling Shot -->
+                <div class="mode-card">
+                    <div class="mode-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></svg>
+                    </div>
+                    <h3>Cycling Shot</h3>
+                    <p class="mode-tagline" data-i18n="modes.cyclingShot.tagline">Captures screenshots at regular intervals</p>
+                    <ul>
+                        <li data-i18n="modes.cyclingShot.feature1">Scheduled Mode: Set start/end date with capture interval</li>
+                        <li data-i18n="modes.cyclingShot.feature2">Immediate Mode: Start now with set duration</li>
+                        <li data-i18n="modes.cyclingShot.feature3">Great for time-lapse monitoring</li>
+                    </ul>
+                    <div class="mode-example">
+                        <strong data-i18n="modes.example">Example:</strong>
+                        <span data-i18n="modes.cyclingShot.example">Capture CCTV every hour, monitor construction site daily, or track progress on tasks</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alerts Section -->
+    <section class="alerts" id="alerts">
+        <div class="container">
+            <h2 class="section-title" data-i18n="alerts.title">Alert Options</h2>
+            <p class="section-subtitle" data-i18n="alerts.subtitle">Multiple alert options to notify you when motion is detected</p>
+            <div class="alerts-grid">
+                <!-- Local Alerts -->
+                <div class="alert-category">
+                    <h3>
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12z"/></svg>
+                        <span data-i18n="alerts.local.title">Local Alerts</span>
+                    </h3>
+                    <div class="alert-item">
+                        <div class="alert-icon">
+                            <svg viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
+                        </div>
+                        <div class="alert-info">
+                            <h4 data-i18n="alerts.local.flash">Screen Flash</h4>
+                            <p data-i18n="alerts.local.flashDesc">Your screen flashes to get your attention</p>
+                        </div>
+                    </div>
+                    <div class="alert-item">
+                        <div class="alert-icon">
+                            <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+                        </div>
+                        <div class="alert-info">
+                            <h4 data-i18n="alerts.local.beep">Beep Sound</h4>
+                            <p data-i18n="alerts.local.beepDesc">System beep alert</p>
+                        </div>
+                    </div>
+                    <div class="alert-item">
+                        <div class="alert-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+                        </div>
+                        <div class="alert-info">
+                            <h4 data-i18n="alerts.local.media">Media Playback</h4>
+                            <p data-i18n="alerts.local.mediaDesc">Play custom MP3, WAV, OGG, FLAC files</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Push Alerts -->
+                <div class="alert-category">
+                    <h3>
+                        <svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
+                        <span data-i18n="alerts.push.title">Push Alerts</span>
+                    </h3>
+                    <div class="alert-item">
+                        <div class="alert-icon" style="background: #5865F2;">
+                            <svg viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+                        </div>
+                        <div class="alert-info">
+                            <h4>Discord</h4>
+                            <p data-i18n="alerts.push.discordDesc">Receive alerts on your Discord server with screenshots</p>
+                        </div>
+                    </div>
+                    <div class="alert-item">
+                        <div class="alert-icon" style="background: #0088cc;">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+                        </div>
+                        <div class="alert-info">
+                            <h4>Telegram</h4>
+                            <p data-i18n="alerts.push.telegramDesc">Receive alerts via Telegram bot with screenshots</p>
+                        </div>
+                    </div>
+                    <div class="alert-item">
+                        <div class="alert-icon" style="background: #4A154B;">
+                            <svg viewBox="0 0 24 24"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg>
+                        </div>
+                        <div class="alert-info">
+                            <h4>Slack</h4>
+                            <p data-i18n="alerts.push.slackDesc">Receive alerts in your Slack channel (file path only)</p>
+                        </div>
+                    </div>
+                    <div class="alert-item">
+                        <div class="alert-icon" style="background: var(--kakao);">
+                            <svg viewBox="0 0 24 24" style="fill: #3C1E1E;"><path d="M12 3c-5.52 0-10 3.59-10 8 0 2.83 1.88 5.32 4.72 6.72-.16.57-.54 2.07-.62 2.39-.1.41.15.4.32.29.13-.08 2.04-1.38 2.87-1.94.88.13 1.79.2 2.71.2 5.52 0 10-3.59 10-8s-4.48-8-10-8z"/></svg>
+                        </div>
+                        <div class="alert-info">
+                            <h4>KakaoTalk</h4>
+                            <p data-i18n="alerts.push.kakaoDesc">Receive Alimtalk notifications (Kakao version only)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 2rem; color: var(--text-body);" data-i18n="alerts.note">You can enable one or multiple alert methods simultaneously.</p>
+        </div>
+    </section>
+
+    <!-- Screenshot Section -->
+    <section class="screenshot-section" id="screenshot">
+        <div class="container">
+            <div class="screenshot-content">
+                <div class="screenshot-info">
+                    <h2 data-i18n="screenshot.title">Screenshot Capture</h2>
+                    <p data-i18n="screenshot.description">Capture a screenshot when motion is detected and send it with your Push alert. See exactly what triggered the alert, even when you're away from your PC.</p>
+                    <p data-i18n="screenshot.mobile">Receive alerts on your smartphone or tablet through Discord, Telegram, Slack, or KakaoTalk apps.</p>
+                    <div class="screenshot-note">
+                        <strong>Note:</strong>
+                        <p data-i18n="screenshot.note">Discord and Telegram can receive captured images directly. Slack receives the file path where the screenshot is saved instead.</p>
+                    </div>
+                </div>
+                <div class="screenshot-visual">
+                    <div class="device-mockup">
+                        <svg viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+                        <span data-i18n="screenshot.phone">Mobile</span>
+                    </div>
+                    <div class="device-mockup">
+                        <svg viewBox="0 0 24 24"><path d="M18.5 0h-14C3.12 0 2 1.12 2 2.5v19C2 22.88 3.12 24 4.5 24h14c1.38 0 2.5-1.12 2.5-2.5v-19C21 1.12 19.88 0 18.5 0zm-7 23c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm7.5-4H4V3h15v16z"/></svg>
+                        <span data-i18n="screenshot.tablet">Tablet</span>
+                    </div>
+                    <div class="device-mockup">
+                        <svg viewBox="0 0 24 24"><path d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/></svg>
+                        <span data-i18n="screenshot.desktop">Desktop</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages Section -->
+    <section class="languages">
+        <div class="container">
+            <h2 class="section-title" data-i18n="languages.title">16 Languages Supported</h2>
+            <p class="section-subtitle" data-i18n="languages.subtitle">Switch anytime without restart</p>
+            <div class="languages-image">
+                <img src="image/06_Languages.png" alt="Supported Languages">
+            </div>
+            <div class="lang-grid">
+                <span class="lang-tag">English</span>
+                <span class="lang-tag">한국어</span>
+                <span class="lang-tag">日本語</span>
+                <span class="lang-tag">Español</span>
+                <span class="lang-tag">Français</span>
+                <span class="lang-tag">Deutsch</span>
+                <span class="lang-tag">Italiano</span>
+                <span class="lang-tag">中文</span>
+                <span class="lang-tag">Русский</span>
+                <span class="lang-tag">Português</span>
+                <span class="lang-tag">العربية</span>
+                <span class="lang-tag">हिन्दी</span>
+                <span class="lang-tag">Nederlands</span>
+                <span class="lang-tag">Svenska</span>
+                <span class="lang-tag">Türkçe</span>
+                <span class="lang-tag">Polski</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="download">
+        <div class="container">
+            <h2 data-i18n="cta.title">Get ScreenEagle Now</h2>
+            <p data-i18n="cta.subtitle">Lightweight and fast screen motion detection utility</p>
+            <div class="cta-buttons">
+                <a href="https://hnstudio6.gumroad.com/l/ScreenEagle" target="_blank" class="btn btn-white">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                    </svg>
+                    <span data-i18n="cta.globalButton">Global Version</span>
+                </a>
+                <a href="#" class="btn btn-kakao">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 3c-5.52 0-10 3.59-10 8 0 2.83 1.88 5.32 4.72 6.72-.16.57-.54 2.07-.62 2.39-.1.41.15.4.32.29.13-.08 2.04-1.38 2.87-1.94.88.13 1.79.2 2.71.2 5.52 0 10-3.59 10-8s-4.48-8-10-8z"/>
+                    </svg>
+                    <span data-i18n="cta.kakaoButton">Kakao Version</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">
+            <img src="image/HaNull Studio_160x160.png" alt="HaNull Studio">
+            <span>HaNull Studio</span>
+        </div>
+        <p>&copy; 2025 HaNull Studio. All rights reserved.</p>
+        <div class="business-info">
+            <p>상호명: 하널 스튜디오(HaNull Studio) | 대표자명: 이하늘</p>
+            <p>사업장 주소: 18429 경기도 화성시 동탄공원로 21-40 (능동) 동탄푸른마을두산위브아파트 930-1804</p>
+            <p>대표 메일: <a href="mailto:HNStudio.c@gmail.com">HNStudio.c@gmail.com</a> / <a href="mailto:info@HaNullStudio.com">info@HaNullStudio.com</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Translations
+        const translations = {
+            en: {
+                'nav.home': 'Home',
+                'nav.versions': 'Versions',
+                'nav.modes': 'Modes',
+                'nav.alerts': 'Alerts',
+                'nav.download': 'Download',
+                'hero.tagline': 'Screen Motion Detection Utility for Windows',
+                'hero.description': 'ScreenEagle monitors your screen and alerts you when motion is detected. Perfect for gamers, stream monitors, and automation tasks.',
+                'hero.getStarted': 'Get Started',
+                'hero.learnMore': 'Learn More',
+                'versions.title': 'Choose Your Version',
+                'versions.subtitle': 'Two versions to match your notification preferences',
+                'versions.global.badge': 'Global',
+                'versions.global.title': 'Global Version',
+                'versions.global.desc': 'Push notifications via Discord, Telegram, and Slack for worldwide users',
+                'versions.global.feature1': 'Send screenshots with alerts',
+                'versions.global.feature2': 'Multiple platform support',
+                'versions.global.feature3': 'Available on Gumroad',
+                'versions.global.button': 'Get Global Version',
+                'versions.kakao.badge': 'Korea',
+                'versions.kakao.title': 'Kakao Version',
+                'versions.kakao.desc': 'KakaoTalk Alimtalk notifications for Korean users',
+                'versions.kakao.feature1': 'Alimtalk instant notifications',
+                'versions.kakao.feature2': 'No app installation required',
+                'versions.kakao.feature3': 'Optimized for Korean users',
+                'versions.kakao.button': 'Get Kakao Version',
+                'modes.title': '3 Detection Modes',
+                'modes.subtitle': 'ScreenEagle offers 3 detection modes to fit your needs',
+                'modes.example': 'Example:',
+                'modes.stopShot.tagline': 'Triggers an alert when motion stops for a specified duration',
+                'modes.stopShot.feature1': 'Set duration in days, hours, minutes, and seconds',
+                'modes.stopShot.feature2': 'Perfect for monitoring ongoing activities',
+                'modes.stopShot.example': 'Alert when a video stream freezes, game character stops moving, or a machine stops running',
+                'modes.startShot.tagline': 'Triggers an alert when new motion is detected',
+                'modes.startShot.feature1': 'Instant alert when movement begins',
+                'modes.startShot.feature2': 'Ideal for security monitoring',
+                'modes.startShot.example': 'Alert when someone enters the frame, an application window changes, or a download starts',
+                'modes.cyclingShot.tagline': 'Captures screenshots at regular intervals',
+                'modes.cyclingShot.feature1': 'Scheduled Mode: Set start/end date with capture interval',
+                'modes.cyclingShot.feature2': 'Immediate Mode: Start now with set duration',
+                'modes.cyclingShot.feature3': 'Great for time-lapse monitoring',
+                'modes.cyclingShot.example': 'Capture CCTV every hour, monitor construction site daily, or track progress on tasks',
+                'alerts.title': 'Alert Options',
+                'alerts.subtitle': 'Multiple alert options to notify you when motion is detected',
+                'alerts.local.title': 'Local Alerts',
+                'alerts.local.flash': 'Screen Flash',
+                'alerts.local.flashDesc': 'Your screen flashes to get your attention',
+                'alerts.local.beep': 'Beep Sound',
+                'alerts.local.beepDesc': 'System beep alert',
+                'alerts.local.media': 'Media Playback',
+                'alerts.local.mediaDesc': 'Play custom MP3, WAV, OGG, FLAC files',
+                'alerts.push.title': 'Push Alerts',
+                'alerts.push.discordDesc': 'Receive alerts on your Discord server with screenshots',
+                'alerts.push.telegramDesc': 'Receive alerts via Telegram bot with screenshots',
+                'alerts.push.slackDesc': 'Receive alerts in your Slack channel (file path only)',
+                'alerts.push.kakaoDesc': 'Receive Alimtalk notifications (Kakao version only)',
+                'alerts.note': 'You can enable one or multiple alert methods simultaneously.',
+                'screenshot.title': 'Screenshot Capture',
+                'screenshot.description': 'Capture a screenshot when motion is detected and send it with your Push alert. See exactly what triggered the alert, even when you\'re away from your PC.',
+                'screenshot.mobile': 'Receive alerts on your smartphone or tablet through Discord, Telegram, Slack, or KakaoTalk apps.',
+                'screenshot.note': 'Discord and Telegram can receive captured images directly. Slack receives the file path where the screenshot is saved instead.',
+                'screenshot.phone': 'Mobile',
+                'screenshot.tablet': 'Tablet',
+                'screenshot.desktop': 'Desktop',
+                'languages.title': '16 Languages Supported',
+                'languages.subtitle': 'Switch anytime without restart',
+                'cta.title': 'Get ScreenEagle Now',
+                'cta.subtitle': 'Lightweight and fast screen motion detection utility',
+                'cta.globalButton': 'Global Version',
+                'cta.kakaoButton': 'Kakao Version'
+            },
+            ko: {
+                'nav.home': '홈',
+                'nav.versions': '버전',
+                'nav.modes': '모드',
+                'nav.alerts': '알림',
+                'nav.download': '다운로드',
+                'hero.tagline': 'Windows용 화면 움직임 감지 유틸리티',
+                'hero.description': 'ScreenEagle은 화면을 모니터링하고 움직임이 감지되면 알려줍니다. 게이머, 스트림 모니터링, 자동화 작업에 최적화되어 있습니다.',
+                'hero.getStarted': '시작하기',
+                'hero.learnMore': '자세히 보기',
+                'versions.title': '버전 선택',
+                'versions.subtitle': '알림 방식에 따라 두 가지 버전을 제공합니다',
+                'versions.global.badge': '글로벌',
+                'versions.global.title': '글로벌 버전',
+                'versions.global.desc': 'Discord, Telegram, Slack을 통한 푸시 알림',
+                'versions.global.feature1': '스크린샷과 함께 알림 전송',
+                'versions.global.feature2': '다중 플랫폼 지원',
+                'versions.global.feature3': 'Gumroad에서 구매 가능',
+                'versions.global.button': '글로벌 버전 받기',
+                'versions.kakao.badge': '한국',
+                'versions.kakao.title': '카카오 버전',
+                'versions.kakao.desc': '카카오톡 알림톡으로 즉시 알림',
+                'versions.kakao.feature1': '알림톡 즉시 알림',
+                'versions.kakao.feature2': '별도 앱 설치 불필요',
+                'versions.kakao.feature3': '한국 사용자에 최적화',
+                'versions.kakao.button': '카카오 버전 받기',
+                'modes.title': '3가지 감지 모드',
+                'modes.subtitle': '상황에 맞는 최적의 모드를 선택하세요',
+                'modes.example': '예시:',
+                'modes.stopShot.tagline': '지정된 시간 동안 움직임이 멈추면 알림을 보냅니다',
+                'modes.stopShot.feature1': '일, 시간, 분, 초 단위로 시간 설정 가능',
+                'modes.stopShot.feature2': '진행 중인 활동 모니터링에 적합',
+                'modes.stopShot.example': '비디오 스트림이 멈추거나, 게임 캐릭터가 멈추거나, 기계가 작동을 멈출 때 알림',
+                'modes.startShot.tagline': '새로운 움직임이 감지되면 알림을 보냅니다',
+                'modes.startShot.feature1': '움직임 시작 시 즉시 알림',
+                'modes.startShot.feature2': '보안 모니터링에 이상적',
+                'modes.startShot.example': '누군가 화면에 나타나거나, 애플리케이션 창이 변경되거나, 다운로드가 시작될 때 알림',
+                'modes.cyclingShot.tagline': '정해진 간격으로 스크린샷을 캡처합니다',
+                'modes.cyclingShot.feature1': '예약 모드: 시작/종료 날짜와 캡처 간격 설정',
+                'modes.cyclingShot.feature2': '즉시 모드: 지금 바로 설정된 기간으로 시작',
+                'modes.cyclingShot.feature3': '타임랩스 모니터링에 적합',
+                'modes.cyclingShot.example': '매시간 CCTV 캡처, 매일 건설 현장 모니터링, 작업 진행 상황 추적',
+                'alerts.title': '알림 옵션',
+                'alerts.subtitle': '움직임이 감지되면 다양한 방법으로 알림을 받으세요',
+                'alerts.local.title': '로컬 알림',
+                'alerts.local.flash': '화면 플래시',
+                'alerts.local.flashDesc': '화면이 깜빡여서 주의를 끕니다',
+                'alerts.local.beep': '비프음',
+                'alerts.local.beepDesc': '시스템 비프 알림',
+                'alerts.local.media': '미디어 재생',
+                'alerts.local.mediaDesc': 'MP3, WAV, OGG, FLAC 등 사운드 파일 재생',
+                'alerts.push.title': '푸시 알림',
+                'alerts.push.discordDesc': '스크린샷과 함께 Discord 서버로 알림 수신',
+                'alerts.push.telegramDesc': '스크린샷과 함께 Telegram 봇으로 알림 수신',
+                'alerts.push.slackDesc': 'Slack 채널로 알림 수신 (파일 경로만)',
+                'alerts.push.kakaoDesc': '알림톡 수신 (카카오 버전 전용)',
+                'alerts.note': '여러 알림 방법을 동시에 사용할 수 있습니다.',
+                'screenshot.title': '스크린샷 캡처',
+                'screenshot.description': '움직임이 감지되면 스크린샷을 캡처하여 푸시 알림과 함께 전송합니다. PC에서 떨어져 있어도 무엇이 알림을 발생시켰는지 정확히 확인할 수 있습니다.',
+                'screenshot.mobile': 'Discord, Telegram, Slack 또는 카카오톡 앱을 통해 스마트폰이나 태블릿에서 알림을 받으세요.',
+                'screenshot.note': 'Discord와 Telegram은 캡처된 이미지를 직접 수신할 수 있습니다. Slack은 스크린샷이 저장된 파일 경로를 대신 수신합니다.',
+                'screenshot.phone': '모바일',
+                'screenshot.tablet': '태블릿',
+                'screenshot.desktop': '데스크톱',
+                'languages.title': '16개 언어 지원',
+                'languages.subtitle': '재시작 없이 언제든지 전환 가능',
+                'cta.title': '지금 ScreenEagle을 시작하세요',
+                'cta.subtitle': '가볍고 빠른 화면 움직임 감지 유틸리티',
+                'cta.globalButton': '글로벌 버전',
+                'cta.kakaoButton': '카카오 버전'
+            },
+            ja: {
+                'nav.home': 'ホーム',
+                'nav.versions': 'バージョン',
+                'nav.modes': 'モード',
+                'nav.alerts': 'アラート',
+                'nav.download': 'ダウンロード',
+                'hero.tagline': 'Windows用画面モーション検出ユーティリティ',
+                'hero.description': 'ScreenEagleは画面を監視し、動きが検出されると通知します。ゲーマー、ストリーム監視、自動化タスクに最適です。',
+                'hero.getStarted': '始める',
+                'hero.learnMore': '詳細を見る',
+                'versions.title': 'バージョンを選択',
+                'versions.subtitle': '通知方法に合わせて2つのバージョンをご用意',
+                'versions.global.badge': 'グローバル',
+                'versions.global.title': 'グローバル版',
+                'versions.global.desc': 'Discord、Telegram、Slackでプッシュ通知',
+                'versions.global.feature1': 'スクリーンショット付きで通知送信',
+                'versions.global.feature2': 'マルチプラットフォーム対応',
+                'versions.global.feature3': 'Gumroadで購入可能',
+                'versions.global.button': 'グローバル版を入手',
+                'versions.kakao.badge': '韓国',
+                'versions.kakao.title': 'Kakao版',
+                'versions.kakao.desc': 'KakaoTalkアリムトークで即時通知',
+                'versions.kakao.feature1': 'アリムトーク即時通知',
+                'versions.kakao.feature2': 'アプリのインストール不要',
+                'versions.kakao.feature3': '韓国ユーザー向けに最適化',
+                'versions.kakao.button': 'Kakao版を入手',
+                'modes.title': '3つの検出モード',
+                'modes.subtitle': 'ニーズに合わせて3つの検出モードから選択',
+                'modes.example': '例:',
+                'modes.stopShot.tagline': '指定時間動きが止まるとアラートを発動',
+                'modes.stopShot.feature1': '日、時間、分、秒単位で時間を設定',
+                'modes.stopShot.feature2': '進行中のアクティビティの監視に最適',
+                'modes.stopShot.example': 'ビデオストリームがフリーズした時、ゲームキャラクターが停止した時、機械が停止した時にアラート',
+                'modes.startShot.tagline': '新しい動きが検出されるとアラートを発動',
+                'modes.startShot.feature1': '動きが始まると即座にアラート',
+                'modes.startShot.feature2': 'セキュリティ監視に最適',
+                'modes.startShot.example': '誰かがフレームに入った時、アプリウィンドウが変化した時、ダウンロードが開始された時にアラート',
+                'modes.cyclingShot.tagline': '定期的な間隔でスクリーンショットをキャプチャ',
+                'modes.cyclingShot.feature1': 'スケジュールモード: 開始/終了日とキャプチャ間隔を設定',
+                'modes.cyclingShot.feature2': '即時モード: 設定した期間で今すぐ開始',
+                'modes.cyclingShot.feature3': 'タイムラプス監視に最適',
+                'modes.cyclingShot.example': '毎時間CCTVをキャプチャ、毎日建設現場を監視、タスクの進捗を追跡',
+                'alerts.title': 'アラートオプション',
+                'alerts.subtitle': '動きが検出されたときに通知する複数の方法',
+                'alerts.local.title': 'ローカルアラート',
+                'alerts.local.flash': '画面フラッシュ',
+                'alerts.local.flashDesc': '画面が点滅して注意を引きます',
+                'alerts.local.beep': 'ビープ音',
+                'alerts.local.beepDesc': 'システムビープアラート',
+                'alerts.local.media': 'メディア再生',
+                'alerts.local.mediaDesc': 'MP3、WAV、OGG、FLACファイルを再生',
+                'alerts.push.title': 'プッシュアラート',
+                'alerts.push.discordDesc': 'スクリーンショット付きでDiscordサーバーに通知',
+                'alerts.push.telegramDesc': 'スクリーンショット付きでTelegramボットに通知',
+                'alerts.push.slackDesc': 'Slackチャンネルに通知（ファイルパスのみ）',
+                'alerts.push.kakaoDesc': 'アリムトーク通知（Kakao版のみ）',
+                'alerts.note': '複数のアラート方法を同時に有効にできます。',
+                'screenshot.title': 'スクリーンショットキャプチャ',
+                'screenshot.description': '動きが検出されるとスクリーンショットをキャプチャし、プッシュアラートと一緒に送信します。PCから離れていても何がアラートを発生させたか正確に確認できます。',
+                'screenshot.mobile': 'Discord、Telegram、Slack、またはKakaoTalkアプリを通じてスマートフォンやタブレットでアラートを受信。',
+                'screenshot.note': 'DiscordとTelegramはキャプチャした画像を直接受信できます。Slackは代わりにスクリーンショットが保存されたファイルパスを受信します。',
+                'screenshot.phone': 'モバイル',
+                'screenshot.tablet': 'タブレット',
+                'screenshot.desktop': 'デスクトップ',
+                'languages.title': '16言語対応',
+                'languages.subtitle': '再起動なしでいつでも切り替え可能',
+                'cta.title': '今すぐScreenEagleを入手',
+                'cta.subtitle': '軽量で高速な画面モーション検出ユーティリティ',
+                'cta.globalButton': 'グローバル版',
+                'cta.kakaoButton': 'Kakao版'
+            },
+            zh: {
+                'nav.home': '首页',
+                'nav.versions': '版本',
+                'nav.modes': '模式',
+                'nav.alerts': '提醒',
+                'nav.download': '下载',
+                'hero.tagline': 'Windows屏幕动态检测工具',
+                'hero.description': 'ScreenEagle监控您的屏幕，在检测到动态时发出提醒。非常适合游戏玩家、直播监控和自动化任务。',
+                'hero.getStarted': '开始使用',
+                'hero.learnMore': '了解更多',
+                'versions.title': '选择您的版本',
+                'versions.subtitle': '根据您的通知偏好提供两个版本',
+                'versions.global.badge': '全球',
+                'versions.global.title': '全球版',
+                'versions.global.desc': '通过Discord、Telegram、Slack推送通知',
+                'versions.global.feature1': '发送带截图的提醒',
+                'versions.global.feature2': '多平台支持',
+                'versions.global.feature3': '在Gumroad购买',
+                'versions.global.button': '获取全球版',
+                'versions.kakao.badge': '韩国',
+                'versions.kakao.title': 'Kakao版',
+                'versions.kakao.desc': '通过KakaoTalk Alimtalk即时通知',
+                'versions.kakao.feature1': 'Alimtalk即时通知',
+                'versions.kakao.feature2': '无需安装其他应用',
+                'versions.kakao.feature3': '为韩国用户优化',
+                'versions.kakao.button': '获取Kakao版',
+                'modes.title': '3种检测模式',
+                'modes.subtitle': 'ScreenEagle提供3种检测模式满足您的需求',
+                'modes.example': '示例:',
+                'modes.stopShot.tagline': '当动态停止指定时间后触发提醒',
+                'modes.stopShot.feature1': '以天、小时、分钟、秒为单位设置时间',
+                'modes.stopShot.feature2': '非常适合监控正在进行的活动',
+                'modes.stopShot.example': '视频流冻结、游戏角色停止移动或机器停止运行时提醒',
+                'modes.startShot.tagline': '检测到新动态时触发提醒',
+                'modes.startShot.feature1': '动态开始时即时提醒',
+                'modes.startShot.feature2': '非常适合安全监控',
+                'modes.startShot.example': '有人进入画面、应用窗口变化或下载开始时提醒',
+                'modes.cyclingShot.tagline': '定期截取屏幕截图',
+                'modes.cyclingShot.feature1': '定时模式：设置开始/结束日期和截图间隔',
+                'modes.cyclingShot.feature2': '即时模式：立即开始设定的持续时间',
+                'modes.cyclingShot.feature3': '非常适合延时监控',
+                'modes.cyclingShot.example': '每小时截取监控画面、每天监控建筑工地或跟踪任务进度',
+                'alerts.title': '提醒选项',
+                'alerts.subtitle': '检测到动态时有多种提醒方式',
+                'alerts.local.title': '本地提醒',
+                'alerts.local.flash': '屏幕闪烁',
+                'alerts.local.flashDesc': '屏幕闪烁以引起您的注意',
+                'alerts.local.beep': '蜂鸣声',
+                'alerts.local.beepDesc': '系统蜂鸣提醒',
+                'alerts.local.media': '媒体播放',
+                'alerts.local.mediaDesc': '播放MP3、WAV、OGG、FLAC等音频文件',
+                'alerts.push.title': '推送提醒',
+                'alerts.push.discordDesc': '在Discord服务器接收带截图的提醒',
+                'alerts.push.telegramDesc': '通过Telegram机器人接收带截图的提醒',
+                'alerts.push.slackDesc': '在Slack频道接收提醒（仅文件路径）',
+                'alerts.push.kakaoDesc': '接收Alimtalk通知（仅Kakao版）',
+                'alerts.note': '您可以同时启用一种或多种提醒方式。',
+                'screenshot.title': '截图捕获',
+                'screenshot.description': '检测到动态时捕获截图并随推送提醒一起发送。即使您不在电脑旁，也能准确看到是什么触发了提醒。',
+                'screenshot.mobile': '通过Discord、Telegram、Slack或KakaoTalk应用在智能手机或平板电脑上接收提醒。',
+                'screenshot.note': 'Discord和Telegram可以直接接收捕获的图像。Slack则接收截图保存的文件路径。',
+                'screenshot.phone': '手机',
+                'screenshot.tablet': '平板',
+                'screenshot.desktop': '桌面',
+                'languages.title': '支持16种语言',
+                'languages.subtitle': '无需重启随时切换',
+                'cta.title': '立即获取ScreenEagle',
+                'cta.subtitle': '轻量快速的屏幕动态检测工具',
+                'cta.globalButton': '全球版',
+                'cta.kakaoButton': 'Kakao版'
+            }
+        };
+
+        let currentLang = 'en';
+
+        // Language switcher
+        function toggleLangDropdown() {
+            document.getElementById('lang-dropdown').classList.toggle('show');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.lang-selector')) {
+                document.getElementById('lang-dropdown').classList.remove('show');
+            }
+        });
+
+        // Change language
+        document.querySelectorAll('.lang-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const lang = this.dataset.lang;
+                setLanguage(lang);
+            });
+        });
+
+        function setLanguage(lang) {
+            currentLang = lang;
+
+            // Update active state
+            document.querySelectorAll('.lang-option').forEach(opt => {
+                opt.classList.remove('active');
+                if (opt.dataset.lang === lang) {
+                    opt.classList.add('active');
+                }
+            });
+
+            // Update button text
+            const langNames = { en: 'EN', ko: 'KO', ja: 'JA', zh: 'ZH' };
+            document.getElementById('current-lang').textContent = langNames[lang];
+
+            // Update all translatable elements
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.dataset.i18n;
+                if (translations[lang] && translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+
+            // Close dropdown
+            document.getElementById('lang-dropdown').classList.remove('show');
+
+            // Save preference
+            localStorage.setItem('preferredLang', lang);
+        }
+
+        // Load saved language preference
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLang');
+            if (savedLang && translations[savedLang]) {
+                setLanguage(savedLang);
+            }
+        });
+
+        // Navigation scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.08)';
+            } else {
+                nav.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.05)';
+            }
+        });
+    </script>
 </body>
 </html>
