@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>교환환불정책 - ScreenEagle 카카오톡 에디션</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --primary-light: #818cf8;
+            --secondary: #0ea5e9;
+            --dark: #1e293b;
+            --gray-dark: #475569;
+            --gray: #64748b;
+            --gray-light: #94a3b8;
+            --light: #f1f5f9;
+            --lighter: #f8fafc;
+            --white: #ffffff;
+            --text-dark: #1e293b;
+            --text-body: #475569;
+            --warning: #f59e0b;
+            --success: #10b981;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', 'Poppins', sans-serif;
+            background: var(--lighter);
+            color: var(--text-body);
+            line-height: 1.8;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .back-link {
+            color: var(--gray-dark);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: var(--primary);
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        .content-card {
+            background: var(--white);
+            border-radius: 1rem;
+            padding: 3rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .content-card h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-light);
+        }
+
+        .content-card h2:first-child {
+            margin-top: 0;
+        }
+
+        .content-card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 1.5rem 0 0.75rem;
+        }
+
+        .content-card p {
+            margin-bottom: 1rem;
+        }
+
+        .content-card ul, .content-card ol {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .content-card li {
+            margin-bottom: 0.75rem;
+        }
+
+        .highlight-box {
+            background: var(--light);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+        }
+
+        .highlight-box.success {
+            border-left-color: var(--success);
+            background: #ecfdf5;
+        }
+
+        .highlight-box.warning {
+            border-left-color: var(--warning);
+            background: #fffbeb;
+        }
+
+        .refund-badge {
+            display: inline-block;
+            background: var(--success);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 0.75rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .contact-info a {
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        footer {
+            background: var(--white);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+            margin-top: 4rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo img {
+            height: 32px;
+            width: auto;
+        }
+
+        .footer-logo span {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--gray-dark);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        footer p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding: 6rem 1rem 2rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .content-card {
+                padding: 1.5rem;
+            }
+
+            .footer-links {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="image/HaNull Studio_160x160.png" alt="HaNull Studio">
+                <span>HaNull Studio</span>
+            </a>
+            <a href="index.html" class="back-link">
+                ← 홈으로 돌아가기
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="page-header">
+            <h1>교환환불정책</h1>
+            <p>ScreenEagle 카카오톡 에디션 교환 및 환불 안내</p>
+        </div>
+
+        <div class="content-card">
+            <h2>제1조 (기본 정책)</h2>
+            <div class="highlight-box warning">
+                <p><strong>기본적으로 환불 보장을 제공하지 않습니다.</strong> 사용 전 반드시 무료체험을 통해서 사용 여부를 판단해 주세요.</p>
+            </div>
+
+            <h2>제2조 (환불 자격)</h2>
+            <p>1회성 요금제에 한해 다음 조건으로 환불이 가능합니다:</p>
+            <div class="highlight-box">
+                <p>구매 후 <strong>7일 이내</strong>에 사용한 포인트를 차감하고 잔여 포인트에 대해서 <strong>100% 환불</strong>이 가능합니다. (부분환불)</p>
+            </div>
+
+            <h2>제3조 (7일 이후)</h2>
+            <p>7일 경과 후에는 전액/부분 환불이 불가합니다. 반드시 기간 내 환불을 요청해 주세요.</p>
+
+            <h2>제4조 (환불 처리)</h2>
+            <ul>
+                <li>승인된 환불은 <strong>31일 이내</strong>에 처리됩니다.</li>
+                <li>원래 결제 수단으로 환불됩니다.</li>
+                <li>현금 환불 시 <strong>수수료 5%</strong>가 제외됩니다.</li>
+            </ul>
+
+            <h2>제5조 (환불 요청 방법)</h2>
+            <p>환불 사유를 포함하여 아래 이메일로 요청해 주세요.</p>
+
+            <h2>제6조 (환불 불가 사유)</h2>
+            <ul>
+                <li>구매 후 <strong>7일 경과</strong></li>
+                <li>갱신 전 <strong>미취소</strong></li>
+            </ul>
+
+            <h2>제7조 (교환 정책)</h2>
+            <p>디지털 소프트웨어 특성상 교환을 제공하지 않습니다. 문제 발생 시 기술 지원으로 해결해 드립니다.</p>
+
+            <h2>제8조 (문의)</h2>
+            <div class="contact-info">
+                <p>환불 요청: <a href="mailto:HNStudio.c@gmail.com">HNStudio.c@gmail.com</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-logo">
+            <img src="image/HaNull Studio_160x160.png" alt="HaNull Studio">
+            <span>HaNull Studio</span>
+        </div>
+        <div class="footer-links">
+            <a href="pricing.html">가격안내</a>
+            <a href="terms.html">이용약관</a>
+            <a href="privacy.html">개인정보처리방침</a>
+            <a href="refund.html">교환환불정책</a>
+        </div>
+        <p>&copy; 2025 HaNull Studio. All rights reserved.</p>
+    </footer>
+</body>
+</html>

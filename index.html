@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HaNull Studio - ScreenEagle</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Sans+SC:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -866,6 +867,26 @@
             text-decoration: none;
         }
 
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--gray-dark);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
         footer a:hover {
             text-decoration: underline;
         }
@@ -1321,6 +1342,12 @@
         <div class="footer-logo">
             <img src="image/HaNull Studio_160x160.png" alt="HaNull Studio">
             <span>HaNull Studio</span>
+        </div>
+        <div class="footer-links">
+            <a href="pricing.html">가격안내</a>
+            <a href="terms.html">이용약관</a>
+            <a href="privacy.html">개인정보처리방침</a>
+            <a href="refund.html">교환환불정책</a>
         </div>
         <p>&copy; 2025 HaNull Studio. All rights reserved.</p>
         <div class="business-info">
