@@ -1,325 +1,174 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이용약관 - ScreenEagle 카카오톡 에디션</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary: #6366f1;
-            --primary-dark: #4f46e5;
-            --primary-light: #818cf8;
-            --secondary: #0ea5e9;
-            --dark: #1e293b;
-            --gray-dark: #475569;
-            --gray: #64748b;
-            --gray-light: #94a3b8;
-            --light: #f1f5f9;
-            --lighter: #f8fafc;
-            --white: #ffffff;
-            --text-dark: #1e293b;
-            --text-body: #475569;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Noto Sans KR', 'Poppins', sans-serif;
-            background: var(--lighter);
-            color: var(--text-body);
-            line-height: 1.8;
-        }
-
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        .logo img {
-            height: 40px;
-            width: auto;
-        }
-
-        .back-link {
-            color: var(--gray-dark);
-            text-decoration: none;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: color 0.2s ease;
-        }
-
-        .back-link:hover {
-            color: var(--primary);
-        }
-
-        main {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 8rem 2rem 4rem;
-        }
-
-        .page-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .page-header h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 1rem;
-        }
-
-        .page-header p {
-            color: var(--gray);
-            font-size: 1.1rem;
-        }
-
-        .content-card {
-            background: var(--white);
-            border-radius: 1rem;
-            padding: 3rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-        }
-
-        .content-card h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin: 2rem 0 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--primary-light);
-        }
-
-        .content-card h2:first-child {
-            margin-top: 0;
-        }
-
-        .content-card h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--text-dark);
-            margin: 1.5rem 0 0.75rem;
-        }
-
-        .content-card p {
-            margin-bottom: 1rem;
-        }
-
-        .content-card ul, .content-card ol {
-            margin: 1rem 0;
-            padding-left: 1.5rem;
-        }
-
-        .content-card li {
-            margin-bottom: 0.75rem;
-        }
-
-        .highlight-box {
-            background: var(--light);
-            border-left: 4px solid var(--primary);
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 0 0.5rem 0.5rem 0;
-        }
-
-        .highlight-box p {
-            margin: 0;
-        }
-
-        footer {
-            background: var(--white);
-            padding: 3rem 2rem;
-            text-align: center;
-            border-top: 1px solid rgba(0, 0, 0, 0.06);
-            margin-top: 4rem;
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .footer-logo img {
-            height: 32px;
-            width: auto;
-        }
-
-        .footer-logo span {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 1.5rem 0;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: var(--gray-dark);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.2s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary);
-        }
-
-        footer p {
-            color: var(--gray);
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            main {
-                padding: 6rem 1rem 2rem;
-            }
-
-            .page-header h1 {
-                font-size: 2rem;
-            }
-
-            .content-card {
-                padding: 1.5rem;
-            }
-
-            .footer-links {
-                gap: 1rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>이용약관 — AlphaWiz</title>
+  <meta name="description" content="AlphaWiz 서비스 이용약관.">
+  <link rel="icon" type="image/svg+xml" href="image/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <img src="image/HaNull Studio_160x160.png" alt="HaNull Studio">
-                <span>HaNull Studio</span>
-            </a>
-            <a href="index.html" class="back-link">
-                ← 홈으로 돌아가기
-            </a>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="image/logo.svg" alt="AlphaWiz">
+        <span>AlphaWiz</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#features">기능</a></li>
+        <li><a href="index.html#markets">지원시장</a></li>
+        <li><a href="pricing.html">요금제</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="blog.html">블로그</a></li>
+        <li><a href="about.html">회사소개</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a class="btn btn-primary btn-sm" href="https://alphawiz.ai">사용 시작</a>
+        <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <article class="policy">
+      <h1>이용약관</h1>
+      <p class="updated">최종 업데이트: 2026-04-17</p>
+
+      <h2>제1조 (목적)</h2>
+      <p>본 약관은 HaNull Studio(이하 "회사")가 제공하는 AI 기반 주식 분석 서비스 "AlphaWiz"(이하 "서비스")의 이용과 관련하여 회사와 이용자 간의 권리, 의무 및 책임사항을 규정함을 목적으로 합니다.</p>
+
+      <h2>제2조 (용어의 정의)</h2>
+      <ol>
+        <li>"서비스"란 회사가 웹사이트 <a href="https://alphawiz.ai">alphawiz.ai</a> 및 관련 도메인을 통해 제공하는 AI 기반 주식 데이터 분석 및 Q&amp;A 서비스를 의미합니다.</li>
+        <li>"이용자"란 본 약관에 따라 회사가 제공하는 서비스를 이용하는 회원 및 비회원을 말합니다.</li>
+        <li>"회원"이란 회사에 개인정보를 제공하고 계정을 등록한 자로서, 서비스를 지속적으로 이용할 수 있는 자를 말합니다.</li>
+        <li>"질문(Query)"이란 이용자가 서비스에 입력한 자연어 질의와 그에 대한 AI 응답 한 쌍을 의미합니다.</li>
+      </ol>
+
+      <h2>제3조 (서비스의 성격)</h2>
+      <ol>
+        <li>서비스는 공개된 주가·재무·공시 데이터를 바탕으로 AI가 분석 결과를 제공하는 <strong>정보 제공 서비스</strong>입니다.</li>
+        <li>서비스는 「자본시장과 금융투자업에 관한 법률」상 투자자문업, 투자중개업 또는 투자일임업에 해당하지 않으며, 특정 종목의 매수·매도를 권유하지 않습니다.</li>
+        <li>이용자는 서비스가 제공하는 정보를 참고 자료로만 활용해야 하며, 모든 투자 판단과 그에 따른 손익은 이용자 본인의 책임입니다.</li>
+      </ol>
+
+      <h2>제4조 (약관의 효력 및 변경)</h2>
+      <ol>
+        <li>본 약관은 서비스 화면에 게시하거나 기타의 방법으로 이용자에게 공지함으로써 효력을 발생합니다.</li>
+        <li>회사는 관련 법령을 위배하지 않는 범위에서 약관을 변경할 수 있으며, 변경 시 적용일자 및 변경 사유를 명시하여 시행일 7일 전부터 공지합니다. 이용자에게 불리한 변경의 경우 30일 전에 공지합니다.</li>
+      </ol>
+
+      <h2>제5조 (회원가입 및 계정)</h2>
+      <ol>
+        <li>이용자는 회사가 정한 절차에 따라 정확한 정보를 제공하고 본 약관에 동의함으로써 회원으로 가입할 수 있습니다.</li>
+        <li>회원은 자신의 계정 정보를 제3자에게 제공하거나 공유할 수 없으며, 계정의 관리 책임은 회원에게 있습니다.</li>
+        <li>만 14세 미만 아동은 회원가입을 할 수 없습니다.</li>
+      </ol>
+
+      <h2>제6조 (요금제 및 결제)</h2>
+      <ol>
+        <li>서비스는 유료 요금제로 제공되며, 현재 Day10, Week3, Pro1, Pro10, Pro100의 5종으로 구성됩니다. 자세한 내용은 <a href="pricing.html">요금제 페이지</a>를 참고하세요.</li>
+        <li>각 요금제는 이용 기간과 일일 질문 한도에 따라 구분되며, 가격은 부가세 포함 기준입니다.</li>
+        <li>미사용 일일 한도는 다음 날로 이월되지 않으며, 이용 기간 종료 시 잔여 질문은 소멸합니다.</li>
+        <li>결제 수단 및 방법은 서비스 내 별도 안내에 따릅니다.</li>
+      </ol>
+
+      <h2>제7조 (이용자의 의무)</h2>
+      <ol>
+        <li>이용자는 서비스 이용과 관련하여 다음 행위를 해서는 안 됩니다.
+          <ul>
+            <li>타인의 정보를 도용하거나 허위 정보를 등록하는 행위</li>
+            <li>자동화된 수단(크롤러, 봇 등)을 통해 서비스에 접근하거나 과도한 요청을 발생시키는 행위</li>
+            <li>서비스의 응답 결과를 무단으로 재배포·상업적 목적으로 이용하는 행위</li>
+            <li>서비스의 정상적인 운영을 방해하는 모든 행위</li>
+          </ul>
+        </li>
+        <li>이용자는 관련 법령과 본 약관을 준수해야 합니다.</li>
+      </ol>
+
+      <h2>제8조 (지적재산권)</h2>
+      <ol>
+        <li>서비스 및 관련 소프트웨어, 로고, 텍스트, 이미지 등에 대한 지적재산권은 회사에 귀속됩니다.</li>
+        <li>이용자는 회사의 사전 서면 동의 없이 서비스를 통해 얻은 정보를 복제·배포·가공·상업적으로 이용할 수 없습니다.</li>
+        <li>이용자가 입력한 질의 내용에 대한 권리는 이용자에게 있으며, 회사는 서비스 제공 및 개선 목적의 범위 내에서만 이를 이용합니다.</li>
+      </ol>
+
+      <h2>제9조 (면책)</h2>
+      <ol>
+        <li>회사는 서비스가 제공하는 분석 결과의 정확성·완전성·적시성을 보장하지 않으며, 이용자가 서비스 정보를 근거로 내린 투자 판단에 의한 손익에 대해 어떠한 책임도 지지 않습니다.</li>
+        <li>회사는 천재지변, 전쟁, 국가비상사태, 통신 장애, 데이터 공급처의 오류 등 불가항력적 사유로 인한 서비스 중단·지연에 대해 책임지지 않습니다.</li>
+        <li>시세·재무·공시 데이터는 거래소 및 외부 데이터 공급자의 정책에 따라 일정한 지연이 있을 수 있습니다.</li>
+      </ol>
+
+      <h2>제10조 (서비스의 변경 및 종료)</h2>
+      <ol>
+        <li>회사는 서비스의 품질 향상, 기술적 필요, 운영상 사유 등에 따라 서비스의 전부 또는 일부를 변경할 수 있습니다.</li>
+        <li>회사가 서비스 전체를 종료하는 경우 종료일 30일 전에 공지하며, 이용자에게 잔여 이용 기간에 비례한 환불을 진행합니다.</li>
+      </ol>
+
+      <h2>제11조 (준거법 및 관할)</h2>
+      <p>본 약관은 대한민국 법률에 따라 해석되며, 서비스 이용과 관련하여 발생한 분쟁에 대해서는 민사소송법상의 관할 법원을 관할 법원으로 합니다.</p>
+
+      <h2>제12조 (문의)</h2>
+      <p>본 약관과 관련된 문의는 <a href="mailto:HNStudio.c@gmail.com">HNStudio.c@gmail.com</a>으로 주시기 바랍니다.</p>
+
+      <p style="margin-top:40px; padding-top:24px; border-top:1px solid var(--border); color:var(--text-muted); font-size:13px;">
+        본 약관은 2026-04-17부터 시행됩니다.
+      </p>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-cols">
+        <div class="footer-brand">
+          <div class="brand"><img src="image/logo.svg" alt="AlphaWiz"> AlphaWiz</div>
+          <p>AI 기반 주식 분석 서비스. 주가·재무·종목 데이터로 당신의 투자 판단을 돕습니다.</p>
         </div>
-    </nav>
-
-    <main>
-        <div class="page-header">
-            <h1>이용약관</h1>
-            <p>ScreenEagle 카카오톡 에디션 서비스 이용약관</p>
+        <div class="footer-col">
+          <h4>제품</h4>
+          <ul>
+            <li><a href="index.html#features">기능</a></li>
+            <li><a href="index.html#markets">지원시장</a></li>
+            <li><a href="pricing.html">요금제</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
         </div>
-
-        <div class="content-card">
-            <div class="highlight-box">
-                <p><strong>ScreenEagle을 사용함으로써 본 약관에 동의하게 됩니다.</strong></p>
-            </div>
-
-            <h2>제1조 (회원가입)</h2>
-            <p>프로그램 내 회원가입이 필수입니다. 이메일과 전화번호 제공이 필수이며, 전화번호는 알림톡 발송용으로 사용됩니다.</p>
-
-            <h2>제2조 (라이선스)</h2>
-            <div class="highlight-box">
-                <p>본 라이선스는 <strong>1대의 Windows PC에서 ScreenEagle을 사용할 수 있는 개인용, 양도 불가 라이선스</strong>입니다.</p>
-            </div>
-
-            <h2>제3조 (구독)</h2>
-            <p>결제 즉시 정기구독이 시작됩니다. 언제든 해지 가능하나 현재 기간에 대한 환불은 없습니다.</p>
-
-            <h2>제4조 (제한사항)</h2>
-            <p>ScreenEagle을 재배포, 역설계 또는 재판매할 수 없습니다.</p>
-
-            <h2>제5조 (데이터 보안)</h2>
-            <ul>
-                <li>로컬 작동 방식이며, 알림톡 선택 시 스크린샷이 외부 서버로 전송됩니다.</li>
-                <li><strong>스크린샷은 30일 후 완전삭제</strong>됩니다.</li>
-                <li>회원정보는 탈퇴 또는 1년 미로그인 시 삭제됩니다.</li>
-            </ul>
-
-            <h2>제6조 (보증 면책)</h2>
-            <p>ScreenEagle은 어떠한 종류의 보증도 없이 <strong>"있는 그대로"</strong> 제공됩니다.</p>
-
-            <h2>제7조 (책임 제한)</h2>
-            <p>간접적, 우발적, 결과적 손해에 대해 책임지지 않습니다.</p>
-
-            <h2>제8조 (서비스 변경)</h2>
-            <p>서비스는 언제든 수정될 수 있습니다. 서비스 종료 시 최소 2개월 전 공지하며, 남은 기간과 포인트에 대해 구매가격의 2배를 보상합니다.</p>
-
-            <h2>제9조 (약관 변경)</h2>
-            <p>본 약관은 언제든 업데이트될 수 있습니다. 계속 사용 시 변경에 동의한 것으로 간주됩니다.</p>
-
-            <h2>제10조 (환불 정책)</h2>
-            <p>환불에 관한 사항은 <a href="refund.html">환불 정책</a>을 참조하세요. 무료체험 후 구독을 권장합니다.</p>
-
-            <h2>제11조 (준거법)</h2>
-            <p>본 약관은 대한민국 법률에 따라 해석됩니다. 분쟁 발생 시 회사 주소지 소재 지방 법원이 관할권을 가집니다.</p>
-
-            <h2>제12조 (문의)</h2>
-            <p>문의사항: <a href="mailto:HNStudio.c@gmail.com">HNStudio.c@gmail.com</a></p>
+        <div class="footer-col">
+          <h4>회사</h4>
+          <ul>
+            <li><a href="about.html">회사소개</a></li>
+            <li><a href="blog.html">블로그</a></li>
+            <li><a href="mailto:HNStudio.c@gmail.com">문의하기</a></li>
+          </ul>
         </div>
-    </main>
+        <div class="footer-col">
+          <h4>법적고지</h4>
+          <ul>
+            <li><a href="terms.html">이용약관</a></li>
+            <li><a href="privacy.html">개인정보처리방침</a></li>
+            <li><a href="refund.html">환불정책</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 AlphaWiz · Service by HaNull Studio. All rights reserved.</div>
+        <div class="legal">
+          <a href="terms.html">이용약관</a>
+          <a href="privacy.html">개인정보</a>
+          <a href="refund.html">환불</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-    <footer>
-        <div class="footer-logo">
-            <img src="image/HaNull Studio_160x160.png" alt="HaNull Studio">
-            <span>HaNull Studio</span>
-        </div>
-        <div class="footer-links">
-            <a href="pricing.html">가격안내</a>
-            <a href="terms.html">이용약관</a>
-            <a href="privacy.html">개인정보처리방침</a>
-            <a href="refund.html">교환환불정책</a>
-        </div>
-        <p>&copy; 2025 HaNull Studio. All rights reserved.</p>
-    </footer>
+  <script src="js/site.js"></script>
 </body>
 </html>

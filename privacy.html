@@ -1,385 +1,182 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>개인정보처리방침 - ScreenEagle 카카오톡 에디션</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary: #6366f1;
-            --primary-dark: #4f46e5;
-            --primary-light: #818cf8;
-            --secondary: #0ea5e9;
-            --dark: #1e293b;
-            --gray-dark: #475569;
-            --gray: #64748b;
-            --gray-light: #94a3b8;
-            --light: #f1f5f9;
-            --lighter: #f8fafc;
-            --white: #ffffff;
-            --text-dark: #1e293b;
-            --text-body: #475569;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Noto Sans KR', 'Poppins', sans-serif;
-            background: var(--lighter);
-            color: var(--text-body);
-            line-height: 1.8;
-        }
-
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        .logo img {
-            height: 40px;
-            width: auto;
-        }
-
-        .back-link {
-            color: var(--gray-dark);
-            text-decoration: none;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: color 0.2s ease;
-        }
-
-        .back-link:hover {
-            color: var(--primary);
-        }
-
-        main {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 8rem 2rem 4rem;
-        }
-
-        .page-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .page-header h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 1rem;
-        }
-
-        .page-header p {
-            color: var(--gray);
-            font-size: 1.1rem;
-        }
-
-        .content-card {
-            background: var(--white);
-            border-radius: 1rem;
-            padding: 3rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-        }
-
-        .content-card h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin: 2rem 0 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--primary-light);
-        }
-
-        .content-card h2:first-child {
-            margin-top: 0;
-        }
-
-        .content-card h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--text-dark);
-            margin: 1.5rem 0 0.75rem;
-        }
-
-        .content-card p {
-            margin-bottom: 1rem;
-        }
-
-        .content-card ul, .content-card ol {
-            margin: 1rem 0;
-            padding-left: 1.5rem;
-        }
-
-        .content-card li {
-            margin-bottom: 0.75rem;
-        }
-
-        .highlight-box {
-            background: var(--light);
-            border-left: 4px solid var(--primary);
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 0 0.5rem 0.5rem 0;
-        }
-
-        .highlight-box p {
-            margin: 0;
-        }
-
-        .info-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1rem 0;
-        }
-
-        .info-table th, .info-table td {
-            border: 1px solid var(--light);
-            padding: 1rem;
-            text-align: left;
-        }
-
-        .info-table th {
-            background: var(--light);
-            font-weight: 600;
-            color: var(--text-dark);
-        }
-
-        .contact-info {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: var(--white);
-            padding: 2rem;
-            border-radius: 0.75rem;
-            margin-top: 2rem;
-            text-align: center;
-        }
-
-        .contact-info a {
-            color: var(--white);
-            font-weight: 600;
-        }
-
-        footer {
-            background: var(--white);
-            padding: 3rem 2rem;
-            text-align: center;
-            border-top: 1px solid rgba(0, 0, 0, 0.06);
-            margin-top: 4rem;
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .footer-logo img {
-            height: 32px;
-            width: auto;
-        }
-
-        .footer-logo span {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 1.5rem 0;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: var(--gray-dark);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.2s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary);
-        }
-
-        footer p {
-            color: var(--gray);
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            main {
-                padding: 6rem 1rem 2rem;
-            }
-
-            .page-header h1 {
-                font-size: 2rem;
-            }
-
-            .content-card {
-                padding: 1.5rem;
-            }
-
-            .footer-links {
-                gap: 1rem;
-            }
-
-            .info-table th, .info-table td {
-                padding: 0.75rem;
-                font-size: 0.9rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>개인정보처리방침 — AlphaWiz</title>
+  <meta name="description" content="AlphaWiz 개인정보처리방침.">
+  <link rel="icon" type="image/svg+xml" href="image/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <img src="image/HaNull Studio_160x160.png" alt="HaNull Studio">
-                <span>HaNull Studio</span>
-            </a>
-            <a href="index.html" class="back-link">
-                ← 홈으로 돌아가기
-            </a>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="image/logo.svg" alt="AlphaWiz">
+        <span>AlphaWiz</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#features">기능</a></li>
+        <li><a href="index.html#markets">지원시장</a></li>
+        <li><a href="pricing.html">요금제</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="blog.html">블로그</a></li>
+        <li><a href="about.html">회사소개</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a class="btn btn-primary btn-sm" href="https://alphawiz.ai">사용 시작</a>
+        <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <article class="policy">
+      <h1>개인정보처리방침</h1>
+      <p class="updated">최종 업데이트: 2026-04-17</p>
+
+      <p>HaNull Studio(이하 "회사")는 AlphaWiz 서비스(이하 "서비스") 이용자의 개인정보를 중요시하며, 「개인정보 보호법」 등 관련 법령을 준수합니다.</p>
+
+      <h2>제1조 (수집하는 개인정보 항목)</h2>
+      <p>회사는 서비스 제공을 위해 아래와 같은 최소한의 개인정보를 수집합니다.</p>
+      <table>
+        <thead>
+          <tr><th>구분</th><th>수집 항목</th><th>목적</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>회원가입 시</td><td>이메일 주소, 비밀번호(암호화 저장)</td><td>계정 생성·관리, 로그인</td></tr>
+          <tr><td>결제 시</td><td>결제 승인 번호, 결제일시, 결제 금액</td><td>요금제 결제 처리, 환불 업무</td></tr>
+          <tr><td>서비스 이용 시</td><td>접속 IP, 브라우저 정보, 서비스 이용 기록, 질의 내용</td><td>부정이용 방지, 서비스 품질 개선</td></tr>
+          <tr><td>고객 문의 시</td><td>이메일 주소, 문의 내용</td><td>문의 응대</td></tr>
+        </tbody>
+      </table>
+
+      <h2>제2조 (개인정보의 수집 및 이용 목적)</h2>
+      <ol>
+        <li>회원 관리: 회원 식별, 본인 확인, 부정 이용 방지</li>
+        <li>서비스 제공: AI 분석 응답 생성, 질문 한도 관리, 요금제 이용 기간 관리</li>
+        <li>결제 및 정산: 요금 청구, 환불 처리</li>
+        <li>서비스 개선: 이용 통계 분석, AI 응답 품질 향상</li>
+        <li>고지사항 전달: 약관 변경·중요 공지 안내</li>
+      </ol>
+
+      <h2>제3조 (개인정보의 보유 및 이용 기간)</h2>
+      <ol>
+        <li>회원 탈퇴 시 지체 없이 파기합니다. 다만 관련 법령에 따라 보존이 필요한 경우 아래 기간 동안 보관합니다.
+          <ul>
+            <li>계약 또는 청약 철회 등에 관한 기록: 5년 (전자상거래법)</li>
+            <li>대금결제 및 재화 등의 공급에 관한 기록: 5년 (전자상거래법)</li>
+            <li>소비자 불만 또는 분쟁처리에 관한 기록: 3년 (전자상거래법)</li>
+            <li>로그인 기록: 3개월 (통신비밀보호법)</li>
+          </ul>
+        </li>
+        <li>질의 내용은 서비스 개선·안전성 점검을 위해 최대 90일간 보관 후 삭제합니다.</li>
+      </ol>
+
+      <h2>제4조 (개인정보의 제3자 제공)</h2>
+      <p>회사는 이용자의 개인정보를 원칙적으로 외부에 제공하지 않습니다. 다만, 아래의 경우에는 예외로 합니다.</p>
+      <ol>
+        <li>이용자가 사전에 동의한 경우</li>
+        <li>법령의 규정에 의거하거나, 수사기관이 법령에 정해진 절차와 방법에 따라 요구하는 경우</li>
+      </ol>
+
+      <h2>제5조 (개인정보 처리의 위탁)</h2>
+      <p>회사는 원활한 서비스 제공을 위해 아래 업무를 외부에 위탁할 수 있으며, 위탁 시 수탁사 및 위탁 범위를 본 방침에 공개합니다.</p>
+      <ul>
+        <li>결제 처리: 서비스 오픈 시 지정되는 전자결제(PG) 업체 (결제 정보 처리)</li>
+        <li>클라우드 인프라: AI 모델 실행 및 데이터 저장을 위한 클라우드 서비스</li>
+      </ul>
+
+      <h2>제6조 (이용자의 권리)</h2>
+      <p>이용자는 언제든지 자신의 개인정보에 대해 열람, 정정, 삭제, 처리 정지를 요구할 수 있습니다. 요청은 <a href="mailto:HNStudio.c@gmail.com">HNStudio.c@gmail.com</a>을 통해 접수하며, 회사는 지체 없이 조치합니다.</p>
+
+      <h2>제7조 (개인정보의 파기)</h2>
+      <ol>
+        <li>회사는 보유 기간이 경과하거나 처리 목적이 달성된 개인정보를 지체 없이 파기합니다.</li>
+        <li>전자적 파일 형태는 복구 및 재생이 불가능한 방법으로 삭제하고, 출력물은 분쇄 또는 소각 처리합니다.</li>
+      </ol>
+
+      <h2>제8조 (쿠키의 사용)</h2>
+      <ol>
+        <li>회사는 로그인 유지, 이용 통계 분석을 위해 쿠키를 사용할 수 있습니다.</li>
+        <li>이용자는 브라우저 설정에서 쿠키 저장을 거부할 수 있으나, 이 경우 일부 서비스 이용에 제한이 있을 수 있습니다.</li>
+      </ol>
+
+      <h2>제9조 (개인정보 보호 책임자)</h2>
+      <p>회사는 개인정보 보호와 관련한 이용자의 문의·불만에 신속히 응답하기 위해 아래와 같이 책임자를 지정합니다.</p>
+      <ul>
+        <li>담당: HaNull Studio 개인정보 보호 담당자</li>
+        <li>이메일: <a href="mailto:HNStudio.c@gmail.com">HNStudio.c@gmail.com</a></li>
+      </ul>
+
+      <h2>제10조 (안전성 확보 조치)</h2>
+      <p>회사는 개인정보 보호를 위해 다음과 같은 조치를 합니다.</p>
+      <ul>
+        <li>비밀번호의 단방향 암호화 저장</li>
+        <li>접근 권한의 최소화 및 접근 로그 관리</li>
+        <li>개인정보 전송 구간의 암호화(HTTPS)</li>
+        <li>내부 관리계획 수립 및 정기 점검</li>
+      </ul>
+
+      <h2>제11조 (방침의 변경)</h2>
+      <p>본 개인정보처리방침이 변경되는 경우, 변경 내용과 시행일을 서비스 화면에 공지합니다. 이용자에게 불리한 변경의 경우 30일 전에 공지합니다.</p>
+
+      <p style="margin-top:40px; padding-top:24px; border-top:1px solid var(--border); color:var(--text-muted); font-size:13px;">
+        본 방침은 2026-04-17부터 시행됩니다.
+      </p>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-cols">
+        <div class="footer-brand">
+          <div class="brand"><img src="image/logo.svg" alt="AlphaWiz"> AlphaWiz</div>
+          <p>AI 기반 주식 분석 서비스. 주가·재무·종목 데이터로 당신의 투자 판단을 돕습니다.</p>
         </div>
-    </nav>
-
-    <main>
-        <div class="page-header">
-            <h1>개인정보처리방침</h1>
-            <p>ScreenEagle 카카오톡 에디션 개인정보 처리에 관한 안내</p>
+        <div class="footer-col">
+          <h4>제품</h4>
+          <ul>
+            <li><a href="index.html#features">기능</a></li>
+            <li><a href="index.html#markets">지원시장</a></li>
+            <li><a href="pricing.html">요금제</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
         </div>
-
-        <div class="content-card">
-            <h2>제1조 (수집하는 개인정보)</h2>
-            <table class="info-table">
-                <thead>
-                    <tr>
-                        <th>수집 항목</th>
-                        <th>수집 목적</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>이름/별명</td>
-                        <td>계정 관리</td>
-                    </tr>
-                    <tr>
-                        <td>이메일</td>
-                        <td>계정 관리 및 결제</td>
-                    </tr>
-                    <tr>
-                        <td>전화번호</td>
-                        <td>알림톡 발송 (필수)</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h2>제2조 (개인정보 보유 기간)</h2>
-            <p>개인정보는 구독 활성화 동안 보관됩니다.</p>
-            <div class="highlight-box">
-                <p>계정 삭제 후 <strong>30일 후에</strong> 해당 회원에 대한 데이터가 일괄 삭제됩니다.</p>
-            </div>
-
-            <h2>제3조 (로컬 작동)</h2>
-            <p>ScreenEagle은 PC에서 로컬로 작동합니다. 알림톡 전송 시에만 스크린샷이 외부로 전송됩니다.</p>
-
-            <h2>제4조 (알림 방식)</h2>
-            <p>다음과 같은 알림 방식을 제공합니다:</p>
-            <ul>
-                <li>화면 깜빡임</li>
-                <li>비프음</li>
-                <li>MP3</li>
-                <li>카카오 알림톡</li>
-            </ul>
-            <p>스크린샷 옵션을 선택할 수 있습니다.</p>
-
-            <h2>제5조 (스크린샷 기능)</h2>
-            <p>캡처 이미지는 카카오톡으로 직접 전송됩니다.</p>
-            <div class="highlight-box">
-                <p><strong>스크린샷은 당사 서버에 30일간 저장된 후 완전삭제</strong>됩니다.</p>
-            </div>
-
-            <h2>제6조 (제3자 서비스)</h2>
-            <p>알림은 카카오톡을 통해 발송됩니다. 카카오 개인정보처리방침이 적용됩니다.</p>
-
-            <h2>제7조 (결제 처리)</h2>
-            <p>결제는 결제서비스를 통해 처리됩니다. 당사는 결제 정보를 보관하지 않습니다.</p>
-
-            <h2>제8조 (추적 금지)</h2>
-            <p>화면 내용이나 개인 활동을 추적하지 않습니다.</p>
-
-            <h2>제9조 (정보주체의 권리)</h2>
-            <p>데이터 접근, 수정, 삭제 요청은 아래 이메일로 문의해 주세요.</p>
-
-            <h2>제10조 (정책 변경)</h2>
-            <p>본 정책은 수시로 업데이트될 수 있습니다.</p>
-
-            <h2>제11조 (문의)</h2>
-            <div class="contact-info">
-                <p>개인정보 관련 문의: <a href="mailto:HNStudio.c@gmail.com">HNStudio.c@gmail.com</a></p>
-            </div>
+        <div class="footer-col">
+          <h4>회사</h4>
+          <ul>
+            <li><a href="about.html">회사소개</a></li>
+            <li><a href="blog.html">블로그</a></li>
+            <li><a href="mailto:HNStudio.c@gmail.com">문의하기</a></li>
+          </ul>
         </div>
-    </main>
+        <div class="footer-col">
+          <h4>법적고지</h4>
+          <ul>
+            <li><a href="terms.html">이용약관</a></li>
+            <li><a href="privacy.html">개인정보처리방침</a></li>
+            <li><a href="refund.html">환불정책</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 AlphaWiz · Service by HaNull Studio. All rights reserved.</div>
+        <div class="legal">
+          <a href="terms.html">이용약관</a>
+          <a href="privacy.html">개인정보</a>
+          <a href="refund.html">환불</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-    <footer>
-        <div class="footer-logo">
-            <img src="image/HaNull Studio_160x160.png" alt="HaNull Studio">
-            <span>HaNull Studio</span>
-        </div>
-        <div class="footer-links">
-            <a href="pricing.html">가격안내</a>
-            <a href="terms.html">이용약관</a>
-            <a href="privacy.html">개인정보처리방침</a>
-            <a href="refund.html">교환환불정책</a>
-        </div>
-        <p>&copy; 2025 HaNull Studio. All rights reserved.</p>
-    </footer>
+  <script src="js/site.js"></script>
 </body>
 </html>
