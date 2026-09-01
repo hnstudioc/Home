@@ -3,53 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>88Phone — 글씨도 버튼도 큰, 어르신을 위한 스마트폰 앱</title>
-<meta name="description" content="88Phone은 어르신을 위해 만든 안드로이드 홈 화면 앱입니다. 글씨와 버튼을 크게 키우고, 자주 쓰는 기능만 남겨 스마트폰을 다시 쉽게 만듭니다.">
-<meta name="theme-color" content="#0B57A4">
-<link rel="icon" href="image/favicon.svg" type="image/svg+xml">
-<meta property="og:title" content="88Phone — 어르신을 위한 큰 글씨 스마트폰 앱">
-<meta property="og:description" content="글씨도 버튼도 크게. 자주 쓰는 기능만 남긴 어르신 전용 홈 화면 앱.">
+<title>88폰 — 큰딸 사진을 누르면 바로 전화가 걸립니다</title>
+<meta name="description" content="전화 거는 일만 남긴 전화 앱. 사진을 누르면 바로 걸립니다. 부모님이 따로 배우지 않으셔도 됩니다. 안드로이드 · 무료.">
+<meta name="theme-color" content="#4C3825">
+<link rel="icon" href="image/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="image/apple-touch-icon.png">
+<meta property="og:title" content="88폰 — 큰딸 사진을 누르면 바로 전화가 걸립니다">
+<meta property="og:description" content="전화 거는 일만 남긴 전화 앱. 부모님이 따로 배우지 않으셔도 됩니다.">
+<meta property="og:image" content="image/app-icon.png">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
 <a class="skip-link" href="#main">본문 바로가기</a>
 
-<!-- ===== 상단: 글씨 크기 조절 ===== -->
-<div class="topbar">
-  <div class="container topbar-inner">
-    <span class="topbar-label" id="fs-label">화면 글씨 크기</span>
-    <div class="fs-controls" role="group" aria-labelledby="fs-label">
-      <button type="button" class="fs-btn fs-btn-1" data-size="0" aria-pressed="true">가<span class="sr-only"> 보통 크기</span></button>
-      <button type="button" class="fs-btn fs-btn-2" data-size="1" aria-pressed="false">가<span class="sr-only"> 크게</span></button>
-      <button type="button" class="fs-btn fs-btn-3" data-size="2" aria-pressed="false">가<span class="sr-only"> 아주 크게</span></button>
-    </div>
-  </div>
-</div>
-
-<!-- ===== 내비게이션 ===== -->
-<header class="nav">
-  <div class="container nav-inner">
-    <a class="nav-logo" href="index.html">
-      <img src="image/logo.svg" alt="" width="64" height="64">
-      88Phone
+<header class="head grain">
+  <div class="container head-inner">
+    <a class="brand" href="index.html">
+      <img src="image/app-icon.png" alt="" width="40" height="40">
+      88폰
     </a>
-    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
-        <path d="M3 6h18M3 12h18M3 18h18"/>
-      </svg>
-      메뉴
-    </button>
-    <nav id="nav-menu" aria-label="주요 메뉴">
-      <ul class="nav-links">
-        <li><a href="index.html">앱 소개</a></li>
-        <li><a href="download.html">내려받기</a></li>
-        <li><a href="review.html">후기 남기기</a></li>
-        <li><a href="feedback.html">개선 요청</a></li>
+    <nav aria-label="주요 메뉴">
+      <ul class="head-links">
+        <li><a href="index.html">소개</a></li>
+        <li><a href="#price">값</a></li>
+        <li><a href="#faq">자주 묻는 질문</a></li>
+        <li><a href="feedback.html">문의</a></li>
       </ul>
     </nav>
   </div>
@@ -58,299 +41,316 @@
 <main id="main">
 
   <!-- ===== 히어로 ===== -->
-  <section class="hero">
+  <section class="hero grain">
     <div class="container hero-grid">
       <div>
-        <span class="eyebrow">어르신을 위한 스마트폰 앱</span>
-        <h1>스마트폰이 다시<br><span class="hl">쉬워집니다</span></h1>
-        <p class="hero-sub">
-          글씨는 크게, 버튼은 큼직하게. 자주 쓰는 기능만 남겼습니다.
-          설치만 하면 늘 쓰던 스마트폰이 <strong>보기 편한 화면</strong>으로 바뀝니다.
+        <h1>큰딸 사진을 누르면<br>바로 전화가 걸립니다</h1>
+        <p class="hero-lead">
+          전화 거는 일만 남긴 전화 앱.<br>
+          부모님이 따로 배우지 않으셔도 됩니다.
         </p>
-
-        <ul class="hero-points">
-          <li>돋보기 없이 읽히는 큰 글씨</li>
-          <li>잘못 누를 걱정 없는 큰 버튼</li>
-          <li>가족 사진을 누르면 바로 전화</li>
-          <li>쓰던 번호·사진·앱은 그대로</li>
-        </ul>
-
-        <div class="btn-row">
-          <a class="btn btn-primary btn-lg" href="download.html">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <div class="key-row">
+          <a class="key key-lg" data-store-link href="#get">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
             </svg>
-            내려받는 방법 보기
+            <span data-store-label>구글 플레이에서 받기</span>
           </a>
-          <a class="btn btn-outline btn-lg" href="#features">어떤 앱인가요?</a>
         </div>
+        <p class="hero-note">무료 · 광고 있음 · 안드로이드</p>
       </div>
 
-      <div class="hero-visual">
-        <img src="image/app-home.svg" width="320" height="620"
-             alt="88Phone 홈 화면. 전화, 문자, 사진, 즐겨찾기, 가족, 도움말 버튼이 큼직하게 배열되어 있고 아래에 긴급 도움 버튼이 있습니다.">
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 이런 점이 불편하셨다면 ===== -->
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-head center">
-        <span class="eyebrow">왜 88Phone인가요</span>
-        <h2>스마트폰이 어려운 건<br>어르신 탓이 아닙니다</h2>
-        <p>화면이 작은 글씨로 가득하고, 버튼은 손끝보다 작습니다. 88Phone은 그 반대로 만들었습니다.</p>
-      </div>
-
-      <div class="compare">
-        <div class="compare-col before">
-          <h3><span class="compare-tag">지금</span> 보통 스마트폰</h3>
-          <ul>
-            <li>글씨가 작아 안경을 써도 잘 안 보입니다</li>
-            <li>버튼이 작아 옆 것을 잘못 누릅니다</li>
-            <li>안 쓰는 앱이 화면을 가득 채웁니다</li>
-            <li>전화 한 통 걸려면 여러 번 눌러야 합니다</li>
-            <li>모르는 창이 떠서 당황스럽습니다</li>
-          </ul>
-        </div>
-        <div class="compare-col after">
-          <h3><span class="compare-tag">88Phone</span> 설치 후</h3>
-          <ul>
-            <li>한눈에 읽히는 큰 글씨</li>
-            <li>손가락으로 편하게 누르는 큰 버튼</li>
-            <li>자주 쓰는 기능만 화면에 남습니다</li>
-            <li>가족 사진을 한 번 누르면 전화 연결</li>
-            <li>화면이 늘 같아서 헷갈리지 않습니다</li>
-          </ul>
-        </div>
+      <div class="hero-shot">
+        <img src="image/screen-home.png" width="600" height="1300"
+             alt="88폰 첫 화면. 박철수·김순자·이며느리·늘편한내과가 큰 사진 카드로 놓여 있고, 아래에 번호 누르기와 사람 찾기 버튼이 있습니다.">
       </div>
     </div>
   </section>
 
-  <!-- ===== 주요 기능 ===== -->
-  <section class="section" id="features">
-    <div class="container">
-      <div class="section-head center">
-        <span class="eyebrow">주요 기능</span>
-        <h2>꼭 필요한 것만, 크고 단순하게</h2>
-      </div>
-
-      <div class="grid grid-3">
-        <div class="card">
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M3 5.5A2.5 2.5 0 0 1 5.5 3h2.6a1 1 0 0 1 1 .76l1 4a1 1 0 0 1-.44 1.06l-1.8 1.2a13 13 0 0 0 5.9 5.9l1.2-1.8a1 1 0 0 1 1.06-.44l4 1a1 1 0 0 1 .76 1V18a2.5 2.5 0 0 1-2.5 2.5C10.6 20.5 3 12.9 3 5.5z"/>
-            </svg>
-          </div>
-          <h3>큰 글씨 전화 걸기</h3>
-          <p>숫자 버튼을 화면 가득 크게 키웠습니다. 눈이 침침해도, 손이 떨려도 정확하게 눌립니다.</p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="8" r="3.5"/><path d="M4.5 20c0-4 3.4-6.5 7.5-6.5s7.5 2.5 7.5 6.5"/>
-            </svg>
-          </div>
-          <h3>사진으로 거는 전화</h3>
-          <p>가족 얼굴 사진을 한 번 누르면 바로 통화가 시작됩니다. 이름을 찾아 헤맬 필요가 없습니다.</p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M4 7h3l1.6-2.2h6.8L17 7h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1z"/>
-              <circle cx="12" cy="13" r="3.6"/>
-            </svg>
-          </div>
-          <h3>크게 보는 사진</h3>
-          <p>찍은 사진과 받은 사진을 큰 화면으로 넘겨 봅니다. 손주 사진을 보기가 훨씬 편해집니다.</p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon warm">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 3.5 21 19H3z"/><path d="M12 10v4"/><circle cx="12" cy="16.6" r="0.9" fill="currentColor" stroke="none"/>
-            </svg>
-          </div>
-          <h3>긴급 도움 버튼</h3>
-          <p>화면 아래 큰 버튼을 길게 누르면 미리 정해 둔 가족에게 연결됩니다. 급할 때 헤매지 않습니다.</p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/>
-            </svg>
-          </div>
-          <h3>글씨 큰 문자</h3>
-          <p>주고받은 문자를 큰 글씨로 보여 줍니다. 답장도 큰 자판으로 편하게 씁니다.</p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="9"/><path d="M9.6 9.4a2.5 2.5 0 0 1 4.8.9c0 1.7-2.4 2-2.4 3.5"/>
-              <circle cx="12" cy="17.2" r="0.9" fill="currentColor" stroke="none"/>
-            </svg>
-          </div>
-          <h3>언제든 도움말</h3>
-          <p>화면마다 "도움말" 버튼이 있습니다. 무엇을 누르면 되는지 큰 글씨로 알려 드립니다.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 화면 미리보기 ===== -->
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-head center">
-        <span class="eyebrow">화면 미리보기</span>
-        <h2>이렇게 생겼습니다</h2>
-        <p>실제 앱 화면을 본떠 만든 그림입니다. 출시 후 실제 화면으로 바꿔 올릴 예정입니다.</p>
-      </div>
-      <div class="grid grid-3">
-        <figure style="margin:0">
-          <img src="image/app-home.svg" alt="88Phone 홈 화면: 전화·문자·사진·즐겨찾기·가족·도움말 버튼과 긴급 도움 버튼." style="margin:0 auto">
-          <figcaption style="text-align:center;margin-top:0.9rem;font-weight:700">첫 화면</figcaption>
-        </figure>
-        <figure style="margin:0">
-          <img src="image/app-dial.svg" alt="88Phone 전화 걸기 화면: 숫자 버튼이 화면 가득 크게 배치되어 있습니다." style="margin:0 auto">
-          <figcaption style="text-align:center;margin-top:0.9rem;font-weight:700">전화 걸기</figcaption>
-        </figure>
-        <figure style="margin:0">
-          <img src="image/app-contacts.svg" alt="88Phone 연락처 화면: 사진과 이름, 전화번호가 크게 표시된 목록." style="margin:0 auto">
-          <figcaption style="text-align:center;margin-top:0.9rem;font-weight:700">가족 연락처</figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 설치 방법 ===== -->
+  <!-- ===== 이런 분께 ===== -->
   <section class="section">
-    <div class="container container-narrow">
+    <div class="container narrow">
       <div class="section-head center">
-        <span class="eyebrow">설치 방법</span>
-        <h2>세 번만 누르면 끝납니다</h2>
+        <h2>이런 분께</h2>
       </div>
-      <div class="steps">
-        <div class="step">
-          <div>
-            <h3>플레이스토어를 엽니다</h3>
-            <p>아래 QR 코드를 카메라로 비추거나, "내려받기" 버튼을 누르시면 설치 화면이 열립니다.</p>
-          </div>
+      <ul class="who">
+        <li>글씨가 작아 연락처가 잘 안 보이시는 분</li>
+        <li>이름 목록에서 찾다가 그만두시는 분</li>
+        <li>잘못 눌러 엉뚱한 화면에 들어가면 돌아오지 못하시는 분</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== 기능 ===== -->
+  <section class="section section-tint">
+    <div class="container">
+      <div class="section-head center">
+        <h2>어떻게 다른가요</h2>
+        <p>화면은 셋뿐입니다. 홈, 확대 카드, 번호판.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-shot">
+          <img src="image/screen-home.png" width="600" height="1300"
+               alt="88폰 첫 화면. 이름과 큰 사진이 담긴 나무 카드가 네 칸으로 놓여 있습니다.">
         </div>
-        <div class="step">
-          <div>
-            <h3>설치 버튼을 누릅니다</h3>
-            <p>초록색 "설치" 버튼을 한 번 누르고 잠시 기다리시면 됩니다.</p>
-          </div>
+        <div>
+          <h3>얼굴을 보고 누릅니다</h3>
+          <p>
+            이름 목록을 훑지 않습니다. 사진이 카드의 절반을 차지해서,
+            글씨가 안 보여도 누가 누구인지 압니다.
+            자주 거는 분을 자리에 놓아 두면 네 칸으로 시작해 다 찰 때마다
+            두 칸씩, 열두 칸까지 저절로 늘어납니다.
+          </p>
         </div>
-        <div class="step">
+      </div>
+
+      <div class="feature feature-alt">
+        <div class="feature-shot">
+          <img src="image/screen-card.png" width="600" height="1300"
+               alt="사진을 누르면 나타나는 확대 카드. 이름과 전화번호 아래에 초록색 전화 걸기, 파란색 문자 보내기 버튼이 있습니다.">
+        </div>
+        <div>
+          <h3>한 번 눌러 전화</h3>
+          <p>
+            사진을 누르면 카드가 커지고, 전화 걸기를 한 번 누르면 걸립니다.
+            거는 화면이 한 관문이라 주머니에서 실수로 걸리지 않습니다.
+          </p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-shot">
+          <img src="image/screen-messages.png" width="600" height="1300"
+               alt="문자 고르기 화면. 전화주세요, 사랑합니다 같은 자주 쓰는 말이 큰 버튼으로 나열되어 있습니다.">
+        </div>
+        <div>
+          <h3>문자는 고르기만 하면 됩니다</h3>
+          <p>
+            자판을 치지 않습니다. "전화주세요", "사랑합니다", "안녕히 주무세요"
+            같은 자주 하는 말 열여섯 가지 중에서 고르면 문자가 채워집니다.
+          </p>
+        </div>
+      </div>
+
+      <div class="feature feature-alt">
+        <div class="feature-shot">
+          <img src="image/screen-settings.png" width="600" height="1300"
+               alt="설정 화면. 버튼 모양 네 가지와 글자 크기 네 단계를 고를 수 있습니다.">
+        </div>
+        <div>
+          <h3>글자만 커지는 게 아닙니다</h3>
+          <p>
+            크기를 키우면 사진과 카드가 같이 커집니다. 네 단계까지 있습니다.
+            버튼 모양도 원목·백자·검정·고무 네 가지 중에서 고르실 수 있습니다.
+          </p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-shot">
+          <img src="image/screen-pictures.png" width="600" height="1300"
+               alt="그림 고르기 화면. 사람 그림과 병원·약국·택시·은행 같은 생활 그림이 나열되어 있습니다.">
+        </div>
+        <div>
+          <h3>연락처는 폰에 있는 것을 그대로 씁니다</h3>
+          <p>
+            따로 저장하지 않고, 밖으로 보내지 않습니다. 서버가 없습니다.
+            연락처에서 번호를 고치시면 88폰에서도 함께 바뀝니다.
+            사진이 없는 분은 병원·약국·택시 같은 그림 열여덟 가지 중에서 고르시면 됩니다.
+          </p>
+        </div>
+      </div>
+
+      <div class="feature feature-alt">
+        <div class="feature-shot">
+          <img src="image/screen-keypad.png" width="600" height="1300"
+               alt="번호 누르기 화면. 큰 번호판과 010-1234-5678처럼 끊어져 보이는 번호 표시.">
+        </div>
+        <div>
+          <h3>자리에 없는 번호는 직접</h3>
+          <p>
+            번호판이 큽니다. 누른 번호가 한 줄을 다 쓰고,
+            010-1234-5678처럼 끊어져 보입니다.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 전화 온 분 표시 ===== -->
+  <section class="section section-board grain">
+    <div class="container narrow">
+      <div class="section-head center">
+        <h2>전화가 왔던 분은 표시가 남습니다</h2>
+        <p>
+          나에게 전화했던 분의 카드에 표시가 붙고 테두리가 깜빡입니다.
+          설정에서 켜야 동작하며, 88폰은 번호를 적기만 하고
+          전화를 막거나 거절하지 않습니다.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 값 ===== -->
+  <section class="section" id="price">
+    <div class="container narrow">
+      <div class="section-head center">
+        <h2>값</h2>
+        <p>앱은 무료입니다. 받아서 모든 기능을 그대로 쓰십니다.</p>
+      </div>
+
+      <table class="price-table">
+        <thead>
+          <tr><th scope="col">항목</th><th scope="col">내용</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">앱 받기</th>
+            <td><span class="price-amount">무료</span></td>
+          </tr>
+          <tr>
+            <th scope="row">기능</th>
+            <td>모든 기능을 무료로 씁니다. 돈을 낸다고 더 걸 수 있는 것이 아닙니다.</td>
+          </tr>
+          <tr>
+            <th scope="row">광고</th>
+            <td>화면 맨 아래에 띠 광고 하나. 전면 광고는 없습니다.</td>
+          </tr>
+          <tr>
+            <th scope="row">광고 없애기</th>
+            <td><span class="price-amount" data-price>8,800원</span> 한 번 (구독 아님)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="price-callout">
+        <p>한 번만 내시면 광고가 영영 사라집니다. 매달 빠져나가는 돈이 아닙니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 내려받기 ===== -->
+  <section class="section section-tint" id="get">
+    <div class="container">
+      <div class="section-head center">
+        <h2>내려받기</h2>
+      </div>
+
+      <div class="narrow" style="margin:0 auto">
+        <div class="notice" data-release-notice hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/><path d="M12 7.5v5"/><circle cx="12" cy="16.3" r="1" fill="currentColor" stroke="none"/>
+          </svg>
           <div>
-            <h3>홈 화면으로 지정합니다</h3>
-            <p>앱을 처음 열면 안내가 나옵니다. "88Phone 사용"을 고르시면 설정이 끝납니다.</p>
+            <strong>곧 열립니다</strong>
+            <p>아직 구글 플레이에 올라가기 전입니다. 등록이 끝나면 아래 버튼과 QR 코드가 설치 화면으로 이어집니다.</p>
           </div>
         </div>
       </div>
-      <div class="btn-row" style="justify-content:center;margin-top:2.2rem">
-        <a class="btn btn-primary btn-lg" href="download.html">내려받기 페이지로 가기</a>
+
+      <div class="get">
+        <div class="qr-wrap">
+          <div class="qr-box" data-qr="#qr-cap" role="img" aria-label="88폰 QR 코드"></div>
+          <p class="qr-cap" id="qr-cap"></p>
+        </div>
+        <div>
+          <h2>부모님 폰에 깔아 드리세요</h2>
+          <p>
+            폰의 카메라를 켜고 왼쪽 QR 코드를 비추면 화면 위에 주소가 뜹니다.
+            그 주소를 한 번 누르시면 설치 화면으로 갑니다.
+          </p>
+          <div class="key-row">
+            <a class="key key-call key-lg" data-store-link href="#get">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+              </svg>
+              <span data-store-label>구글 플레이에서 받기</span>
+            </a>
+          </div>
+          <p class="store-url"><strong>주소</strong> <span data-store-url-text></span></p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ===== 자주 묻는 질문 ===== -->
-  <section class="section section-alt">
-    <div class="container container-narrow">
+  <section class="section" id="faq">
+    <div class="container narrow">
       <div class="section-head center">
-        <span class="eyebrow">자주 묻는 질문</span>
-        <h2>궁금한 점이 있으신가요?</h2>
+        <h2>자주 묻는 질문</h2>
       </div>
 
-      <div class="faq-list">
+      <div class="faq">
         <div class="faq-item">
-          <button type="button" class="faq-question">
-            쓰던 전화번호와 사진이 없어지나요?
-            <span class="faq-icon" aria-hidden="true"></span>
-          </button>
-          <div class="faq-answer">
-            <p>아닙니다. 88Phone은 화면만 바꿔 주는 앱입니다. 저장된 전화번호, 사진, 문자, 이미 깔려 있는 앱은 그대로 남아 있습니다.</p>
+          <button type="button" class="faq-q">정말 무료인가요?<span class="faq-mark" aria-hidden="true"></span></button>
+          <div class="faq-a">
+            <p>
+              네. 모든 기능을 무료로 쓰실 수 있습니다. 화면 맨 아래에 띠 광고가 하나 있고,
+              <span data-price>8,800원</span>을 한 번 내시면 그 광고가 사라집니다.
+              매달 내는 것이 아닙니다.
+            </p>
           </div>
         </div>
 
         <div class="faq-item">
-          <button type="button" class="faq-question">
-            원래 화면으로 되돌릴 수 있나요?
-            <span class="faq-icon" aria-hidden="true"></span>
-          </button>
-          <div class="faq-answer">
-            <p>네, 언제든 되돌릴 수 있습니다. 설정에서 홈 화면을 원래 것으로 다시 고르시면 됩니다. 앱을 지우셔도 아무것도 사라지지 않습니다.</p>
+          <button type="button" class="faq-q">부모님 연락처를 회사가 가져가나요?<span class="faq-mark" aria-hidden="true"></span></button>
+          <div class="faq-a">
+            <p>
+              아니요. 88폰은 서버가 없습니다. 연락처는 폰 안에서만 읽고, 어디로도 보내지 않습니다.
+            </p>
           </div>
         </div>
 
         <div class="faq-item">
-          <button type="button" class="faq-question">
-            아이폰에서도 쓸 수 있나요?
-            <span class="faq-icon" aria-hidden="true"></span>
-          </button>
-          <div class="faq-answer">
-            <p>현재는 안드로이드 휴대폰(삼성 갤럭시, LG 등)에서만 쓸 수 있습니다. 아이폰은 홈 화면을 바꾸는 것이 제한되어 있어 지원하지 않습니다.</p>
+          <button type="button" class="faq-q">아이폰에서도 되나요?<span class="faq-mark" aria-hidden="true"></span></button>
+          <div class="faq-a">
+            <p>지금은 안드로이드만 됩니다.</p>
           </div>
         </div>
 
         <div class="faq-item">
-          <button type="button" class="faq-question">
-            요금이 드나요?
-            <span class="faq-icon" aria-hidden="true"></span>
-          </button>
-          <div class="faq-answer">
-            <p>내려받아 쓰시는 데 요금은 들지 않습니다. 다만 앱을 내려받을 때 데이터를 쓰므로, 가능하면 와이파이가 되는 곳에서 설치하시길 권해 드립니다.</p>
+          <button type="button" class="faq-q">전화가 안 울리게 되지는 않나요?<span class="faq-mark" aria-hidden="true"></span></button>
+          <div class="faq-a">
+            <p>
+              그런 일은 없습니다. "전화 온 분 알려주기"를 켜면 안드로이드가 통화 선별 권한을 묻는데,
+              88폰은 번호를 적기만 하고 전화를 막거나 거절하지 않습니다.
+              끄셔도 통화에는 지장이 없습니다.
+            </p>
           </div>
         </div>
 
         <div class="faq-item">
-          <button type="button" class="faq-question">
-            자녀가 대신 설정해 줄 수 있나요?
-            <span class="faq-icon" aria-hidden="true"></span>
-          </button>
-          <div class="faq-answer">
-            <p>네. 가족 연락처와 긴급 도움 버튼은 자녀분이 미리 설정해 두실 수 있습니다. 한 번 정해 두면 어르신은 누르기만 하시면 됩니다.</p>
+          <button type="button" class="faq-q">어르신이 설치하고 설정까지 하실 수 있나요?<span class="faq-mark" aria-hidden="true"></span></button>
+          <div class="faq-a">
+            <p>
+              처음 한 번은 자녀분이 도와드리는 편이 좋습니다. 버튼 모양과 글자 크기를 고르고,
+              자주 거는 분을 자리에 넣어 드리면 그다음부터는 사진만 누르시면 됩니다.
+            </p>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CTA ===== -->
-  <section class="cta-band">
-    <div class="container">
-      <h2>부모님 휴대폰에 넣어 드리세요</h2>
-      <p>설치는 몇 분이면 끝납니다. 쓰시다가 불편한 점이 있으면 언제든 알려 주세요.</p>
-      <div class="btn-row">
-        <a class="btn btn-outline btn-lg" href="download.html">내려받기</a>
-        <a class="btn btn-outline btn-lg" href="feedback.html">개선 요청 보내기</a>
       </div>
     </div>
   </section>
 
 </main>
 
-<!-- ===== 푸터 ===== -->
-<footer class="footer">
+<footer class="foot">
   <div class="container">
-    <div class="footer-grid">
+    <div class="foot-top">
       <div>
-        <div class="footer-logo">
-          <img src="image/logo.svg" alt="" width="64" height="64">
-          88Phone
+        <div class="foot-brand">
+          <img src="image/app-icon.png" alt="" width="36" height="36">
+          88폰
         </div>
-        <p>어르신이 스마트폰을 편하게 쓰실 수 있도록,<br>글씨와 버튼을 크게 키운 안드로이드 홈 화면 앱입니다.</p>
+        <p>전화 거는 일만 남긴 전화 앱.<br>큰 사진을 누르면 바로 걸립니다.</p>
       </div>
       <div>
         <h4>바로 가기</h4>
         <ul>
-          <li><a href="index.html">앱 소개</a></li>
-          <li><a href="download.html">내려받기</a></li>
+          <li><a href="index.html">소개</a></li>
+          <li><a href="index.html#price">값</a></li>
+          <li><a href="index.html#faq">자주 묻는 질문</a></li>
           <li><a href="review.html">후기 남기기</a></li>
           <li><a href="feedback.html">개선 요청</a></li>
         </ul>
@@ -358,13 +358,17 @@
       <div>
         <h4>문의 · 정책</h4>
         <ul>
-          <li><a href="mailto:HNStudio.c@gmail.com" data-contact-email>HNStudio.c@gmail.com</a></li>
+          <li><a href="#" data-support-email>문의 메일</a></li>
           <li><a href="privacy.html">개인정보처리방침</a></li>
+          <li><a href="../">HaNull Studio</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      © <span data-year>2026</span> 88Phone · Service by HaNull Studio
+
+    <div class="biz" data-business></div>
+
+    <div class="foot-bottom">
+      © <span data-year>2026</span> 88폰 · HaNull Studio
     </div>
   </div>
 </footer>

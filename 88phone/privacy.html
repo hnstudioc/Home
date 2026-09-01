@@ -3,48 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>개인정보처리방침 — 88Phone</title>
-<meta name="description" content="88Phone 앱의 개인정보처리방침. 어떤 권한을 왜 쓰는지, 정보가 어디에 저장되는지 알기 쉽게 정리했습니다.">
-<meta name="theme-color" content="#0B57A4">
-<link rel="icon" href="image/favicon.svg" type="image/svg+xml">
+<title>88폰 개인정보처리방침</title>
+<meta name="description" content="88폰 개인정보처리방침. 88폰은 개인정보를 수집하지 않으며 서버가 없습니다.">
+<meta name="theme-color" content="#4C3825">
+<link rel="icon" href="image/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="image/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
 <a class="skip-link" href="#main">본문 바로가기</a>
 
-<div class="topbar">
-  <div class="container topbar-inner">
-    <span class="topbar-label" id="fs-label">화면 글씨 크기</span>
-    <div class="fs-controls" role="group" aria-labelledby="fs-label">
-      <button type="button" class="fs-btn fs-btn-1" data-size="0" aria-pressed="true">가<span class="sr-only"> 보통 크기</span></button>
-      <button type="button" class="fs-btn fs-btn-2" data-size="1" aria-pressed="false">가<span class="sr-only"> 크게</span></button>
-      <button type="button" class="fs-btn fs-btn-3" data-size="2" aria-pressed="false">가<span class="sr-only"> 아주 크게</span></button>
-    </div>
-  </div>
-</div>
-
-<header class="nav">
-  <div class="container nav-inner">
-    <a class="nav-logo" href="index.html">
-      <img src="image/logo.svg" alt="" width="64" height="64">
-      88Phone
+<header class="head grain">
+  <div class="container head-inner">
+    <a class="brand" href="index.html">
+      <img src="image/app-icon.png" alt="" width="40" height="40">
+      88폰
     </a>
-    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
-        <path d="M3 6h18M3 12h18M3 18h18"/>
-      </svg>
-      메뉴
-    </button>
-    <nav id="nav-menu" aria-label="주요 메뉴">
-      <ul class="nav-links">
-        <li><a href="index.html">앱 소개</a></li>
-        <li><a href="download.html">내려받기</a></li>
-        <li><a href="review.html">후기 남기기</a></li>
-        <li><a href="feedback.html">개선 요청</a></li>
+    <nav aria-label="주요 메뉴">
+      <ul class="head-links">
+        <li><a href="index.html">소개</a></li>
+        <li><a href="index.html#price">값</a></li>
+        <li><a href="index.html#faq">자주 묻는 질문</a></li>
+        <li><a href="feedback.html">문의</a></li>
       </ul>
     </nav>
   </div>
@@ -53,185 +37,91 @@
 <main id="main">
   <section class="section">
     <div class="container">
-      <article class="policy">
+      <article class="doc">
 
-        <h1>개인정보처리방침</h1>
+        <h1>88폰 개인정보처리방침</h1>
 
-        <div class="policy-meta">
-          <p><strong>서비스명</strong> 88Phone (안드로이드 애플리케이션)</p>
-          <p><strong>제공자</strong> HaNull Studio</p>
-          <p><strong>문의</strong> <a href="mailto:HNStudio.c@gmail.com" data-contact-email>HNStudio.c@gmail.com</a></p>
-          <p><strong>시행일</strong> 2026년 9월 1일</p>
+        <div class="doc-meta">
+          <p><strong>시행일</strong> <span data-privacy-date>2026년 9월 1일</span></p>
         </div>
 
-        <div class="policy-callout">
-          <p>
-            88Phone은 어르신이 스마트폰을 편하게 쓰시도록 화면만 바꿔 주는 앱입니다.
-            휴대폰 안의 정보를 <strong>바깥으로 내보내지 않으며</strong>, 별도의 회원가입도 받지 않습니다.
-          </p>
-        </div>
-
-        <h2>제1조 (개인정보의 수집 항목 및 방법)</h2>
+        <h2>1. 우리가 수집하는 개인정보</h2>
         <p>
-          88Phone은 회원가입을 받지 않으며, 이름·생년월일·주소 등의 개인정보를 서버로 수집하거나
-          저장하지 않습니다. 앱이 제 기능을 하기 위해 아래 정보에 <strong>접근</strong>하지만,
-          모두 <strong>이용자의 휴대폰 안에서만</strong> 처리됩니다.
-        </p>
-        <table class="policy-table">
-          <thead>
-            <tr><th>접근 항목</th><th>쓰이는 곳</th><th>보관 위치</th></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td data-th="접근 항목">연락처</td>
-              <td data-th="쓰이는 곳">가족·자주 거는 번호를 큰 글씨와 사진으로 보여 주기 위해</td>
-              <td data-th="보관 위치">휴대폰 안에만 저장</td>
-            </tr>
-            <tr>
-              <td data-th="접근 항목">전화 걸기 및 통화 기록</td>
-              <td data-th="쓰이는 곳">버튼을 눌러 바로 전화를 걸고, 최근 통화를 보여 주기 위해</td>
-              <td data-th="보관 위치">휴대폰 안에만 저장</td>
-            </tr>
-            <tr>
-              <td data-th="접근 항목">문자 메시지</td>
-              <td data-th="쓰이는 곳">주고받은 문자를 큰 글씨로 보여 주고 답장을 보내기 위해</td>
-              <td data-th="보관 위치">휴대폰 안에만 저장</td>
-            </tr>
-            <tr>
-              <td data-th="접근 항목">사진 및 미디어</td>
-              <td data-th="쓰이는 곳">저장된 사진을 큰 화면으로 보여 주고, 연락처 사진을 설정하기 위해</td>
-              <td data-th="보관 위치">휴대폰 안에만 저장</td>
-            </tr>
-            <tr>
-              <td data-th="접근 항목">카메라</td>
-              <td data-th="쓰이는 곳">앱 안에서 사진을 찍기 위해</td>
-              <td data-th="보관 위치">휴대폰 안에만 저장</td>
-            </tr>
-            <tr>
-              <td data-th="접근 항목">앱 설정값</td>
-              <td data-th="쓰이는 곳">글씨 크기, 즐겨찾는 연락처, 긴급 도움 대상 등 이용자가 정한 설정</td>
-              <td data-th="보관 위치">휴대폰 안에만 저장</td>
-            </tr>
-          </tbody>
-        </table>
-        <p>
-          위 항목은 안드로이드 권한 안내 창을 통해 이용자가 <strong>허용한 경우에만</strong> 접근합니다.
-          허용하지 않으셔도 앱은 실행되며, 해당 기능만 쓸 수 없습니다.
+          88폰은 개인정보를 수집하지 않습니다. 88폰에는 서버가 없으며,
+          이용자의 어떤 정보도 외부로 전송하거나 저장하지 않습니다.
         </p>
 
-        <h2>제2조 (개인정보의 이용 목적)</h2>
+        <h2>2. 앱이 기기에서 사용하는 정보</h2>
+        <p>88폰은 다음 정보를 이용자의 기기 안에서만 읽고 사용합니다.</p>
         <ul>
-          <li>큰 글씨·큰 버튼 화면으로 전화, 문자, 사진, 연락처 기능을 제공</li>
-          <li>이용자가 지정한 가족에게 긴급 도움 연결</li>
-          <li>이용자가 정한 화면 설정을 다음 실행 때에도 유지</li>
+          <li>
+            <strong>연락처(선택)</strong> — 자리에 넣은 분의 이름·전화번호·사진을 화면에
+            표시하기 위해 사용합니다. 앱은 연락처의 식별자와 마지막으로 확인한 이름·번호를
+            기기 내부 저장소에만 보관합니다.
+          </li>
+          <li>
+            <strong>전화 걸기(선택)</strong> — [전화 걸기]를 눌렀을 때 전화를 거는 데만 사용합니다.
+          </li>
+          <li>
+            <strong>통화 선별 역할(선택)</strong> — 이용자가 직접 켠 경우에만, 걸려온 전화번호를
+            기기 안에 기록하여 해당 연락처를 화면에 표시하는 데 사용합니다.
+            통화를 차단하거나 거절하지 않으며, 통화 내용을 기록하지 않습니다.
+          </li>
         </ul>
-        <p>위 목적 외의 용도로는 이용하지 않습니다.</p>
+        <p>위 정보는 모두 기기를 벗어나지 않습니다. 앱을 삭제하면 함께 사라집니다.</p>
 
-        <h2>제3조 (개인정보의 보유 및 이용 기간)</h2>
+        <h2>3. 광고</h2>
         <p>
-          88Phone이 접근하는 정보는 이용자의 휴대폰에만 저장되며, 제공자는 이를 보관하지 않습니다.
-          앱이 만든 설정값은 <strong>앱을 삭제하면 함께 지워집니다.</strong>
-          연락처·사진·문자 등 휴대폰에 원래 있던 정보는 앱을 지워도 그대로 남아 있습니다.
-        </p>
-
-        <h2>제4조 (개인정보의 제3자 제공)</h2>
-        <p>
-          제공자는 이용자의 개인정보를 <strong>제3자에게 제공하거나 판매하지 않습니다.</strong>
-          다만 법령에 따라 수사기관 등이 적법한 절차로 요구하는 경우에는 그에 따를 수 있습니다.
-        </p>
-
-        <h2>제5조 (개인정보 처리의 위탁)</h2>
-        <p>
-          현재 개인정보 처리를 외부에 위탁하고 있지 않습니다.
-          향후 위탁이 필요해지면 위탁받는 자와 업무 내용을 이 방침에 미리 알리겠습니다.
-        </p>
-
-        <h2>제6조 (광고 및 분석 도구)</h2>
-        <p>
-          88Phone은 광고를 넣지 않으며, 이용자의 사용 기록을 추적하는 분석 도구를 넣지 않습니다.
-        </p>
-
-        <h2>제7조 (홈페이지에서 보내 주시는 내용)</h2>
-        <p>
-          이 홈페이지의 <a href="review.html">후기 남기기</a> 및
-          <a href="feedback.html">개선 요청</a> 화면은 별도의 서버로 정보를 보내지 않습니다.
-          작성하신 내용은 이용자의 메일 앱을 통해
-          <a href="mailto:HNStudio.c@gmail.com" data-contact-email>HNStudio.c@gmail.com</a> 으로 전달됩니다.
+          88폰은 화면 하단에 구글 애드몹(Google AdMob) 배너 광고를 표시합니다.
+          광고 제공을 위해 구글이 광고 식별자 등을 수집·이용할 수 있으며,
+          이는 구글의 개인정보처리방침을 따릅니다.
         </p>
         <ul>
-          <li>보내 주신 내용과 연락처는 <strong>답변과 서비스 개선에만</strong> 사용합니다.</li>
-          <li>연락처는 선택 항목이며, 적지 않으셔도 내용을 보내실 수 있습니다.</li>
-          <li>처리가 끝나고 <strong>1년이 지나면 메일함에서 삭제</strong>합니다.</li>
+          <li>구글 개인정보처리방침: <a href="https://policies.google.com/privacy" rel="noopener">https://policies.google.com/privacy</a></li>
+          <li>광고 맞춤설정은 안드로이드 설정 &gt; 개인정보보호 &gt; 광고에서 변경하실 수 있습니다.</li>
         </ul>
+        <p>앱 내 결제로 광고를 제거하시면 광고가 표시되지 않습니다.</p>
+
+        <h2>4. 결제</h2>
         <p>
-          홈페이지는 글씨 크기 설정을 브라우저 안(localStorage)에 저장합니다.
-          이 값은 이용자의 기기에만 남으며 외부로 전송되지 않습니다.
-          그 밖의 쿠키나 추적 도구는 사용하지 않습니다.
+          광고 제거 결제는 구글 플레이를 통해 이루어지며, 결제 정보는 구글이 처리합니다.
+          당사는 이용자의 결제수단 정보를 수집하거나 보관하지 않습니다.
         </p>
 
-        <h2>제8조 (이용자 및 법정대리인의 권리)</h2>
-        <p>이용자는 언제든지 다음과 같이 하실 수 있습니다.</p>
-        <ul>
-          <li>휴대폰 <strong>설정 → 애플리케이션 → 88Phone → 권한</strong>에서 허용한 권한을 다시 거두기</li>
-          <li>앱을 삭제해 앱이 만든 설정값을 모두 지우기</li>
-          <li>홈페이지로 보내신 내용의 열람·삭제를 위 문의 메일로 요청하기</li>
-        </ul>
-        <p>만 14세 미만 아동을 대상으로 하는 서비스가 아닙니다.</p>
-
-        <h2>제9조 (개인정보의 파기)</h2>
+        <h2>5. 만 14세 미만 아동</h2>
         <p>
-          보유 기간이 지나거나 처리 목적이 끝난 정보는 지체 없이 파기합니다.
-          전자적 파일은 복구할 수 없는 방법으로 삭제합니다.
+          88폰은 아동을 대상으로 하지 않으며, 아동의 개인정보를 의도적으로 수집하지 않습니다.
         </p>
 
-        <h2>제10조 (안전성 확보 조치)</h2>
-        <ul>
-          <li>앱이 다루는 정보를 외부 서버로 전송하지 않도록 설계</li>
-          <li>기능에 꼭 필요한 최소한의 권한만 요청</li>
-          <li>문의 메일 계정에 대한 접근 인원 최소화</li>
-        </ul>
+        <h2>6. 문의</h2>
+        <div data-privacy-contact></div>
 
-        <h2>제11조 (개인정보 보호 책임자)</h2>
+        <h2>7. 변경 고지</h2>
         <p>
-          개인정보와 관련한 문의·불만·피해 구제는 아래로 연락해 주시면 신속히 답변드리겠습니다.
+          이 방침이 변경되는 경우 이 페이지에 변경 내용과 시행일을 게시합니다.
         </p>
-        <ul>
-          <li><strong>담당</strong> HaNull Studio 개인정보 보호 책임자</li>
-          <li><strong>메일</strong> <a href="mailto:HNStudio.c@gmail.com" data-contact-email>HNStudio.c@gmail.com</a></li>
-        </ul>
-        <p>
-          그 밖의 개인정보 침해 신고·상담은 개인정보침해신고센터(privacy.kisa.or.kr, 국번없이 118),
-          대검찰청 사이버수사과(spo.go.kr, 1301), 경찰청 사이버수사국(ecrm.police.go.kr, 182)에
-          문의하실 수 있습니다.
-        </p>
-
-        <h2>제12조 (방침의 변경)</h2>
-        <p>
-          이 방침이 바뀌는 경우 변경 내용과 시행일을 이 페이지에 최소 7일 전부터 알립니다.
-          이용자에게 불리한 변경일 때에는 30일 전부터 알립니다.
-        </p>
-        <p><strong>공고일</strong> 2026년 9월 1일 · <strong>시행일</strong> 2026년 9월 1일</p>
 
       </article>
     </div>
   </section>
 </main>
 
-<footer class="footer">
+<footer class="foot">
   <div class="container">
-    <div class="footer-grid">
+    <div class="foot-top">
       <div>
-        <div class="footer-logo">
-          <img src="image/logo.svg" alt="" width="64" height="64">
-          88Phone
+        <div class="foot-brand">
+          <img src="image/app-icon.png" alt="" width="36" height="36">
+          88폰
         </div>
-        <p>어르신이 스마트폰을 편하게 쓰실 수 있도록,<br>글씨와 버튼을 크게 키운 안드로이드 홈 화면 앱입니다.</p>
+        <p>전화 거는 일만 남긴 전화 앱.<br>큰 사진을 누르면 바로 걸립니다.</p>
       </div>
       <div>
         <h4>바로 가기</h4>
         <ul>
-          <li><a href="index.html">앱 소개</a></li>
-          <li><a href="download.html">내려받기</a></li>
+          <li><a href="index.html">소개</a></li>
+          <li><a href="index.html#price">값</a></li>
+          <li><a href="index.html#faq">자주 묻는 질문</a></li>
           <li><a href="review.html">후기 남기기</a></li>
           <li><a href="feedback.html">개선 요청</a></li>
         </ul>
@@ -239,19 +129,22 @@
       <div>
         <h4>문의 · 정책</h4>
         <ul>
-          <li><a href="mailto:HNStudio.c@gmail.com" data-contact-email>HNStudio.c@gmail.com</a></li>
+          <li><a href="#" data-support-email>문의 메일</a></li>
           <li><a href="privacy.html">개인정보처리방침</a></li>
+          <li><a href="../">HaNull Studio</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      © <span data-year>2026</span> 88Phone · Service by HaNull Studio
+
+    <div class="biz" data-business></div>
+
+    <div class="foot-bottom">
+      © <span data-year>2026</span> 88폰 · HaNull Studio
     </div>
   </div>
 </footer>
 
 <script src="js/config.js"></script>
-<script src="js/qrcode.js"></script>
 <script src="js/site.js"></script>
 </body>
 </html>

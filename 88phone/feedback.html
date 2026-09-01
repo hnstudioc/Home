@@ -3,218 +3,156 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>개선 요청 보내기 — 88Phone</title>
-<meta name="description" content="88Phone에 바랐으면 하는 점, 불편한 점, 오류를 알려 주세요. 보내 주신 내용은 다음 판을 만드는 데 쓰입니다.">
-<meta name="theme-color" content="#0B57A4">
-<link rel="icon" href="image/favicon.svg" type="image/svg+xml">
+<title>문의 · 개선 요청 — 88폰</title>
+<meta name="description" content="88폰에 바랐으면 하는 점, 불편한 점, 잘 안 되는 점을 알려 주세요.">
+<meta name="theme-color" content="#4C3825">
+<link rel="icon" href="image/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="image/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
 <a class="skip-link" href="#main">본문 바로가기</a>
 
-<div class="topbar">
-  <div class="container topbar-inner">
-    <span class="topbar-label" id="fs-label">화면 글씨 크기</span>
-    <div class="fs-controls" role="group" aria-labelledby="fs-label">
-      <button type="button" class="fs-btn fs-btn-1" data-size="0" aria-pressed="true">가<span class="sr-only"> 보통 크기</span></button>
-      <button type="button" class="fs-btn fs-btn-2" data-size="1" aria-pressed="false">가<span class="sr-only"> 크게</span></button>
-      <button type="button" class="fs-btn fs-btn-3" data-size="2" aria-pressed="false">가<span class="sr-only"> 아주 크게</span></button>
-    </div>
-  </div>
-</div>
-
-<header class="nav">
-  <div class="container nav-inner">
-    <a class="nav-logo" href="index.html">
-      <img src="image/logo.svg" alt="" width="64" height="64">
-      88Phone
+<header class="head grain">
+  <div class="container head-inner">
+    <a class="brand" href="index.html">
+      <img src="image/app-icon.png" alt="" width="40" height="40">
+      88폰
     </a>
-    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
-        <path d="M3 6h18M3 12h18M3 18h18"/>
-      </svg>
-      메뉴
-    </button>
-    <nav id="nav-menu" aria-label="주요 메뉴">
-      <ul class="nav-links">
-        <li><a href="index.html">앱 소개</a></li>
-        <li><a href="download.html">내려받기</a></li>
-        <li><a href="review.html">후기 남기기</a></li>
-        <li><a href="feedback.html">개선 요청</a></li>
+    <nav aria-label="주요 메뉴">
+      <ul class="head-links">
+        <li><a href="index.html">소개</a></li>
+        <li><a href="index.html#price">값</a></li>
+        <li><a href="index.html#faq">자주 묻는 질문</a></li>
+        <li><a href="feedback.html">문의</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
 <main id="main">
-
   <section class="section">
-    <div class="container container-narrow">
+    <div class="container narrow">
 
       <div class="section-head center">
-        <span class="eyebrow">개선 요청</span>
         <h1>이렇게 바뀌면 좋겠어요</h1>
-        <p>
-          불편한 점, 잘 안 되는 점, 있었으면 하는 기능을 알려 주세요.
-          보내 주신 내용은 하나하나 읽고 다음 판에 반영합니다.
-        </p>
+        <p>불편한 점, 잘 안 되는 점, 있었으면 하는 것을 알려 주세요. 하나하나 읽고 다음 판에 반영합니다.</p>
       </div>
 
-      <!-- 구글 폼 등을 설정한 경우에만 나타납니다 -->
-      <div class="contact-box" data-external-form="FEEDBACK_FORM_URL" hidden style="margin-bottom:2rem">
+      <div class="callout" data-external-form="FEEDBACK_FORM_URL" hidden style="margin-bottom:26px">
         <h3>개선 요청 보내기</h3>
         <p>아래 버튼을 누르면 요청 작성 화면이 열립니다.</p>
-        <div class="btn-row">
-          <a class="btn btn-primary btn-lg" href="#" target="_blank">요청 작성 화면 열기</a>
-        </div>
+        <div class="key-row"><a class="key" href="#" target="_blank">요청 작성 화면 열기</a></div>
       </div>
 
       <div data-builtin-form="FEEDBACK_FORM_URL">
-        <form class="form-card" data-mail-form="개선요청" novalidate>
+        <form class="form" data-mail-form="문의" novalidate>
 
           <fieldset>
-            <legend class="fieldset-legend">
-              어떤 내용인가요? <span class="required" aria-hidden="true">*</span>
-              <span class="sr-only">필수 항목</span>
-            </legend>
-            <div class="choice-list">
+            <legend class="legend">어떤 내용인가요? <span class="req" aria-hidden="true">*</span><span class="sr-only">필수 항목</span></legend>
+            <div class="choices">
               <div class="choice">
                 <input type="radio" id="t1" name="type" value="불편" data-label="종류" data-required data-text="쓰기 불편한 점">
                 <label for="t1">쓰기 불편한 점이 있습니다</label>
               </div>
               <div class="choice">
-                <input type="radio" id="t2" name="type" value="오류" data-label="종류" data-text="앱이 잘못 동작함(오류)">
+                <input type="radio" id="t2" name="type" value="오류" data-label="종류" data-text="앱이 잘못 동작함">
                 <label for="t2">앱이 멈추거나 이상하게 동작합니다</label>
               </div>
               <div class="choice">
-                <input type="radio" id="t3" name="type" value="기능" data-label="종류" data-text="새로운 기능 요청">
-                <label for="t3">이런 기능이 있었으면 좋겠습니다</label>
+                <input type="radio" id="t3" name="type" value="기능" data-label="종류" data-text="새 기능 요청">
+                <label for="t3">이런 것이 있었으면 좋겠습니다</label>
               </div>
               <div class="choice">
-                <input type="radio" id="t4" name="type" value="글씨" data-label="종류" data-text="글씨·색깔·크기 관련">
-                <label for="t4">글씨나 색깔이 보기 어렵습니다</label>
+                <input type="radio" id="t4" name="type" value="크기" data-label="종류" data-text="글자·사진 크기나 색 관련">
+                <label for="t4">글자나 사진이 보기 어렵습니다</label>
               </div>
               <div class="choice">
                 <input type="radio" id="t5" name="type" value="설치" data-label="종류" data-text="설치·설정이 어려움">
                 <label for="t5">설치나 설정이 어렵습니다</label>
               </div>
               <div class="choice">
-                <input type="radio" id="t6" name="type" value="기타" data-label="종류" data-text="그 밖">
-                <label for="t6">그 밖의 이야기</label>
+                <input type="radio" id="t6" name="type" value="결제" data-label="종류" data-text="광고 제거 결제 관련">
+                <label for="t6">광고 제거 결제에 관한 것입니다</label>
+              </div>
+              <div class="choice">
+                <input type="radio" id="t7" name="type" value="기타" data-label="종류" data-text="그 밖">
+                <label for="t7">그 밖의 이야기</label>
               </div>
             </div>
           </fieldset>
 
           <div class="field">
-            <label for="detail">
-              자세한 내용 <span class="required" aria-hidden="true">*</span>
-              <span class="sr-only">필수 항목</span>
-            </label>
-            <span class="field-hint">
-              어느 화면에서, 무엇을 누르셨을 때 그랬는지 적어 주시면 고치기가 훨씬 쉽습니다.
-            </span>
-            <textarea class="textarea" id="detail" name="detail" data-label="자세한 내용" data-required
-                      placeholder="예: 전화 걸기 화면에서 숫자를 누르면 가끔 두 번 눌립니다."></textarea>
+            <label for="detail">자세한 내용 <span class="req" aria-hidden="true">*</span><span class="sr-only">필수 항목</span></label>
+            <span class="hint">어느 화면에서, 무엇을 누르셨을 때 그랬는지 적어 주시면 고치기가 훨씬 쉽습니다.</span>
+            <textarea class="textarea" id="detail" data-label="자세한 내용" data-required
+                      placeholder="예: 번호 누르기 화면에서 숫자가 가끔 두 번 눌립니다."></textarea>
           </div>
 
           <div class="field">
-            <label for="device">쓰시는 휴대폰 (선택)</label>
-            <span class="field-hint">아시는 만큼만 적어 주세요. 예: 갤럭시 S22</span>
-            <input class="input" type="text" id="device" name="device" data-label="휴대폰 기종"
-                   placeholder="예: 삼성 갤럭시">
+            <label for="device">쓰시는 폰 (선택)</label>
+            <span class="hint">아시는 만큼만 적어 주세요. 예: 갤럭시 S22</span>
+            <input class="input" type="text" id="device" data-label="폰 기종" placeholder="예: 삼성 갤럭시">
           </div>
 
           <div class="field">
             <label for="contact">답장받을 곳 (선택)</label>
-            <span class="field-hint">
-              적어 주시면 처리 결과를 알려 드립니다. 답장이 필요 없으시면 비워 두세요.
-            </span>
-            <input class="input" type="text" id="contact" name="contact" data-label="연락처"
-                   autocomplete="email" placeholder="메일 주소 또는 전화번호">
+            <span class="hint">적어 주시면 처리 결과를 알려 드립니다. 답장이 필요 없으시면 비워 두세요.</span>
+            <input class="input" type="text" id="contact" data-label="연락처" autocomplete="email" placeholder="메일 주소 또는 전화번호">
           </div>
 
-          <div class="btn-row">
-            <button type="submit" class="btn btn-primary btn-lg">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M21 3 10.5 13.5M21 3l-6.8 18-3.7-7.5L3 9.8z"/>
-              </svg>
-              보내기
-            </button>
-            <button type="button" class="btn btn-outline" data-copy>내용 복사하기</button>
+          <div class="key-row">
+            <button type="submit" class="key key-call">보내기</button>
+            <button type="button" class="key" data-copy>내용 복사하기</button>
           </div>
 
-          <p class="form-status" aria-live="polite"></p>
+          <p class="status" aria-live="polite"></p>
         </form>
 
-        <div class="contact-box" style="margin-top:2rem">
+        <div class="callout" style="margin-top:26px">
           <h3>메일 앱이 열리지 않으면</h3>
-          <p>"내용 복사하기"를 누르신 뒤, 아래 주소로 문자나 메일을 보내 주셔도 됩니다.</p>
-          <a class="contact-email" href="mailto:HNStudio.c@gmail.com" data-contact-email>HNStudio.c@gmail.com</a>
+          <p>"내용 복사하기"를 누르신 뒤, 아래 주소로 보내 주셔도 됩니다.</p>
+          <a class="mail-big" href="#" data-support-email="text">문의 메일</a>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- ===== 안내 ===== -->
-  <section class="section section-alt">
-    <div class="container">
+  <section class="section section-tint">
+    <div class="container narrow">
       <div class="section-head center">
-        <h2>보내 주신 내용은 이렇게 쓰입니다</h2>
+        <h2>보내 주신 내용은 이렇게 씁니다</h2>
       </div>
-      <div class="grid grid-3">
-        <div class="card">
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M4 4h16v12H8l-4 4z"/>
-            </svg>
-          </div>
-          <h3>하나하나 읽습니다</h3>
-          <p>보내 주신 글은 모두 직접 읽습니다. 짧은 한 줄도 큰 도움이 됩니다.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M14.5 3.5 20.5 9.5 9 21H3v-6z"/><path d="m12.5 5.5 6 6"/>
-            </svg>
-          </div>
-          <h3>다음 판에 반영합니다</h3>
-          <p>같은 이야기가 여러 번 들어온 것부터 먼저 고칩니다.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 3 4.5 6v6c0 4.4 3.1 8.2 7.5 9 4.4-.8 7.5-4.6 7.5-9V6z"/><path d="m9 12 2.2 2.2L15.5 10"/>
-            </svg>
-          </div>
-          <h3>연락처는 답장에만</h3>
-          <p>적어 주신 연락처는 답장을 드리는 데에만 쓰고 다른 곳에 넘기지 않습니다.</p>
-        </div>
-      </div>
+      <ul class="who">
+        <li>보내 주신 글은 모두 직접 읽습니다</li>
+        <li>같은 이야기가 여러 번 들어온 것부터 먼저 고칩니다</li>
+        <li>적어 주신 연락처는 답장에만 쓰고 다른 곳에 넘기지 않습니다</li>
+      </ul>
     </div>
   </section>
-
 </main>
 
-<footer class="footer">
+<footer class="foot">
   <div class="container">
-    <div class="footer-grid">
+    <div class="foot-top">
       <div>
-        <div class="footer-logo">
-          <img src="image/logo.svg" alt="" width="64" height="64">
-          88Phone
+        <div class="foot-brand">
+          <img src="image/app-icon.png" alt="" width="36" height="36">
+          88폰
         </div>
-        <p>어르신이 스마트폰을 편하게 쓰실 수 있도록,<br>글씨와 버튼을 크게 키운 안드로이드 홈 화면 앱입니다.</p>
+        <p>전화 거는 일만 남긴 전화 앱.<br>큰 사진을 누르면 바로 걸립니다.</p>
       </div>
       <div>
         <h4>바로 가기</h4>
         <ul>
-          <li><a href="index.html">앱 소개</a></li>
-          <li><a href="download.html">내려받기</a></li>
+          <li><a href="index.html">소개</a></li>
+          <li><a href="index.html#price">값</a></li>
+          <li><a href="index.html#faq">자주 묻는 질문</a></li>
           <li><a href="review.html">후기 남기기</a></li>
           <li><a href="feedback.html">개선 요청</a></li>
         </ul>
@@ -222,19 +160,18 @@
       <div>
         <h4>문의 · 정책</h4>
         <ul>
-          <li><a href="mailto:HNStudio.c@gmail.com" data-contact-email>HNStudio.c@gmail.com</a></li>
+          <li><a href="#" data-support-email>문의 메일</a></li>
           <li><a href="privacy.html">개인정보처리방침</a></li>
+          <li><a href="../">HaNull Studio</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      © <span data-year>2026</span> 88Phone · Service by HaNull Studio
-    </div>
+    <div class="biz" data-business></div>
+    <div class="foot-bottom">© <span data-year>2026</span> 88폰 · HaNull Studio</div>
   </div>
 </footer>
 
 <script src="js/config.js"></script>
-<script src="js/qrcode.js"></script>
 <script src="js/site.js"></script>
 </body>
 </html>

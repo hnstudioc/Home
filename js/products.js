@@ -13,18 +13,18 @@ window.PRODUCTS = [
 
   {
     id: '88phone',
-    name: '88Phone',
-    tagline: '어르신을 위한 큰 글씨 스마트폰 앱',
+    name: '88폰',
+    tagline: '큰 사진을 누르면 바로 전화가 걸립니다',
     description:
-      '글씨와 버튼을 큼직하게 키운 안드로이드 홈 화면 앱입니다. ' +
-      '자주 쓰는 기능만 남겨 스마트폰을 다시 쉽게 만듭니다.',
-    audience: '시니어 · 안드로이드',
+      '전화 거는 일만 남긴 전화 앱입니다. 이름 목록을 훑지 않고 ' +
+      '얼굴을 보고 누릅니다. 부모님이 따로 배우지 않으셔도 됩니다.',
+    audience: '안드로이드 · 무료',
     url: '88phone/',
-    logo: '88phone/image/logo.svg',
-    accent: '#0B57A4',
+    logo: '88phone/image/app-icon.png',
+    accent: '#A97E4C',
     /* status: 배지를 없애려면 null 로 두세요.
        tone 은 'live'(초록) · 'pending'(주황) · 'archived'(회색) 중 하나 */
-    status: { label: '출시 준비 중', tone: 'pending' }
+    status: { label: '곧 열립니다', tone: 'pending' }
   },
 
   {

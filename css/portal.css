@@ -50,7 +50,7 @@ body {
   overflow-wrap: break-word;
 }
 
-img { max-width: 100%; display: block; }
+img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; }
 
 :focus-visible {
