@@ -99,8 +99,8 @@
           <p>
             이름 목록을 훑지 않습니다. 사진이 카드의 절반을 차지해서,
             글씨가 안 보여도 누가 누구인지 압니다.
-            자주 거는 분을 자리에 놓아 두면 네 칸으로 시작해 다 찰 때마다
-            두 칸씩, 열두 칸까지 저절로 늘어납니다.
+            자주 거는 분을 자리에 놓아 두면 됩니다. 무료로는 네 칸까지,
+            광고를 없애시면 다 찰 때마다 두 칸씩 열두 칸까지 늘어납니다.
           </p>
         </div>
       </div>
@@ -128,7 +128,10 @@
           <h3>문자는 고르기만 하면 됩니다</h3>
           <p>
             자판을 치지 않습니다. "전화주세요", "사랑합니다", "안녕히 주무세요"
-            같은 자주 하는 말 열여섯 가지 중에서 고르면 문자가 채워집니다.
+            같은 자주 하는 말 중에서 고르면 문자가 채워집니다.
+            <strong>자주 고르시는 말은 저절로 위로 올라옵니다.</strong>
+            무료로는 여덟 가지, 광고를 없애시면 열여섯 가지가 나오고
+            문구를 직접 고치실 수도 있습니다.
           </p>
         </div>
       </div>
@@ -197,35 +200,54 @@
     <div class="container narrow">
       <div class="section-head center">
         <h2>값</h2>
-        <p>앱은 무료입니다. 받아서 모든 기능을 그대로 쓰십니다.</p>
+        <p>앱은 무료입니다. 전화 거는 일은 돈을 내지 않아도 그대로 하십니다.</p>
       </div>
 
       <table class="price-table">
         <thead>
-          <tr><th scope="col">항목</th><th scope="col">내용</th></tr>
+          <tr>
+            <th scope="col">항목</th>
+            <th scope="col">무료</th>
+            <th scope="col"><span class="price-amount" data-price>8,800원</span> 한 번</th>
+          </tr>
         </thead>
         <tbody>
           <tr>
-            <th scope="row">앱 받기</th>
-            <td><span class="price-amount">무료</span></td>
+            <th scope="row">전화 걸기 · 문자 보내기</th>
+            <td data-label="무료">다 됩니다</td>
+            <td data-label="광고 없애면">같습니다</td>
           </tr>
           <tr>
-            <th scope="row">기능</th>
-            <td>모든 기능을 무료로 씁니다. 돈을 낸다고 더 걸 수 있는 것이 아닙니다.</td>
+            <th scope="row">연락처 연동 · 전화 온 분 표시</th>
+            <td data-label="무료">다 됩니다</td>
+            <td data-label="광고 없애면">같습니다</td>
+          </tr>
+          <tr>
+            <th scope="row">글자 크기 · 버튼 모양</th>
+            <td data-label="무료">다 됩니다</td>
+            <td data-label="광고 없애면">같습니다</td>
+          </tr>
+          <tr>
+            <th scope="row">고정 자리</th>
+            <td data-label="무료">네 칸</td>
+            <td data-label="광고 없애면"><strong>열두 칸</strong></td>
+          </tr>
+          <tr>
+            <th scope="row">문자 문구</th>
+            <td data-label="무료">여덟 가지</td>
+            <td data-label="광고 없애면"><strong>열여섯 가지 · 직접 고치기</strong></td>
           </tr>
           <tr>
             <th scope="row">광고</th>
-            <td>화면 맨 아래에 띠 광고 하나. 전면 광고는 없습니다.</td>
-          </tr>
-          <tr>
-            <th scope="row">광고 없애기</th>
-            <td><span class="price-amount" data-price>8,800원</span> 한 번 (구독 아님)</td>
+            <td data-label="무료">화면 맨 아래 띠 하나<br>(전면 광고는 없습니다)</td>
+            <td data-label="광고 없애면"><strong>없습니다</strong></td>
           </tr>
         </tbody>
       </table>
 
       <div class="price-callout">
         <p>한 번만 내시면 광고가 영영 사라집니다. 매달 빠져나가는 돈이 아닙니다.</p>
+        <p>돈을 내지 않으셔도 네 분을 자리에 놓고 전화와 문자를 그대로 하십니다.</p>
       </div>
     </div>
   </section>
@@ -286,9 +308,21 @@
           <button type="button" class="faq-q">정말 무료인가요?<span class="faq-mark" aria-hidden="true"></span></button>
           <div class="faq-a">
             <p>
-              네. 모든 기능을 무료로 쓰실 수 있습니다. 화면 맨 아래에 띠 광고가 하나 있고,
-              <span data-price>8,800원</span>을 한 번 내시면 그 광고가 사라집니다.
-              매달 내는 것이 아닙니다.
+              네. 받아서 바로 쓰십니다. 무료로는 자주 거는 분 네 분을 큰 사진으로 놓고,
+              전화와 문자를 모두 하실 수 있습니다. 화면 맨 아래에 띠 광고가 하나 있습니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-q">광고를 없애면 무엇이 달라지나요?<span class="faq-mark" aria-hidden="true"></span></button>
+          <div class="faq-a">
+            <p>
+              <span data-price>8,800원</span>을 한 번 내시면
+              광고가 사라지고, 고정 자리가 네 칸에서 열두 칸으로,
+              문자 문구가 여덟 가지에서 열여섯 가지로 늘어납니다.
+              문구를 직접 고치실 수도 있습니다.
+              한 번만 내시면 되고 매달 내는 것이 아닙니다.
             </p>
           </div>
         </div>

@@ -321,9 +321,15 @@ a:hover { color: var(--sms-deep); }
 }
 .price-table tbody tr:last-child th,
 .price-table tbody tr:last-child td { border-bottom: 0; }
-.price-table tbody th { font-weight: 700; width: 42%; }
+.price-table tbody th { font-weight: 700; width: 38%; }
 .price-table td { color: var(--on-key-2); }
 .price-amount { font-weight: 900; color: var(--on-key); }
+
+/* 값 표는 무료·유료 두 칸을 나란히 둔다. 좁은 화면에서는 여백을 줄여
+   가로 스크롤이 생기지 않게 한다 — 가로로 밀리는 표는 아무도 안 읽는다. */
+@media (max-width: 560px) {
+  .price-table th, .price-table td { font-size: 0.98rem; }
+}
 
 .price-callout {
   margin-top: 26px; padding: 24px 26px;
@@ -334,6 +340,9 @@ a:hover { color: var(--sms-deep); }
 }
 .price-callout p {
   margin: 0; font-size: 1.18rem; font-weight: 900; color: var(--on-key);
+}
+.price-callout p + p {
+  margin-top: 12px; font-size: 1.04rem; font-weight: 700; color: var(--on-key-2);
 }
 
 /* ============ 자주 묻는 질문 ============ */
@@ -547,7 +556,15 @@ legend { padding: 0; }
   .price-table tr { border-bottom: 2px solid var(--line); }
   .price-table tr:last-child { border-bottom: 0; }
   .price-table th, .price-table td { border-bottom: 0; padding: 14px 18px; }
-  .price-table tbody th { background: var(--surface-2); }
+  /* 세로로 쌓일 때는 항목 이름도 한 줄을 다 쓴다.
+     (기본 규칙의 width: 38% 가 남아 있으면 오른쪽이 텅 빈 채로 보인다) */
+  .price-table tbody th { background: var(--surface-2); width: 100%; }
+  /* 세로로 쌓이면 머리글이 숨는다. 값마다 어느 쪽 것인지 이름표를 붙인다. */
+  .price-table td[data-label]::before {
+    content: attr(data-label) ' — ';
+    font-weight: 900;
+    color: var(--on-key);
+  }
 }
 
 @media print {
