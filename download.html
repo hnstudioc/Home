@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>내려받기 — 88Phone</title>
+<meta name="description" content="88Phone 안드로이드 앱 내려받기. QR 코드를 카메라로 비추거나 구글 플레이스토어 링크를 눌러 설치하세요.">
+<meta name="theme-color" content="#0B57A4">
+<link rel="icon" href="image/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">본문 바로가기</a>
+
+<div class="topbar">
+  <div class="container topbar-inner">
+    <span class="topbar-label" id="fs-label">화면 글씨 크기</span>
+    <div class="fs-controls" role="group" aria-labelledby="fs-label">
+      <button type="button" class="fs-btn fs-btn-1" data-size="0" aria-pressed="true">가<span class="sr-only"> 보통 크기</span></button>
+      <button type="button" class="fs-btn fs-btn-2" data-size="1" aria-pressed="false">가<span class="sr-only"> 크게</span></button>
+      <button type="button" class="fs-btn fs-btn-3" data-size="2" aria-pressed="false">가<span class="sr-only"> 아주 크게</span></button>
+    </div>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="index.html">
+      <img src="image/logo.svg" alt="" width="64" height="64">
+      88Phone
+    </a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+        <path d="M3 6h18M3 12h18M3 18h18"/>
+      </svg>
+      메뉴
+    </button>
+    <nav id="nav-menu" aria-label="주요 메뉴">
+      <ul class="nav-links">
+        <li><a href="index.html">앱 소개</a></li>
+        <li><a href="download.html">내려받기</a></li>
+        <li><a href="review.html">후기 남기기</a></li>
+        <li><a href="feedback.html">개선 요청</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="section">
+    <div class="container">
+
+      <div class="section-head center">
+        <span class="eyebrow">내려받기</span>
+        <h1>88Phone 설치하기</h1>
+        <p>안드로이드 휴대폰에서 구글 플레이스토어를 통해 설치합니다.</p>
+      </div>
+
+      <!-- 출시 전 안내 (등록 후 자동으로 사라집니다) -->
+      <div class="container-narrow" style="padding:0">
+        <div class="notice-banner" id="download-notice" data-release-notice hidden>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/><path d="M12 7.5v5"/><circle cx="12" cy="16.3" r="0.9" fill="currentColor" stroke="none"/>
+          </svg>
+          <div>
+            <strong>아직 출시 준비 중입니다</strong>
+            <p>구글 플레이 등록이 끝나면 아래 버튼과 QR 코드가 설치 화면으로 연결됩니다.
+               그때까지 QR 코드는 이 홈페이지 주소를 담고 있습니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- QR + 링크 -->
+      <div class="download-box">
+        <div class="qr-wrap">
+          <div class="qr-frame" data-qr="#qr-caption" role="img" aria-label="88Phone QR 코드"></div>
+          <p class="qr-caption" id="qr-caption">카메라로 비추면 설치 화면이 열립니다</p>
+        </div>
+
+        <div>
+          <h2>휴대폰 카메라로 비춰 보세요</h2>
+          <p>
+            휴대폰의 <strong>카메라 앱</strong>을 켜고 왼쪽 QR 코드를 비추시면
+            화면 위에 주소가 뜹니다. 그 주소를 한 번 누르시면 설치 화면으로 이동합니다.
+          </p>
+          <div class="btn-row" style="margin-top:1.4rem">
+            <a class="btn btn-primary btn-lg" data-store-link href="#download-notice">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+              </svg>
+              <span data-store-label>플레이스토어에서 받기</span>
+            </a>
+          </div>
+          <p class="store-link"><strong>주소:</strong> <span data-store-url-text>앱 등록이 끝나면 이곳에 주소가 표시됩니다.</span></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== 설치 순서 ===== -->
+  <section class="section section-alt">
+    <div class="container container-narrow">
+      <div class="section-head center">
+        <h2>설치 순서</h2>
+        <p>천천히 따라 하시면 됩니다. 어렵지 않습니다.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div>
+            <h3>플레이스토어 열기</h3>
+            <p>위의 QR 코드를 카메라로 비추거나, 파란색 "플레이스토어에서 받기" 버튼을 누르세요.
+               휴대폰에 있는 <strong>Play 스토어</strong> 앱에서 <strong>88Phone</strong>을 검색하셔도 됩니다.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div>
+            <h3>설치 누르기</h3>
+            <p>초록색 <strong>설치</strong> 버튼을 한 번 누르고 기다리세요.
+               데이터를 쓰므로 와이파이가 되는 곳에서 하시면 좋습니다.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div>
+            <h3>열기 누르기</h3>
+            <p>설치가 끝나면 <strong>열기</strong> 버튼이 나타납니다. 눌러서 앱을 시작하세요.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div>
+            <h3>홈 화면으로 지정하기</h3>
+            <p>처음 열면 "홈 화면으로 쓰시겠습니까?" 하는 안내가 나옵니다.
+               <strong>88Phone</strong>을 고르고 <strong>항상</strong>을 누르시면 설정이 끝납니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 설치 전 확인 ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center">
+        <h2>설치 전에 확인해 주세요</h2>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/>
+            </svg>
+          </div>
+          <h3>안드로이드 휴대폰</h3>
+          <p>삼성 갤럭시, LG 등 안드로이드 휴대폰에서 쓸 수 있습니다. 아이폰은 지원하지 않습니다.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M2.5 9.5a14 14 0 0 1 19 0M6 13a9 9 0 0 1 12 0M9.5 16.5a4 4 0 0 1 5 0"/>
+              <circle cx="12" cy="20" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </div>
+          <h3>와이파이 권장</h3>
+          <p>앱을 내려받을 때 데이터를 씁니다. 와이파이가 되는 곳에서 설치하시길 권합니다.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3 4.5 6v6c0 4.4 3.1 8.2 7.5 9 4.4-.8 7.5-4.6 7.5-9V6z"/><path d="m9 12 2.2 2.2L15.5 10"/>
+            </svg>
+          </div>
+          <h3>자료는 그대로</h3>
+          <p>전화번호·사진·문자는 사라지지 않습니다. 화면만 보기 편하게 바뀝니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 도움 요청 ===== -->
+  <section class="section section-alt">
+    <div class="container container-narrow">
+      <div class="contact-box">
+        <h3>설치가 잘 안 되시나요?</h3>
+        <p>어느 단계에서 막히셨는지 알려 주시면 도와드리겠습니다.</p>
+        <a class="contact-email" href="mailto:HNStudio.c@gmail.com" data-contact-email>HNStudio.c@gmail.com</a>
+        <div class="btn-row" style="margin-top:1.2rem">
+          <a class="btn btn-primary" href="feedback.html">개선 요청 · 문의 보내기</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <img src="image/logo.svg" alt="" width="64" height="64">
+          88Phone
+        </div>
+        <p>어르신이 스마트폰을 편하게 쓰실 수 있도록,<br>글씨와 버튼을 크게 키운 안드로이드 홈 화면 앱입니다.</p>
+      </div>
+      <div>
+        <h4>바로 가기</h4>
+        <ul>
+          <li><a href="index.html">앱 소개</a></li>
+          <li><a href="download.html">내려받기</a></li>
+          <li><a href="review.html">후기 남기기</a></li>
+          <li><a href="feedback.html">개선 요청</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>문의 · 정책</h4>
+        <ul>
+          <li><a href="mailto:HNStudio.c@gmail.com" data-contact-email>HNStudio.c@gmail.com</a></li>
+          <li><a href="privacy.html">개인정보처리방침</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © <span data-year>2026</span> 88Phone · Service by HaNull Studio
+    </div>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/qrcode.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>후기 남기기 — 88Phone</title>
+<meta name="description" content="88Phone을 써 보신 소감을 남겨 주세요. 별점과 짧은 후기가 다음 개선에 큰 도움이 됩니다.">
+<meta name="theme-color" content="#0B57A4">
+<link rel="icon" href="image/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">본문 바로가기</a>
+
+<div class="topbar">
+  <div class="container topbar-inner">
+    <span class="topbar-label" id="fs-label">화면 글씨 크기</span>
+    <div class="fs-controls" role="group" aria-labelledby="fs-label">
+      <button type="button" class="fs-btn fs-btn-1" data-size="0" aria-pressed="true">가<span class="sr-only"> 보통 크기</span></button>
+      <button type="button" class="fs-btn fs-btn-2" data-size="1" aria-pressed="false">가<span class="sr-only"> 크게</span></button>
+      <button type="button" class="fs-btn fs-btn-3" data-size="2" aria-pressed="false">가<span class="sr-only"> 아주 크게</span></button>
+    </div>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="nav-logo" href="index.html">
+      <img src="image/logo.svg" alt="" width="64" height="64">
+      88Phone
+    </a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+        <path d="M3 6h18M3 12h18M3 18h18"/>
+      </svg>
+      메뉴
+    </button>
+    <nav id="nav-menu" aria-label="주요 메뉴">
+      <ul class="nav-links">
+        <li><a href="index.html">앱 소개</a></li>
+        <li><a href="download.html">내려받기</a></li>
+        <li><a href="review.html">후기 남기기</a></li>
+        <li><a href="feedback.html">개선 요청</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="section">
+    <div class="container container-narrow">
+
+      <div class="section-head center">
+        <span class="eyebrow">후기 남기기</span>
+        <h1>써 보신 느낌을 들려주세요</h1>
+        <p>짧아도 괜찮습니다. 어떤 점이 편하셨는지, 어떤 점이 아쉬우셨는지 한 줄이면 충분합니다.</p>
+      </div>
+
+      <!-- 구글 폼 등을 설정한 경우에만 나타납니다 -->
+      <div class="contact-box" data-external-form="REVIEW_FORM_URL" hidden style="margin-bottom:2rem">
+        <h3>후기 작성하기</h3>
+        <p>아래 버튼을 누르면 후기 작성 화면이 열립니다.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary btn-lg" href="#" target="_blank">후기 작성 화면 열기</a>
+        </div>
+      </div>
+
+      <!-- 플레이스토어 별점 안내 -->
+      <div class="contact-box" style="margin-bottom:2rem">
+        <h3>플레이스토어에 별점 남기기</h3>
+        <p>
+          플레이스토어의 별점과 리뷰는 다른 어르신과 가족들이 앱을 고르실 때 큰 도움이 됩니다.
+          아래 버튼을 누르시면 별점을 남기는 화면으로 이동합니다.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-primary" data-store-review-link href="#review-form">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="m12 3.6 2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8L3.5 9.8l5.9-.9z"/>
+            </svg>
+            플레이스토어에서 별점 남기기
+          </a>
+        </div>
+        <p style="margin:1rem 0 0;font-size:0.92rem" data-release-notice hidden>
+          앱 등록이 끝나기 전까지는 아래 양식으로 보내 주시면 감사하겠습니다.
+        </p>
+      </div>
+
+      <!-- 사이트 내 후기 양식 -->
+      <div data-builtin-form="REVIEW_FORM_URL">
+        <h2 id="review-form">이곳에 바로 남기기</h2>
+        <p class="lead" style="margin-bottom:1.6rem">
+          아래를 채우고 <strong>보내기</strong>를 누르시면 메일 앱이 열리고 내용이 자동으로 적혀 있습니다.
+          그대로 "보내기"만 누르시면 됩니다.
+        </p>
+
+        <form class="form-card" data-mail-form="후기" novalidate>
+
+          <fieldset>
+            <legend class="fieldset-legend">
+              얼마나 만족하셨나요? <span class="required" aria-hidden="true">*</span>
+              <span class="sr-only">필수 항목</span>
+            </legend>
+            <div class="rating">
+              <input type="radio" id="r5" name="rating" value="5" data-label="별점" data-required data-text="★★★★★ 매우 좋음">
+              <label for="r5"><span class="stars" aria-hidden="true">★★★★★</span> 매우 좋음</label>
+
+              <input type="radio" id="r4" name="rating" value="4" data-label="별점" data-text="★★★★ 좋음">
+              <label for="r4"><span class="stars" aria-hidden="true">★★★★</span> 좋음</label>
+
+              <input type="radio" id="r3" name="rating" value="3" data-label="별점" data-text="★★★ 보통">
+              <label for="r3"><span class="stars" aria-hidden="true">★★★</span> 보통</label>
+
+              <input type="radio" id="r2" name="rating" value="2" data-label="별점" data-text="★★ 아쉬움">
+              <label for="r2"><span class="stars" aria-hidden="true">★★</span> 아쉬움</label>
+
+              <input type="radio" id="r1" name="rating" value="1" data-label="별점" data-text="★ 많이 아쉬움">
+              <label for="r1"><span class="stars" aria-hidden="true">★</span> 많이 아쉬움</label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend class="fieldset-legend">누가 쓰고 계신가요?</legend>
+            <div class="choice-list">
+              <div class="choice">
+                <input type="radio" id="u1" name="who" value="본인" data-label="사용자" data-text="어르신 본인이 쓰고 있음">
+                <label for="u1">제가 직접 쓰고 있습니다</label>
+              </div>
+              <div class="choice">
+                <input type="radio" id="u2" name="who" value="가족" data-label="사용자" data-text="부모님께 설치해 드림">
+                <label for="u2">부모님께 설치해 드렸습니다</label>
+              </div>
+              <div class="choice">
+                <input type="radio" id="u3" name="who" value="기타" data-label="사용자" data-text="그 밖">
+                <label for="u3">그 밖</label>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="field">
+            <label for="good">가장 편했던 점</label>
+            <span class="field-hint">예: 글씨가 커서 잘 보였다 / 전화 걸기가 쉬웠다</span>
+            <textarea class="textarea" id="good" name="good" data-label="편했던 점"
+                      placeholder="편하게 적어 주세요"></textarea>
+          </div>
+
+          <div class="field">
+            <label for="bad">아쉬웠던 점</label>
+            <span class="field-hint">불편하셨던 점을 알려 주시면 다음 판에 고치겠습니다.</span>
+            <textarea class="textarea" id="bad" name="bad" data-label="아쉬웠던 점"
+                      placeholder="없으시면 비워 두셔도 됩니다"></textarea>
+          </div>
+
+          <div class="field">
+            <label for="nickname">부르실 이름 (선택)</label>
+            <span class="field-hint">실명이 아니어도 됩니다. 비워 두셔도 괜찮습니다.</span>
+            <input class="input" type="text" id="nickname" name="nickname" data-label="이름"
+                   autocomplete="nickname" placeholder="예: 김OO">
+          </div>
+
+          <div class="btn-row">
+            <button type="submit" class="btn btn-primary btn-lg">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 3 10.5 13.5M21 3l-6.8 18-3.7-7.5L3 9.8z"/>
+              </svg>
+              후기 보내기
+            </button>
+            <button type="button" class="btn btn-outline" data-copy>내용 복사하기</button>
+          </div>
+
+          <p class="form-status" aria-live="polite"></p>
+        </form>
+
+        <div class="contact-box" style="margin-top:2rem">
+          <h3>메일 앱이 열리지 않으면</h3>
+          <p>"내용 복사하기"를 누르신 뒤, 아래 주소로 문자나 메일을 보내 주셔도 됩니다.</p>
+          <a class="contact-email" href="mailto:HNStudio.c@gmail.com" data-contact-email>HNStudio.c@gmail.com</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <img src="image/logo.svg" alt="" width="64" height="64">
+          88Phone
+        </div>
+        <p>어르신이 스마트폰을 편하게 쓰실 수 있도록,<br>글씨와 버튼을 크게 키운 안드로이드 홈 화면 앱입니다.</p>
+      </div>
+      <div>
+        <h4>바로 가기</h4>
+        <ul>
+          <li><a href="index.html">앱 소개</a></li>
+          <li><a href="download.html">내려받기</a></li>
+          <li><a href="review.html">후기 남기기</a></li>
+          <li><a href="feedback.html">개선 요청</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>문의 · 정책</h4>
+        <ul>
+          <li><a href="mailto:HNStudio.c@gmail.com" data-contact-email>HNStudio.c@gmail.com</a></li>
+          <li><a href="privacy.html">개인정보처리방침</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © <span data-year>2026</span> 88Phone · Service by HaNull Studio
+    </div>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/qrcode.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>

@@ -1,17 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 48" width="220" height="48" role="img" aria-label="AlphaWiz">
-  <defs>
-    <linearGradient id="aw-wm-g1" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#6B5BFF"/>
-      <stop offset="55%" stop-color="#22D3EE"/>
-      <stop offset="100%" stop-color="#7FE7C4"/>
-    </linearGradient>
-    <linearGradient id="aw-wm-text" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#6B5BFF"/>
-      <stop offset="100%" stop-color="#22D3EE"/>
-    </linearGradient>
-  </defs>
-  <rect x="2" y="6" width="36" height="36" rx="10" fill="url(#aw-wm-g1)"/>
-  <path d="M10 32 L15 22 L18 27 L23 18 L28 32" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.92"/>
-  <circle cx="28" cy="32" r="2.2" fill="#FFFFFF"/>
-  <text x="48" y="32" font-family="'Noto Sans KR', 'Poppins', sans-serif" font-size="22" font-weight="700" fill="url(#aw-wm-text)" letter-spacing="-0.5">AlphaWiz</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 56" width="220" height="56" role="img" aria-label="88Phone">
+  <rect x="0" y="4" width="48" height="48" rx="12" fill="#0B57A4"/>
+  <rect x="13" y="11" width="22" height="34" rx="5" fill="#FFFFFF"/>
+  <rect x="15.6" y="15" width="16.8" height="22" rx="2" fill="#0B57A4"/>
+  <circle cx="24" cy="41" r="2" fill="#C2410C"/>
+  <text x="24" y="31" font-family="'Noto Sans KR',Arial,sans-serif" font-size="14" font-weight="800"
+        fill="#FFFFFF" text-anchor="middle">88</text>
+  <text x="60" y="37" font-family="'Noto Sans KR',Arial,sans-serif" font-size="26" font-weight="800"
+        fill="#1A1A1A" letter-spacing="-1">88Phone</text>
 </svg>
