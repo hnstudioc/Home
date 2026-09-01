@@ -30,7 +30,7 @@ window.SITE_CONFIG = {
   FEEDBACK_FORM_URL: '',
 
   /* ---- 5. 사이트 주소 (QR 코드에 사용) ------------------------------ */
-  SITE_URL: 'https://www.hanullstudio.com/'
+  SITE_URL: 'https://www.hanullstudio.com/88phone/'
 };
 
 /* ---- 위 값에서 자동으로 만들어지는 주소들 (수정 불필요) ---- */

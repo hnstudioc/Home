@@ -68,6 +68,9 @@ body {
   background: var(--bg);
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
+  /* 한국어는 단어 중간에서 줄이 바뀌지 않도록 한다 */
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 img, svg { max-width: 100%; display: block; }

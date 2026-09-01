@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이용약관 - ScreenEagle 카카오톡 에디션</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --primary-light: #818cf8;
+            --secondary: #0ea5e9;
+            --dark: #1e293b;
+            --gray-dark: #475569;
+            --gray: #64748b;
+            --gray-light: #94a3b8;
+            --light: #f1f5f9;
+            --lighter: #f8fafc;
+            --white: #ffffff;
+            --text-dark: #1e293b;
+            --text-body: #475569;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', 'Poppins', sans-serif;
+            background: var(--lighter);
+            color: var(--text-body);
+            line-height: 1.8;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .back-link {
+            color: var(--gray-dark);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: var(--primary);
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        .content-card {
+            background: var(--white);
+            border-radius: 1rem;
+            padding: 3rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .content-card h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-light);
+        }
+
+        .content-card h2:first-child {
+            margin-top: 0;
+        }
+
+        .content-card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 1.5rem 0 0.75rem;
+        }
+
+        .content-card p {
+            margin-bottom: 1rem;
+        }
+
+        .content-card ul, .content-card ol {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .content-card li {
+            margin-bottom: 0.75rem;
+        }
+
+        .highlight-box {
+            background: var(--light);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+        }
+
+        footer {
+            background: var(--white);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+            margin-top: 4rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo img {
+            height: 32px;
+            width: auto;
+        }
+
+        .footer-logo span {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--gray-dark);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        footer p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding: 6rem 1rem 2rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .content-card {
+                padding: 1.5rem;
+            }
+
+            .footer-links {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="image/HaNull Studio_160x160.png" alt="HaNull Studio">
+                <span>HaNull Studio</span>
+            </a>
+            <a href="index.html" class="back-link">
+                ← 홈으로 돌아가기
+            </a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="page-header">
+            <h1>이용약관</h1>
+            <p>ScreenEagle 카카오톡 에디션 서비스 이용약관</p>
+        </div>
+
+        <div class="content-card">
+            <div class="highlight-box">
+                <p><strong>ScreenEagle을 사용함으로써 본 약관에 동의하게 됩니다.</strong></p>
+            </div>
+
+            <h2>제1조 (회원가입)</h2>
+            <p>프로그램 내 회원가입이 필수입니다. 이메일과 전화번호 제공이 필수이며, 전화번호는 알림톡 발송용으로 사용됩니다.</p>
+
+            <h2>제2조 (라이선스)</h2>
+            <div class="highlight-box">
+                <p>본 라이선스는 <strong>1대의 Windows PC에서 ScreenEagle을 사용할 수 있는 개인용, 양도 불가 라이선스</strong>입니다.</p>
+            </div>
+
+            <h2>제3조 (구독)</h2>
+            <p>결제 즉시 정기구독이 시작됩니다. 언제든 해지 가능하나 현재 기간에 대한 환불은 없습니다.</p>
+
+            <h2>제4조 (제한사항)</h2>
+            <p>ScreenEagle을 재배포, 역설계 또는 재판매할 수 없습니다.</p>
+
+            <h2>제5조 (데이터 보안)</h2>
+            <ul>
+                <li>로컬 작동 방식이며, 알림톡 선택 시 스크린샷이 외부 서버로 전송됩니다.</li>
+                <li><strong>스크린샷은 30일 후 완전삭제</strong>됩니다.</li>
+                <li>회원정보는 탈퇴 또는 1년 미로그인 시 삭제됩니다.</li>
+            </ul>
+
+            <h2>제6조 (보증 면책)</h2>
+            <p>ScreenEagle은 어떠한 종류의 보증도 없이 <strong>"있는 그대로"</strong> 제공됩니다.</p>
+
+            <h2>제7조 (책임 제한)</h2>
+            <p>간접적, 우발적, 결과적 손해에 대해 책임지지 않습니다.</p>
+
+            <h2>제8조 (서비스 변경)</h2>
+            <p>서비스는 언제든 수정될 수 있습니다. 서비스 종료 시 최소 2개월 전 공지하며, 남은 기간과 포인트에 대해 구매가격의 2배를 보상합니다.</p>
+
+            <h2>제9조 (약관 변경)</h2>
+            <p>본 약관은 언제든 업데이트될 수 있습니다. 계속 사용 시 변경에 동의한 것으로 간주됩니다.</p>
+
+            <h2>제10조 (환불 정책)</h2>
+            <p>환불에 관한 사항은 <a href="refund.html">환불 정책</a>을 참조하세요. 무료체험 후 구독을 권장합니다.</p>
+
+            <h2>제11조 (준거법)</h2>
+            <p>본 약관은 대한민국 법률에 따라 해석됩니다. 분쟁 발생 시 회사 주소지 소재 지방 법원이 관할권을 가집니다.</p>
+
+            <h2>제12조 (문의)</h2>
+            <p>문의사항: <a href="mailto:HNStudio.c@gmail.com">HNStudio.c@gmail.com</a></p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-logo">
+            <img src="image/HaNull Studio_160x160.png" alt="HaNull Studio">
+            <span>HaNull Studio</span>
+        </div>
+        <div class="footer-links">
+            <a href="pricing.html">가격안내</a>
+            <a href="terms.html">이용약관</a>
+            <a href="privacy.html">개인정보처리방침</a>
+            <a href="refund.html">교환환불정책</a>
+        </div>
+        <p>&copy; 2025 HaNull Studio. All rights reserved.</p>
+    </footer>
+</body>
+</html>

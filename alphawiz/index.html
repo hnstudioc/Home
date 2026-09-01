@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AlphaWiz — AI에게 물어보는 투자의 모든 것</title>
+  <meta name="description" content="주가·재무·종목 데이터를 바탕으로 AI가 기술적 분석과 기업 펀더멘탈을 답하는 AI 주식 분석 서비스. KOSPI·KOSDAQ·NYSE·NASDAQ 지원.">
+  <meta property="og:title" content="AlphaWiz — AI에게 물어보는 투자의 모든 것">
+  <meta property="og:description" content="AI 기술적 분석과 기업 펀더멘탈 분석. KOSPI·KOSDAQ·NYSE·NASDAQ.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="image/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="image/logo.svg" alt="AlphaWiz">
+        <span>AlphaWiz</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#features">기능</a></li>
+        <li><a href="index.html#markets">지원시장</a></li>
+        <li><a href="pricing.html">요금제</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="blog.html">블로그</a></li>
+        <li><a href="about.html">회사소개</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a class="btn btn-primary btn-sm" href="https://alphawiz.ai">사용 시작</a>
+        <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <span class="hero-badge"><span class="dot"></span> AI Stock Analysis · 현재 개발 중</span>
+        <h1>AI에게 물어보는 투자의 모든 것.<br><span class="gradient-text">AlphaWiz</span></h1>
+        <p class="lead">
+          주가·재무·종목 데이터를 바탕으로, AI가 기술적 분석과 기업 펀더멘탈을 답합니다.<br>
+          KOSPI · KOSDAQ · NYSE · NASDAQ 주요 4개 시장을 한 번에.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary btn-lg" href="https://alphawiz.ai">지금 시작하기</a>
+          <a class="btn btn-ghost btn-lg" href="#demo">데모 보기</a>
+        </div>
+        <div class="hero-mockup" id="demo">
+          <img src="image/hero-mockup.svg" alt="AlphaWiz 채팅 UI 미리보기 — 삼성전자 분석 예시">
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Core Features</span>
+          <h2>데이터를 읽고, 맥락을 해석하는 <span class="gradient-text">AI 애널리스트</span></h2>
+          <p>단순한 지표 계산이 아닙니다. AlphaWiz는 데이터의 배경과 흐름을 함께 설명합니다.</p>
+        </div>
+        <div class="features">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3v18h18M7 15l3-6 4 4 5-9"/></svg>
+            </div>
+            <h3>AI 기술적 분석</h3>
+            <p>차트 패턴, 이동평균, RSI·MACD 같은 보조지표를 AI가 종합해 현재 흐름과 매매 시그널의 근거를 풀어 설명합니다.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17V7m4 10V4m4 13v-5M5 21h14"/></svg>
+            </div>
+            <h3>기업 펀더멘탈 분석</h3>
+            <p>재무제표, 실적 추이, 밸류에이션을 AI가 해석. 동종업종 비교와 변곡점까지 자연어로 읽어드립니다.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11a7 7 0 11-14 0 7 7 0 0114 0zM12 8v3l2 2"/></svg>
+            </div>
+            <h3>뉴스·공시 요약 <span class="soon">Coming Soon</span></h3>
+            <p>실시간 뉴스와 공시를 종목 단위로 자동 요약. 중요도 높은 이벤트만 골라 전달합니다.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.86 9.86 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+            </div>
+            <h3>자연어 Q&amp;A</h3>
+            <p>"삼성전자 최근 3년 수익성 어땠어?" 처럼 말하듯 묻고, 근거와 함께 답변받습니다. 복잡한 쿼리 언어 필요 없이.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="markets" style="background: var(--surface-2);">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Supported Markets</span>
+          <h2>한국과 미국, 4개 주요 시장을 한 서비스에서</h2>
+          <p>KOSPI·KOSDAQ·NYSE·NASDAQ. 일본 등 추가 시장도 순차 확장 예정입니다.</p>
+        </div>
+        <div class="markets-grid">
+          <div class="market-card">
+            <div class="country">대한민국</div>
+            <div class="name">KOSPI</div>
+            <span class="badge badge-live">지원중</span>
+          </div>
+          <div class="market-card">
+            <div class="country">대한민국</div>
+            <div class="name">KOSDAQ</div>
+            <span class="badge badge-live">지원중</span>
+          </div>
+          <div class="market-card">
+            <div class="country">미국</div>
+            <div class="name">NYSE</div>
+            <span class="badge badge-live">지원중</span>
+          </div>
+          <div class="market-card">
+            <div class="country">미국</div>
+            <div class="name">NASDAQ</div>
+            <span class="badge badge-live">지원중</span>
+          </div>
+        </div>
+        <p style="text-align:center; color:var(--text-muted); font-size:14px; margin:0;">
+          일본(TSE) · 홍콩(HKEX) 등 주요 글로벌 시장 순차 확대 예정 <span class="badge badge-soon" style="margin-left:6px;">Coming Soon</span>
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">How it works</span>
+          <h2>물어보고 · 분석받고 · 결정한다</h2>
+          <p>세 단계면 충분합니다. 전문 용어와 스크리너를 뒤적일 필요 없이, 바로 대화로 들어가세요.</p>
+        </div>
+        <div class="steps">
+          <div class="step-card">
+            <div class="step-no">01</div>
+            <h3>종목 또는 질문 입력</h3>
+            <p>"테슬라 요즘 어때?"처럼 자연스럽게 묻거나, 원하는 지표·조건을 알려주세요.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-no">02</div>
+            <h3>AI가 데이터 기반 분석</h3>
+            <p>주가·재무·공시 데이터를 종합해 기술적 흐름과 펀더멘탈을 함께 해석합니다.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-no">03</div>
+            <h3>근거와 함께 답변</h3>
+            <p>수치·차트·출처 근거가 포함된 답변으로 판단 근거까지 한눈에 확인하세요.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" style="background: var(--surface-2);">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Pricing</span>
+          <h2>필요한 만큼만, 유연하게</h2>
+          <p>하루 체험부터 월 100질문 파워유저까지. 지금 확인하고 가장 맞는 요금제를 고르세요.</p>
+        </div>
+        <div class="pricing-grid">
+          <div class="plan">
+            <h3>Day10</h3>
+            <div class="plan-sub">1일 · 하루 10질문</div>
+            <div class="price">30,000<small>원</small></div>
+            <ul>
+              <li>24시간 이용</li>
+              <li>하루 10개 질문</li>
+              <li>단기 체험 최적</li>
+            </ul>
+            <a class="btn btn-ghost" href="pricing.html">자세히</a>
+          </div>
+          <div class="plan">
+            <h3>Week3</h3>
+            <div class="plan-sub">7일 · 매일 3질문</div>
+            <div class="price">40,000<small>원</small></div>
+            <ul>
+              <li>7일간 이용</li>
+              <li>매일 3개 질문</li>
+              <li>주간 모니터링</li>
+            </ul>
+            <a class="btn btn-ghost" href="pricing.html">자세히</a>
+          </div>
+          <div class="plan">
+            <h3>Pro1</h3>
+            <div class="plan-sub">30일 · 매일 1질문</div>
+            <div class="price">50,000<small>원</small></div>
+            <ul>
+              <li>한 달간 이용</li>
+              <li>매일 1개 질문</li>
+              <li>입문용 월정액</li>
+            </ul>
+            <a class="btn btn-ghost" href="pricing.html">자세히</a>
+          </div>
+          <div class="plan featured">
+            <span class="plan-tag">BEST VALUE</span>
+            <h3>Pro10</h3>
+            <div class="plan-sub">30일 · 매일 10질문</div>
+            <div class="price">400,000<small>원</small></div>
+            <div><span class="strike">500,000원</span><span class="discount">20% OFF</span></div>
+            <ul>
+              <li>한 달간 이용</li>
+              <li>매일 10개 질문</li>
+              <li>개인 투자자 권장</li>
+            </ul>
+            <a class="btn btn-primary" href="pricing.html">자세히</a>
+          </div>
+          <div class="plan">
+            <h3>Pro100</h3>
+            <div class="plan-sub">30일 · 매일 100질문</div>
+            <div class="price">3,000,000<small>원</small></div>
+            <div><span class="strike">5,000,000원</span><span class="discount">40% OFF</span></div>
+            <ul>
+              <li>한 달간 이용</li>
+              <li>매일 100개 질문</li>
+              <li>파워 유저 / 프로</li>
+            </ul>
+            <a class="btn btn-ghost" href="pricing.html">자세히</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">FAQ</span>
+          <h2>자주 묻는 질문</h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>AlphaWiz는 투자 자문인가요?</span>
+              <svg class="chev" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq-answer"><p>아닙니다. AlphaWiz는 데이터에 기반한 분석 정보 제공 서비스이며 매수·매도를 권유하지 않습니다. 최종 판단은 이용자의 책임입니다.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>어떤 시장을 지원하나요?</span>
+              <svg class="chev" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq-answer"><p>현재 한국(KOSPI·KOSDAQ)과 미국(NYSE·NASDAQ) 4개 시장을 지원합니다. 일본(TSE) 등 주요 글로벌 시장은 순차적으로 확장됩니다.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>"질문 1개"의 기준은 어떻게 되나요?</span>
+              <svg class="chev" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="faq-answer"><p>사용자가 입력한 한 번의 질의와 AI의 응답이 한 쌍을 이뤄 "1 질문"으로 계산됩니다. 세부 기준은 정식 출시 시 공지합니다.</p></div>
+          </div>
+        </div>
+        <p style="text-align:center; margin-top:32px;"><a class="btn btn-ghost" href="faq.html">전체 FAQ 보기</a></p>
+      </div>
+    </section>
+
+    <section class="tight">
+      <div class="container">
+        <div class="cta-banner">
+          <h2>지금 AlphaWiz와 함께 분석을 시작하세요</h2>
+          <p>복잡한 지표도, 방대한 재무제표도, 이제는 대화로 확인하세요.</p>
+          <a class="btn btn-primary btn-lg" href="https://alphawiz.ai">지금 시작하기 →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-cols">
+        <div class="footer-brand">
+          <div class="brand"><img src="image/logo.svg" alt="AlphaWiz"> AlphaWiz</div>
+          <p>AI 기반 주식 분석 서비스. 주가·재무·종목 데이터로 당신의 투자 판단을 돕습니다.</p>
+        </div>
+        <div class="footer-col">
+          <h4>제품</h4>
+          <ul>
+            <li><a href="index.html#features">기능</a></li>
+            <li><a href="index.html#markets">지원시장</a></li>
+            <li><a href="pricing.html">요금제</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>회사</h4>
+          <ul>
+            <li><a href="about.html">회사소개</a></li>
+            <li><a href="blog.html">블로그</a></li>
+            <li><a href="mailto:HNStudio.c@gmail.com">문의하기</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>법적고지</h4>
+          <ul>
+            <li><a href="terms.html">이용약관</a></li>
+            <li><a href="privacy.html">개인정보처리방침</a></li>
+            <li><a href="refund.html">환불정책</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 AlphaWiz · Service by HaNull Studio. All rights reserved.</div>
+        <div class="legal">
+          <a href="terms.html">이용약관</a>
+          <a href="privacy.html">개인정보</a>
+          <a href="refund.html">환불</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/site.js"></script>
+</body>
+</html>
