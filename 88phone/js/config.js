@@ -22,10 +22,9 @@ window.SITE_CONFIG = {
   REMOVE_ADS_PRICE: '8,800원',
 
   /* ---- 4. 문의 받을 주소 --------------------------------------------
-     ※ 스토어에 적는 주소와 같아야 합니다.
-     ※ 아직 88폰 전용 주소를 받지 못해 스튜디오 주소를 씁니다.
-        전용 주소가 생기면 여기만 바꾸세요.                            */
-  SUPPORT_EMAIL: 'HNStudio.c@gmail.com',
+     ※ 구글 플레이 스토어에 적는 지원 이메일과 같아야 합니다.
+     ※ 2026-10-13 스튜디오 공식 주소로 확정.                            */
+  SUPPORT_EMAIL: 'info@hanullstudio.com',
 
   /* ---- 5. 이 페이지 주소 (QR 코드에 씁니다) -------------------------- */
   SITE_URL: 'https://www.hanullstudio.com/88phone/',
