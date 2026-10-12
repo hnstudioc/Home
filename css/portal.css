@@ -237,6 +237,23 @@ a { color: inherit; }
 .footer-brand { display: flex; align-items: center; gap: 10px; font-weight: 700; color: var(--ink); }
 .footer-brand img { width: 26px; height: 26px; }
 
+/* ============ 문의 · 제휴 ============ */
+.contact {
+  border-top: 1px solid var(--line);
+  padding: 56px 0 60px;
+  text-align: center;
+}
+.contact h2 { margin: 0 0 12px; font-size: 1.45rem; font-weight: 700; }
+.contact p  { margin: 0 auto 22px; max-width: 32rem; color: var(--ink-2); line-height: 1.75; }
+.contact-mail {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 52px; padding: 12px 26px;
+  border: 2px solid var(--indigo); border-radius: 999px;
+  color: var(--indigo); font-weight: 700; font-size: 1.05rem;
+  text-decoration: none; word-break: break-all;
+}
+.contact-mail:hover, .contact-mail:focus-visible { background: var(--indigo); color: #fff; }
+
 /* ============ 404 ============ */
 .notfound { text-align: center; padding: 96px 0 72px; }
 .notfound .code {
