@@ -78,7 +78,7 @@
 
   // 값
   document.querySelectorAll('[data-price]').forEach(function (el) {
-    if (cfg.REMOVE_ADS_PRICE) el.textContent = cfg.REMOVE_ADS_PRICE;
+    if (cfg.UNLOCK_PRICE) el.textContent = cfg.UNLOCK_PRICE;
   });
 
   // 문의 메일
