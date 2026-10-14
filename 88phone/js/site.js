@@ -106,7 +106,10 @@
     ['상호', biz.name],
     ['대표자', biz.ceo],
     ['사업자등록번호', biz.regNo],
-    ['통신판매업 신고번호', biz.mailOrder],
+    ['통신판매업 신고번호',
+      biz.mailOrder && biz.mailOrderBy
+        ? biz.mailOrder + ' (' + biz.mailOrderBy + ')'
+        : biz.mailOrder],
     ['주소', biz.address],
     ['전화', biz.phone]
   ].filter(function (r) { return r[1]; });

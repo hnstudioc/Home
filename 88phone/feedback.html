@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-i18n-base="../i18n/">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>문의 · 개선 요청 — 88폰</title>
-<meta name="description" content="88폰에 바랐으면 하는 점, 불편한 점, 잘 안 되는 점을 알려 주세요.">
+<title data-i18n="fb.title">문의 · 개선 요청 — 88폰</title>
+<meta name="description" data-i18n-attr="content:fb.desc" content="88폰에 바랐으면 하는 점, 불편한 점, 잘 안 되는 점을 알려 주세요.">
 <meta name="theme-color" content="#4C3825">
 <link rel="icon" href="image/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="image/apple-touch-icon.png">
@@ -12,25 +12,27 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+<script src="../js/i18n.js"></script>
 </head>
 <body>
 
-<a class="skip-link" href="#main">본문 바로가기</a>
+<a class="skip-link" href="#main" data-i18n="c.skip">본문 바로가기</a>
 
 <header class="head grain">
   <div class="container head-inner">
     <a class="brand" href="index.html">
       <img src="image/app-icon.png" alt="" width="40" height="40">
-      88폰
+      <span data-i18n="c.brand">88폰</span>
     </a>
-    <nav aria-label="주요 메뉴">
+    <nav aria-label="주요 메뉴" data-i18n-attr="aria-label:c.nav.label">
       <ul class="head-links">
-        <li><a href="index.html">소개</a></li>
-        <li><a href="index.html#price">가격</a></li>
-        <li><a href="index.html#faq">자주 묻는 질문</a></li>
-        <li><a href="feedback.html">문의</a></li>
+        <li><a href="index.html" data-i18n="c.nav.about">소개</a></li>
+        <li><a href="index.html#price" data-i18n="c.nav.price">가격</a></li>
+        <li><a href="index.html#faq" data-i18n="c.nav.faq">자주 묻는 질문</a></li>
+        <li><a href="feedback.html" data-i18n="c.nav.contact">문의</a></li>
       </ul>
     </nav>
+    <div data-lang-switcher></div>
   </div>
 </header>
 
@@ -39,83 +41,83 @@
     <div class="container narrow">
 
       <div class="section-head center">
-        <h1>이렇게 바뀌면 좋겠어요</h1>
-        <p>불편한 점, 잘 안 되는 점, 있었으면 하는 것을 알려 주세요. 하나하나 읽고 다음 판에 반영합니다.</p>
+        <h1 data-i18n="fb.h1">이렇게 바뀌면 좋겠어요</h1>
+        <p data-i18n="fb.lead">불편한 점, 잘 안 되는 점, 있었으면 하는 것을 알려 주세요. 하나하나 읽고 다음 판에 반영합니다.</p>
       </div>
 
       <div class="callout" data-external-form="FEEDBACK_FORM_URL" hidden style="margin-bottom:26px">
-        <h3>개선 요청 보내기</h3>
-        <p>아래 버튼을 누르면 요청 작성 화면이 열립니다.</p>
-        <div class="key-row"><a class="key" href="#" target="_blank">요청 작성 화면 열기</a></div>
+        <h3 data-i18n="fb.ext.h3">개선 요청 보내기</h3>
+        <p data-i18n="fb.ext.p">아래 버튼을 누르면 요청 작성 화면이 열립니다.</p>
+        <div class="key-row"><a class="key" href="#" target="_blank" data-i18n="fb.ext.btn">요청 작성 화면 열기</a></div>
       </div>
 
       <div data-builtin-form="FEEDBACK_FORM_URL">
         <form class="form" data-mail-form="문의" novalidate>
 
           <fieldset>
-            <legend class="legend">어떤 내용인가요? <span class="req" aria-hidden="true">*</span><span class="sr-only">필수 항목</span></legend>
+            <legend class="legend"><span data-i18n="fb.f.type">어떤 내용인가요?</span> <span class="req" aria-hidden="true">*</span><span class="sr-only" data-i18n="c.form.required">필수 항목</span></legend>
             <div class="choices">
               <div class="choice">
-                <input type="radio" id="t1" name="type" value="불편" data-label="종류" data-required data-text="쓰기 불편한 점">
-                <label for="t1">쓰기 불편한 점이 있습니다</label>
+                <input type="radio" id="t1" name="type" value="불편" data-label="종류" data-required data-text="쓰기 불편한 점" data-i18n-attr="data-label:fb.f.typeLbl,data-text:fb.f.t1t">
+                <label for="t1" data-i18n="fb.f.t1">쓰기 불편한 점이 있습니다</label>
               </div>
               <div class="choice">
-                <input type="radio" id="t2" name="type" value="오류" data-label="종류" data-text="앱이 잘못 동작함">
-                <label for="t2">앱이 멈추거나 이상하게 동작합니다</label>
+                <input type="radio" id="t2" name="type" value="오류" data-label="종류" data-text="앱이 잘못 동작함" data-i18n-attr="data-label:fb.f.typeLbl,data-text:fb.f.t2t">
+                <label for="t2" data-i18n="fb.f.t2">앱이 멈추거나 이상하게 동작합니다</label>
               </div>
               <div class="choice">
-                <input type="radio" id="t3" name="type" value="기능" data-label="종류" data-text="새 기능 요청">
-                <label for="t3">이런 것이 있었으면 좋겠습니다</label>
+                <input type="radio" id="t3" name="type" value="기능" data-label="종류" data-text="새 기능 요청" data-i18n-attr="data-label:fb.f.typeLbl,data-text:fb.f.t3t">
+                <label for="t3" data-i18n="fb.f.t3">이런 것이 있었으면 좋겠습니다</label>
               </div>
               <div class="choice">
-                <input type="radio" id="t4" name="type" value="크기" data-label="종류" data-text="글자·사진 크기나 색 관련">
-                <label for="t4">글자나 사진이 보기 어렵습니다</label>
+                <input type="radio" id="t4" name="type" value="크기" data-label="종류" data-text="글자·사진 크기나 색 관련" data-i18n-attr="data-label:fb.f.typeLbl,data-text:fb.f.t4t">
+                <label for="t4" data-i18n="fb.f.t4">글자나 사진이 보기 어렵습니다</label>
               </div>
               <div class="choice">
-                <input type="radio" id="t5" name="type" value="설치" data-label="종류" data-text="설치·설정이 어려움">
-                <label for="t5">설치나 설정이 어렵습니다</label>
+                <input type="radio" id="t5" name="type" value="설치" data-label="종류" data-text="설치·설정이 어려움" data-i18n-attr="data-label:fb.f.typeLbl,data-text:fb.f.t5t">
+                <label for="t5" data-i18n="fb.f.t5">설치나 설정이 어렵습니다</label>
               </div>
               <div class="choice">
-                <input type="radio" id="t6" name="type" value="결제" data-label="종류" data-text="결제 관련">
-                <label for="t6">결제에 관한 것입니다</label>
+                <input type="radio" id="t6" name="type" value="결제" data-label="종류" data-text="결제 관련" data-i18n-attr="data-label:fb.f.typeLbl,data-text:fb.f.t6t">
+                <label for="t6" data-i18n="fb.f.t6">결제에 관한 것입니다</label>
               </div>
               <div class="choice">
-                <input type="radio" id="t7" name="type" value="기타" data-label="종류" data-text="그 밖">
-                <label for="t7">그 밖의 이야기</label>
+                <input type="radio" id="t7" name="type" value="기타" data-label="종류" data-text="그 밖" data-i18n-attr="data-label:fb.f.typeLbl,data-text:fb.f.t7t">
+                <label for="t7" data-i18n="fb.f.t7">그 밖의 이야기</label>
               </div>
             </div>
           </fieldset>
 
           <div class="field">
-            <label for="detail">자세한 내용 <span class="req" aria-hidden="true">*</span><span class="sr-only">필수 항목</span></label>
-            <span class="hint">어느 화면에서, 무엇을 누르셨을 때 그랬는지 적어 주시면 고치기가 훨씬 쉽습니다.</span>
+            <label for="detail"><span data-i18n="fb.f.detail">자세한 내용</span> <span class="req" aria-hidden="true">*</span><span class="sr-only" data-i18n="c.form.required">필수 항목</span></label>
+            <span class="hint" data-i18n="fb.f.detailHint">어느 화면에서, 무엇을 누르셨을 때 그랬는지 적어 주시면 고치기가 훨씬 쉽습니다.</span>
             <textarea class="textarea" id="detail" data-label="자세한 내용" data-required
-                      placeholder="예: 번호 누르기 화면에서 숫자가 가끔 두 번 눌립니다."></textarea>
+                      placeholder="예: 번호 누르기 화면에서 숫자가 가끔 두 번 눌립니다." data-i18n-attr="data-label:fb.f.detailLbl,placeholder:fb.f.detailPh"></textarea>
           </div>
 
           <div class="field">
-            <label for="device">쓰시는 폰 (선택)</label>
-            <span class="hint">아시는 만큼만 적어 주세요. 예: 갤럭시 S22</span>
-            <input class="input" type="text" id="device" data-label="폰 기종" placeholder="예: 삼성 갤럭시">
+            <label for="device" data-i18n="fb.f.device">쓰시는 폰 (선택)</label>
+            <span class="hint" data-i18n="fb.f.deviceHint">아시는 만큼만 적어 주세요. 예: 갤럭시 S22</span>
+            <input class="input" type="text" id="device" data-label="폰 기종" placeholder="예: 삼성 갤럭시" data-i18n-attr="data-label:fb.f.deviceLbl,placeholder:fb.f.devicePh">
           </div>
 
           <div class="field">
-            <label for="contact">답장받을 곳 (선택)</label>
-            <span class="hint">적어 주시면 처리 결과를 알려 드립니다. 답장이 필요 없으시면 비워 두세요.</span>
-            <input class="input" type="text" id="contact" data-label="연락처" autocomplete="email" placeholder="메일 주소 또는 전화번호">
+            <label for="contact" data-i18n="fb.f.contact">답장받을 곳 (선택)</label>
+            <span class="hint" data-i18n="fb.f.contactHint">적어 주시면 처리 결과를 알려 드립니다. 답장이 필요 없으시면 비워 두세요.</span>
+            <input class="input" type="text" id="contact" data-label="연락처" autocomplete="email" placeholder="메일 주소 또는 전화번호" data-i18n-attr="data-label:fb.f.contactLbl,placeholder:fb.f.contactPh">
           </div>
 
           <div class="key-row">
-            <button type="submit" class="key key-call">보내기</button>
-            <button type="button" class="key" data-copy>내용 복사하기</button>
+            <button type="submit" class="key key-call" data-i18n="fb.f.send">보내기</button>
+            <button type="button" class="key" data-copy data-i18n="c.form.copy">내용 복사하기</button>
           </div>
 
           <p class="status" aria-live="polite"></p>
         </form>
 
         <div class="callout" style="margin-top:26px">
-          <h3>메일 앱이 열리지 않으면</h3>
-          <p>"내용 복사하기"를 누르신 뒤, 아래 주소로 보내 주셔도 됩니다.</p>
+          <h3 data-i18n="c.form.noMail.h3">메일 앱이 열리지 않으면</h3>
+          <p data-i18n="c.form.noMail.p">"내용 복사하기"를 누르신 뒤, 아래 주소로 보내 주셔도 됩니다.</p>
           <a class="mail-big" href="#" data-support-email="text">문의 메일</a>
         </div>
       </div>
@@ -126,12 +128,12 @@
   <section class="section section-tint">
     <div class="container narrow">
       <div class="section-head center">
-        <h2>보내 주신 내용은 이렇게 씁니다</h2>
+        <h2 data-i18n="fb.how.h2">보내 주신 내용은 이렇게 씁니다</h2>
       </div>
       <ul class="who">
-        <li>보내 주신 글은 모두 직접 읽습니다</li>
-        <li>같은 이야기가 여러 번 들어온 것부터 먼저 고칩니다</li>
-        <li>적어 주신 연락처는 답장에만 쓰고 다른 곳에 넘기지 않습니다</li>
+        <li data-i18n="fb.how.1">보내 주신 글은 모두 직접 읽습니다</li>
+        <li data-i18n="fb.how.2">같은 이야기가 여러 번 들어온 것부터 먼저 고칩니다</li>
+        <li data-i18n="fb.how.3">적어 주신 연락처는 답장에만 쓰고 다른 곳에 넘기지 않습니다</li>
       </ul>
     </div>
   </section>
@@ -143,32 +145,32 @@
       <div>
         <div class="foot-brand">
           <img src="image/app-icon.png" alt="" width="36" height="36">
-          88폰
+          <span data-i18n="c.brand">88폰</span>
         </div>
-        <p>전화 거는 일만 남긴 전화 앱.<br>큰 사진을 누르면 바로 걸립니다.</p>
+        <p data-i18n="c.foot.tagline">전화 거는 일만 남긴 전화 앱.<br>큰 사진을 누르면 바로 걸립니다.</p>
       </div>
       <div>
-        <h4>바로 가기</h4>
+        <h4 data-i18n="c.foot.links">바로 가기</h4>
         <ul>
-          <li><a href="index.html">소개</a></li>
-          <li><a href="index.html#price">가격</a></li>
-          <li><a href="index.html#faq">자주 묻는 질문</a></li>
-          <li><a href="guide.html">부모님 폰 글씨 크게 하는 법</a></li>
-          <li><a href="review.html">후기 남기기</a></li>
-          <li><a href="feedback.html">개선 요청</a></li>
+          <li><a href="index.html" data-i18n="c.nav.about">소개</a></li>
+          <li><a href="index.html#price" data-i18n="c.nav.price">가격</a></li>
+          <li><a href="index.html#faq" data-i18n="c.nav.faq">자주 묻는 질문</a></li>
+          <li><a href="guide.html" data-i18n="c.foot.guide">부모님 폰 글씨 크게 하는 법</a></li>
+          <li><a href="review.html" data-i18n="c.foot.review">후기 남기기</a></li>
+          <li><a href="feedback.html" data-i18n="c.foot.feedback">개선 요청</a></li>
         </ul>
       </div>
       <div>
-        <h4>문의 · 정책</h4>
+        <h4 data-i18n="c.foot.contact">문의 · 정책</h4>
         <ul>
-          <li><a href="#" data-support-email>문의 메일</a></li>
-          <li><a href="privacy.html">개인정보처리방침</a></li>
+          <li><a href="#" data-support-email data-i18n="c.foot.mail">문의 메일</a></li>
+          <li><a href="privacy.html" data-i18n="c.foot.privacy">개인정보처리방침</a></li>
           <li><a href="../">HaNull Studio</a></li>
         </ul>
       </div>
     </div>
     <div class="biz" data-business></div>
-    <div class="foot-bottom">© <span data-year>2026</span> 88폰 · HaNull Studio</div>
+    <div class="foot-bottom" data-i18n="c.foot.copy">© <span data-year>2026</span> 88폰 · HaNull Studio</div>
   </div>
 </footer>
 

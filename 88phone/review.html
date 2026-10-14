@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-i18n-base="../i18n/">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>후기 남기기 — 88폰</title>
-<meta name="description" content="88폰을 써 보신 느낌을 들려주세요. 한 줄이면 충분합니다.">
+<title data-i18n="rev.title">후기 남기기 — 88폰</title>
+<meta name="description" data-i18n-attr="content:rev.desc" content="88폰을 써 보신 느낌을 들려주세요. 한 줄이면 충분합니다.">
 <meta name="theme-color" content="#4C3825">
 <link rel="icon" href="image/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="image/apple-touch-icon.png">
@@ -12,25 +12,27 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+<script src="../js/i18n.js"></script>
 </head>
 <body>
 
-<a class="skip-link" href="#main">본문 바로가기</a>
+<a class="skip-link" href="#main" data-i18n="c.skip">본문 바로가기</a>
 
 <header class="head grain">
   <div class="container head-inner">
     <a class="brand" href="index.html">
       <img src="image/app-icon.png" alt="" width="40" height="40">
-      88폰
+      <span data-i18n="c.brand">88폰</span>
     </a>
-    <nav aria-label="주요 메뉴">
+    <nav aria-label="주요 메뉴" data-i18n-attr="aria-label:c.nav.label">
       <ul class="head-links">
-        <li><a href="index.html">소개</a></li>
-        <li><a href="index.html#price">가격</a></li>
-        <li><a href="index.html#faq">자주 묻는 질문</a></li>
-        <li><a href="feedback.html">문의</a></li>
+        <li><a href="index.html" data-i18n="c.nav.about">소개</a></li>
+        <li><a href="index.html#price" data-i18n="c.nav.price">가격</a></li>
+        <li><a href="index.html#faq" data-i18n="c.nav.faq">자주 묻는 질문</a></li>
+        <li><a href="feedback.html" data-i18n="c.nav.contact">문의</a></li>
       </ul>
     </nav>
+    <div data-lang-switcher></div>
   </div>
 </header>
 
@@ -39,101 +41,101 @@
     <div class="container narrow">
 
       <div class="section-head center">
-        <h1>써 보신 느낌을 들려주세요</h1>
-        <p>짧아도 괜찮습니다. 어떤 점이 편하셨는지, 어떤 점이 아쉬우셨는지 한 줄이면 충분합니다.</p>
+        <h1 data-i18n="rev.h1">써 보신 느낌을 들려주세요</h1>
+        <p data-i18n="rev.lead">짧아도 괜찮습니다. 어떤 점이 편하셨는지, 어떤 점이 아쉬우셨는지 한 줄이면 충분합니다.</p>
       </div>
 
       <!-- 구글 폼을 설정했을 때만 나타납니다 -->
       <div class="callout" data-external-form="REVIEW_FORM_URL" hidden style="margin-bottom:26px">
-        <h3>후기 작성하기</h3>
-        <p>아래 버튼을 누르면 후기 작성 화면이 열립니다.</p>
-        <div class="key-row"><a class="key" href="#" target="_blank">후기 작성 화면 열기</a></div>
+        <h3 data-i18n="rev.ext.h3">후기 작성하기</h3>
+        <p data-i18n="rev.ext.p">아래 버튼을 누르면 후기 작성 화면이 열립니다.</p>
+        <div class="key-row"><a class="key" href="#" target="_blank" data-i18n="rev.ext.btn">후기 작성 화면 열기</a></div>
       </div>
 
       <div class="callout" style="margin-bottom:26px">
-        <h3>구글 플레이에 별점 남기기</h3>
-        <p>
+        <h3 data-i18n="rev.store.h3">구글 플레이에 별점 남기기</h3>
+        <p data-i18n="rev.store.p">
           플레이스토어의 별점은 다른 가족들이 앱을 고르실 때 도움이 됩니다.
         </p>
         <div class="key-row">
-          <a class="key" data-store-review-link href="#review-form">플레이스토어에서 별점 남기기</a>
+          <a class="key" data-store-review-link href="#review-form" data-i18n="rev.store.btn">플레이스토어에서 별점 남기기</a>
         </div>
-        <p style="margin:14px 0 0;font-size:.95rem" data-release-notice hidden>
+        <p style="margin:14px 0 0;font-size:.95rem" data-release-notice hidden data-i18n="rev.store.soon">
           아직 스토어에 올라가기 전입니다. 그때까지는 아래 양식으로 보내 주시면 감사하겠습니다.
         </p>
       </div>
 
       <div data-builtin-form="REVIEW_FORM_URL">
-        <h2 id="review-form">여기에 바로 남기기</h2>
-        <p style="margin-bottom:24px">
+        <h2 id="review-form" data-i18n="rev.form.h2">여기에 바로 남기기</h2>
+        <p style="margin-bottom:24px" data-i18n="rev.form.lead">
           아래를 채우고 <strong>보내기</strong>를 누르시면 메일 앱이 열리고 내용이 자동으로 적혀 있습니다.
         </p>
 
         <form class="form" data-mail-form="후기" novalidate>
 
           <fieldset>
-            <legend class="legend">얼마나 만족하셨나요? <span class="req" aria-hidden="true">*</span><span class="sr-only">필수 항목</span></legend>
+            <legend class="legend"><span data-i18n="rev.f.rating">얼마나 만족하셨나요?</span> <span class="req" aria-hidden="true">*</span><span class="sr-only" data-i18n="c.form.required">필수 항목</span></legend>
             <div class="rating">
-              <input type="radio" id="r5" name="rating" value="5" data-label="별점" data-required data-text="★★★★★ 매우 좋음">
-              <label for="r5"><span aria-hidden="true">★★★★★</span> 매우 좋음</label>
-              <input type="radio" id="r4" name="rating" value="4" data-label="별점" data-text="★★★★ 좋음">
-              <label for="r4"><span aria-hidden="true">★★★★</span> 좋음</label>
-              <input type="radio" id="r3" name="rating" value="3" data-label="별점" data-text="★★★ 보통">
-              <label for="r3"><span aria-hidden="true">★★★</span> 보통</label>
-              <input type="radio" id="r2" name="rating" value="2" data-label="별점" data-text="★★ 아쉬움">
-              <label for="r2"><span aria-hidden="true">★★</span> 아쉬움</label>
-              <input type="radio" id="r1" name="rating" value="1" data-label="별점" data-text="★ 많이 아쉬움">
-              <label for="r1"><span aria-hidden="true">★</span> 많이 아쉬움</label>
+              <input type="radio" id="r5" name="rating" value="5" data-label="별점" data-required data-text="★★★★★ 매우 좋음" data-i18n-attr="data-label:rev.f.ratingLbl,data-text:rev.f.r5t">
+              <label for="r5"><span aria-hidden="true">★★★★★</span> <span data-i18n="rev.f.r5">매우 좋음</span></label>
+              <input type="radio" id="r4" name="rating" value="4" data-label="별점" data-text="★★★★ 좋음" data-i18n-attr="data-label:rev.f.ratingLbl,data-text:rev.f.r4t">
+              <label for="r4"><span aria-hidden="true">★★★★</span> <span data-i18n="rev.f.r4">좋음</span></label>
+              <input type="radio" id="r3" name="rating" value="3" data-label="별점" data-text="★★★ 보통" data-i18n-attr="data-label:rev.f.ratingLbl,data-text:rev.f.r3t">
+              <label for="r3"><span aria-hidden="true">★★★</span> <span data-i18n="rev.f.r3">보통</span></label>
+              <input type="radio" id="r2" name="rating" value="2" data-label="별점" data-text="★★ 아쉬움" data-i18n-attr="data-label:rev.f.ratingLbl,data-text:rev.f.r2t">
+              <label for="r2"><span aria-hidden="true">★★</span> <span data-i18n="rev.f.r2">아쉬움</span></label>
+              <input type="radio" id="r1" name="rating" value="1" data-label="별점" data-text="★ 많이 아쉬움" data-i18n-attr="data-label:rev.f.ratingLbl,data-text:rev.f.r1t">
+              <label for="r1"><span aria-hidden="true">★</span> <span data-i18n="rev.f.r1">많이 아쉬움</span></label>
             </div>
           </fieldset>
 
           <fieldset>
-            <legend class="legend">누가 쓰고 계신가요?</legend>
+            <legend class="legend" data-i18n="rev.f.who">누가 쓰고 계신가요?</legend>
             <div class="choices">
               <div class="choice">
-                <input type="radio" id="u1" name="who" value="본인" data-label="쓰는 분" data-text="본인이 쓰고 있음">
-                <label for="u1">제가 직접 쓰고 있습니다</label>
+                <input type="radio" id="u1" name="who" value="본인" data-label="쓰는 분" data-text="본인이 쓰고 있음" data-i18n-attr="data-label:rev.f.whoLbl,data-text:rev.f.u1t">
+                <label for="u1" data-i18n="rev.f.u1">제가 직접 쓰고 있습니다</label>
               </div>
               <div class="choice">
-                <input type="radio" id="u2" name="who" value="부모님" data-label="쓰는 분" data-text="부모님께 설치해 드림">
-                <label for="u2">부모님께 설치해 드렸습니다</label>
+                <input type="radio" id="u2" name="who" value="부모님" data-label="쓰는 분" data-text="부모님께 설치해 드림" data-i18n-attr="data-label:rev.f.whoLbl,data-text:rev.f.u2t">
+                <label for="u2" data-i18n="rev.f.u2">부모님께 설치해 드렸습니다</label>
               </div>
               <div class="choice">
-                <input type="radio" id="u3" name="who" value="기타" data-label="쓰는 분" data-text="그 밖">
-                <label for="u3">그 밖</label>
+                <input type="radio" id="u3" name="who" value="기타" data-label="쓰는 분" data-text="그 밖" data-i18n-attr="data-label:rev.f.whoLbl,data-text:rev.f.u3t">
+                <label for="u3" data-i18n="rev.f.u3">그 밖</label>
               </div>
             </div>
           </fieldset>
 
           <div class="field">
-            <label for="good">가장 편했던 점</label>
-            <span class="hint">예: 사진을 누르니 바로 걸려서 좋았다</span>
-            <textarea class="textarea" id="good" data-label="편했던 점" placeholder="편하게 적어 주세요"></textarea>
+            <label for="good" data-i18n="rev.f.good">가장 편했던 점</label>
+            <span class="hint" data-i18n="rev.f.goodHint">예: 사진을 누르니 바로 걸려서 좋았다</span>
+            <textarea class="textarea" id="good" data-label="편했던 점" placeholder="편하게 적어 주세요" data-i18n-attr="data-label:rev.f.goodLbl,placeholder:rev.f.goodPh"></textarea>
           </div>
 
           <div class="field">
-            <label for="bad">아쉬웠던 점</label>
-            <span class="hint">알려 주시면 다음 판에 고치겠습니다.</span>
-            <textarea class="textarea" id="bad" data-label="아쉬웠던 점" placeholder="없으시면 비워 두셔도 됩니다"></textarea>
+            <label for="bad" data-i18n="rev.f.bad">아쉬웠던 점</label>
+            <span class="hint" data-i18n="rev.f.badHint">알려 주시면 다음 판에 고치겠습니다.</span>
+            <textarea class="textarea" id="bad" data-label="아쉬웠던 점" placeholder="없으시면 비워 두셔도 됩니다" data-i18n-attr="data-label:rev.f.badLbl,placeholder:rev.f.badPh"></textarea>
           </div>
 
           <div class="field">
-            <label for="nickname">부르실 이름 (선택)</label>
-            <span class="hint">실명이 아니어도 됩니다.</span>
-            <input class="input" type="text" id="nickname" data-label="이름" autocomplete="nickname" placeholder="예: 김OO">
+            <label for="nickname" data-i18n="rev.f.name">부르실 이름 (선택)</label>
+            <span class="hint" data-i18n="rev.f.nameHint">실명이 아니어도 됩니다.</span>
+            <input class="input" type="text" id="nickname" data-label="이름" autocomplete="nickname" placeholder="예: 김OO" data-i18n-attr="data-label:rev.f.nameLbl,placeholder:rev.f.namePh">
           </div>
 
           <div class="key-row">
-            <button type="submit" class="key key-call">후기 보내기</button>
-            <button type="button" class="key" data-copy>내용 복사하기</button>
+            <button type="submit" class="key key-call" data-i18n="rev.f.send">후기 보내기</button>
+            <button type="button" class="key" data-copy data-i18n="c.form.copy">내용 복사하기</button>
           </div>
 
           <p class="status" aria-live="polite"></p>
         </form>
 
         <div class="callout" style="margin-top:26px">
-          <h3>메일 앱이 열리지 않으면</h3>
-          <p>"내용 복사하기"를 누르신 뒤, 아래 주소로 보내 주셔도 됩니다.</p>
+          <h3 data-i18n="c.form.noMail.h3">메일 앱이 열리지 않으면</h3>
+          <p data-i18n="c.form.noMail.p">"내용 복사하기"를 누르신 뒤, 아래 주소로 보내 주셔도 됩니다.</p>
           <a class="mail-big" href="#" data-support-email="text">문의 메일</a>
         </div>
       </div>
@@ -148,32 +150,32 @@
       <div>
         <div class="foot-brand">
           <img src="image/app-icon.png" alt="" width="36" height="36">
-          88폰
+          <span data-i18n="c.brand">88폰</span>
         </div>
-        <p>전화 거는 일만 남긴 전화 앱.<br>큰 사진을 누르면 바로 걸립니다.</p>
+        <p data-i18n="c.foot.tagline">전화 거는 일만 남긴 전화 앱.<br>큰 사진을 누르면 바로 걸립니다.</p>
       </div>
       <div>
-        <h4>바로 가기</h4>
+        <h4 data-i18n="c.foot.links">바로 가기</h4>
         <ul>
-          <li><a href="index.html">소개</a></li>
-          <li><a href="index.html#price">가격</a></li>
-          <li><a href="index.html#faq">자주 묻는 질문</a></li>
-          <li><a href="guide.html">부모님 폰 글씨 크게 하는 법</a></li>
-          <li><a href="review.html">후기 남기기</a></li>
-          <li><a href="feedback.html">개선 요청</a></li>
+          <li><a href="index.html" data-i18n="c.nav.about">소개</a></li>
+          <li><a href="index.html#price" data-i18n="c.nav.price">가격</a></li>
+          <li><a href="index.html#faq" data-i18n="c.nav.faq">자주 묻는 질문</a></li>
+          <li><a href="guide.html" data-i18n="c.foot.guide">부모님 폰 글씨 크게 하는 법</a></li>
+          <li><a href="review.html" data-i18n="c.foot.review">후기 남기기</a></li>
+          <li><a href="feedback.html" data-i18n="c.foot.feedback">개선 요청</a></li>
         </ul>
       </div>
       <div>
-        <h4>문의 · 정책</h4>
+        <h4 data-i18n="c.foot.contact">문의 · 정책</h4>
         <ul>
-          <li><a href="#" data-support-email>문의 메일</a></li>
-          <li><a href="privacy.html">개인정보처리방침</a></li>
+          <li><a href="#" data-support-email data-i18n="c.foot.mail">문의 메일</a></li>
+          <li><a href="privacy.html" data-i18n="c.foot.privacy">개인정보처리방침</a></li>
           <li><a href="../">HaNull Studio</a></li>
         </ul>
       </div>
     </div>
     <div class="biz" data-business></div>
-    <div class="foot-bottom">© <span data-year>2026</span> 88폰 · HaNull Studio</div>
+    <div class="foot-bottom" data-i18n="c.foot.copy">© <span data-year>2026</span> 88폰 · HaNull Studio</div>
   </div>
 </footer>
 

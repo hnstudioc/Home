@@ -72,6 +72,27 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* ============ 다국어 ============
+   한국어가 아닐 때는 단어 중간 줄바꿈 금지(keep-all)를 풀어 준다.
+   (일본어·중국어·태국어는 keep-all 이면 줄이 안 바뀐다) */
+html:not([lang="ko"]) body { word-break: normal; }
+/* 사전을 읽는 동안 한국어가 잠깐 비치지 않게 (최대 1.5초, i18n.js 가 푼다) */
+html.i18n-pending body { visibility: hidden; }
+
+/* 언어 고르기 — 머리말 오른쪽 */
+.lang-switch { display: inline-flex; align-items: center; flex: 0 0 auto; }
+.lang-select {
+  min-height: 48px; padding: 8px 36px 8px 12px;
+  font-family: inherit; font-size: .95rem; font-weight: 700;
+  color: var(--on-board); background: rgba(255,255,255,.08);
+  border: 2px solid rgba(246,231,204,.35); border-radius: 10px;
+  -webkit-appearance: none; appearance: none; cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23F6E7CC' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 8l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 10px center; background-size: 16px;
+}
+.lang-select:hover { background-color: rgba(255,255,255,.14); }
+.lang-select option { color: #241A10; background: #FFFFFF; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {
@@ -141,8 +162,9 @@ a:hover { color: var(--sms-deep); }
 }
 .head-inner {
   display: flex; align-items: center; justify-content: space-between;
-  gap: 16px; min-height: 68px;
+  gap: 12px; min-height: 68px; flex-wrap: wrap;
 }
+.head-inner nav { flex: 1 1 auto; }
 .brand {
   display: flex; align-items: center; gap: 12px;
   text-decoration: none; color: var(--on-board);

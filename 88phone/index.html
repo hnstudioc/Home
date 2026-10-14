@@ -1,40 +1,57 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-i18n-base="../i18n/">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>88폰 — 큰딸 사진을 누르면 바로 전화가 걸립니다</title>
-<meta name="description" content="전화 거는 일만 남긴 전화 앱. 사진을 누르면 바로 걸립니다. 부모님이 따로 배우지 않으셔도 됩니다. 안드로이드 · 무료.">
+<title data-i18n="p88.title">88폰 — 큰딸 사진을 누르면 바로 전화가 걸립니다</title>
+<meta name="description" data-i18n-attr="content:p88.desc" content="전화 거는 일만 남긴 전화 앱. 사진을 누르면 바로 걸립니다. 부모님이 따로 배우지 않으셔도 됩니다. 안드로이드 · 무료.">
 <meta name="theme-color" content="#4C3825">
 <link rel="icon" href="image/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="image/apple-touch-icon.png">
-<meta property="og:title" content="88폰 — 큰딸 사진을 누르면 바로 전화가 걸립니다">
-<meta property="og:description" content="전화 거는 일만 남긴 전화 앱. 부모님이 따로 배우지 않으셔도 됩니다.">
+<meta property="og:title" data-i18n-attr="content:p88.title" content="88폰 — 큰딸 사진을 누르면 바로 전화가 걸립니다">
+<meta property="og:description" data-i18n-attr="content:p88.ogDesc" content="전화 거는 일만 남긴 전화 앱. 부모님이 따로 배우지 않으셔도 됩니다.">
 <meta property="og:image" content="image/app-icon.png">
 <meta property="og:type" content="website">
+<link rel="alternate" hreflang="x-default" href="https://www.hanullstudio.com/88phone/">
+<link rel="alternate" hreflang="ko" href="https://www.hanullstudio.com/88phone/">
+<link rel="alternate" hreflang="en" href="https://www.hanullstudio.com/88phone/?lang=en">
+<link rel="alternate" hreflang="ja" href="https://www.hanullstudio.com/88phone/?lang=ja">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.hanullstudio.com/88phone/?lang=zh">
+<link rel="alternate" hreflang="es" href="https://www.hanullstudio.com/88phone/?lang=es">
+<link rel="alternate" hreflang="fr" href="https://www.hanullstudio.com/88phone/?lang=fr">
+<link rel="alternate" hreflang="it" href="https://www.hanullstudio.com/88phone/?lang=it">
+<link rel="alternate" hreflang="de" href="https://www.hanullstudio.com/88phone/?lang=de">
+<link rel="alternate" hreflang="hi" href="https://www.hanullstudio.com/88phone/?lang=hi">
+<link rel="alternate" hreflang="pt" href="https://www.hanullstudio.com/88phone/?lang=pt">
+<link rel="alternate" hreflang="ru" href="https://www.hanullstudio.com/88phone/?lang=ru">
+<link rel="alternate" hreflang="vi" href="https://www.hanullstudio.com/88phone/?lang=vi">
+<link rel="alternate" hreflang="th" href="https://www.hanullstudio.com/88phone/?lang=th">
+<link rel="alternate" hreflang="id" href="https://www.hanullstudio.com/88phone/?lang=id">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+<script src="../js/i18n.js"></script>
 </head>
 <body>
 
-<a class="skip-link" href="#main">본문 바로가기</a>
+<a class="skip-link" href="#main" data-i18n="c.skip">본문 바로가기</a>
 
 <header class="head grain">
   <div class="container head-inner">
     <a class="brand" href="index.html">
       <img src="image/app-icon.png" alt="" width="40" height="40">
-      88폰
+      <span data-i18n="c.brand">88폰</span>
     </a>
-    <nav aria-label="주요 메뉴">
+    <nav aria-label="주요 메뉴" data-i18n-attr="aria-label:c.nav.label">
       <ul class="head-links">
-        <li><a href="index.html">소개</a></li>
-        <li><a href="#price">가격</a></li>
-        <li><a href="#faq">자주 묻는 질문</a></li>
-        <li><a href="feedback.html">문의</a></li>
+        <li><a href="index.html" data-i18n="c.nav.about">소개</a></li>
+        <li><a href="#price" data-i18n="c.nav.price">가격</a></li>
+        <li><a href="#faq" data-i18n="c.nav.faq">자주 묻는 질문</a></li>
+        <li><a href="feedback.html" data-i18n="c.nav.contact">문의</a></li>
       </ul>
     </nav>
+    <div data-lang-switcher></div>
   </div>
 </header>
 
@@ -44,8 +61,8 @@
   <section class="hero grain">
     <div class="container hero-grid">
       <div>
-        <h1>큰딸 사진을 누르면<br>바로 전화가 걸립니다</h1>
-        <p class="hero-lead">
+        <h1 data-i18n="p88.hero.h1">큰딸 사진을 누르면<br>바로 전화가 걸립니다</h1>
+        <p class="hero-lead" data-i18n="p88.hero.lead">
           전화 거는 일만 남긴 전화 앱.<br>
           부모님이 따로 배우지 않으셔도 됩니다.
         </p>
@@ -54,14 +71,15 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
             </svg>
-            <span data-store-label>구글 플레이에서 받기</span>
+            <span data-store-label data-i18n="c.store">구글 플레이에서 받기</span>
           </a>
         </div>
-        <p class="hero-note">무료 · 광고 없음 · 안드로이드</p>
+        <p class="hero-note" data-i18n="p88.hero.note">무료 · 광고 없음 · 안드로이드</p>
       </div>
 
       <div class="hero-shot">
         <img src="image/screen-home.jpg" width="600" height="1300"
+             data-i18n-attr="alt:p88.hero.alt"
              alt="88폰 첫 화면. 박철수·김순자·이며느리·늘편한내과가 큰 사진 카드로 놓여 있고, 아래에 번호 누르기와 사람 찾기 버튼이 있습니다.">
       </div>
     </div>
@@ -71,12 +89,12 @@
   <section class="section">
     <div class="container narrow">
       <div class="section-head center">
-        <h2>이런 분께</h2>
+        <h2 data-i18n="p88.who.h2">이런 분께</h2>
       </div>
       <ul class="who">
-        <li>글씨가 작아 연락처가 잘 안 보이시는 분</li>
-        <li>이름 목록에서 찾다가 그만두시는 분</li>
-        <li>잘못 눌러 엉뚱한 화면에 들어가면 돌아오지 못하시는 분</li>
+        <li data-i18n="p88.who.1">글씨가 작아 연락처가 잘 안 보이시는 분</li>
+        <li data-i18n="p88.who.2">이름 목록에서 찾다가 그만두시는 분</li>
+        <li data-i18n="p88.who.3">잘못 눌러 엉뚱한 화면에 들어가면 돌아오지 못하시는 분</li>
       </ul>
     </div>
   </section>
@@ -85,18 +103,19 @@
   <section class="section section-tint">
     <div class="container">
       <div class="section-head center">
-        <h2>어떻게 다른가요</h2>
-        <p>전화를 거는 데 쓰는 화면은 셋뿐입니다. 홈, 확대 카드, 번호판.</p>
+        <h2 data-i18n="p88.feat.h2">어떻게 다른가요</h2>
+        <p data-i18n="p88.feat.lead">전화를 거는 데 쓰는 화면은 셋뿐입니다. 홈, 확대 카드, 번호판.</p>
       </div>
 
       <div class="feature">
         <div class="feature-shot">
           <img src="image/screen-home.jpg" width="600" height="1300"
+               data-i18n-attr="alt:p88.feat.face.alt"
                alt="88폰 첫 화면. 이름과 큰 사진이 담긴 나무 카드가 4칸으로 놓여 있습니다.">
         </div>
         <div>
-          <h3>얼굴을 보고 누릅니다</h3>
-          <p>
+          <h3 data-i18n="p88.feat.face.h3">얼굴을 보고 누릅니다</h3>
+          <p data-i18n="p88.feat.face.p1">
             이름 목록을 훑지 않습니다. 사진이 카드의 절반을 차지해서,
             글씨가 안 보여도 누가 누구인지 압니다.
             자주 거는 분을 자리에 놓아 두면 됩니다. 무료로는 네 분까지,
@@ -108,11 +127,12 @@
       <div class="feature feature-alt">
         <div class="feature-shot">
           <img src="image/screen-card.jpg" width="600" height="1300"
+               data-i18n-attr="alt:p88.feat.tap.alt"
                alt="사진을 누르면 나타나는 확대 카드. 이름과 전화번호 아래에 초록색 전화 걸기, 파란색 문자 보내기 버튼이 있습니다.">
         </div>
         <div>
-          <h3>한 번 눌러 전화</h3>
-          <p>
+          <h3 data-i18n="p88.feat.tap.h3">한 번 눌러 전화</h3>
+          <p data-i18n="p88.feat.tap.p1">
             카드를 누르면 바로 걸립니다. 거는 데 한 번이면 됩니다.
             한 관문을 두고 싶으시면 설정에서 <strong>“누르면 바로 전화”</strong>를 끄십시오.
             그러면 카드가 먼저 커지고, 전화 걸기와 문자 보내기 중에서 고르시게 됩니다.
@@ -124,11 +144,12 @@
       <div class="feature">
         <div class="feature-shot">
           <img src="image/screen-messages.jpg" width="600" height="1300"
+               data-i18n-attr="alt:p88.feat.sms.alt"
                alt="문자 고르기 화면. 전화주세요, 사랑합니다 같은 자주 쓰는 말이 큰 버튼으로 나열되어 있습니다.">
         </div>
         <div>
-          <h3>문자는 고르기만 하면 됩니다</h3>
-          <p>
+          <h3 data-i18n="p88.feat.sms.h3">문자는 고르기만 하면 됩니다</h3>
+          <p data-i18n="p88.feat.sms.p1">
             자판을 치지 않습니다. "전화주세요", "사랑합니다", "안녕히 주무세요"
             같은 자주 하는 말 중에서 고르면 문자가 채워집니다.
             <strong>자주 고르시는 말은 저절로 위로 올라옵니다.</strong>
@@ -141,17 +162,18 @@
       <div class="feature feature-alt">
         <div class="feature-shot">
           <img src="image/screen-settings.jpg" width="600" height="1300"
+               data-i18n-attr="alt:p88.feat.size.alt"
                alt="설정 화면. 버튼 모양 원목·백자·검정·고무와 한 줄에 놓을 카드 수, 화면 밝기를 고를 수 있습니다.">
         </div>
         <div>
-          <h3>글자만 커지는 게 아닙니다</h3>
-          <p>
+          <h3 data-i18n="p88.feat.size.h3">글자만 커지는 게 아닙니다</h3>
+          <p data-i18n="p88.feat.size.p1">
             크기를 키우면 사진과 카드가 같이 커집니다. 보통·크게·더 크게·아주 크게에
             <strong>화면 크기에 맞춤</strong>까지 5가지이고, 처음에는 “더 크게”로 켜집니다.
             한 줄에 놓을 카드 수를 1개까지 줄이면 더 크게 보이고,
             사진을 빼고 이름만 아주 크게 띄울 수도 있습니다.
           </p>
-          <p>
+          <p data-i18n="p88.feat.size.p2">
             사진 모양은 네모와 동그라미 중에서, 버튼 모양은 원목·백자·검정·고무
             4가지 중에서 고르십니다. 화면 밝기는 폰 설정을 따르거나 늘 밝게·늘 어둡게
             둘 수 있습니다.
@@ -162,15 +184,16 @@
       <div class="feature">
         <div class="feature-shot">
           <img src="image/screen-pictures.jpg" width="600" height="1300"
+               data-i18n-attr="alt:p88.feat.contacts.alt"
                alt="그림 고르기 화면. 사람 그림과 병원·약국·택시·은행 같은 생활 그림이 나열되어 있습니다.">
         </div>
         <div>
-          <h3>연락처는 폰에 있는 것을 그대로 씁니다</h3>
-          <p>
+          <h3 data-i18n="p88.feat.contacts.h3">연락처는 폰에 있는 것을 그대로 씁니다</h3>
+          <p data-i18n="p88.feat.contacts.p1">
             따로 저장하지 않고, 밖으로 보내지 않습니다. 서버가 없습니다.
             연락처에서 번호를 고치시면 88폰에서도 함께 바뀝니다.
           </p>
-          <p>
+          <p data-i18n="p88.feat.contacts.p2">
             처음 켜면 연락처에서 <strong>“큰딸”, “남편”처럼 적어 두신 분을 찾아</strong> 보여 드립니다.
             그중에서 넣으실 분만 고르시면 됩니다.
             사진은 그 자리에서 찍거나 앨범에서 고르실 수 있고,
@@ -182,15 +205,16 @@
       <div class="feature feature-alt">
         <div class="feature-shot">
           <img src="image/screen-keypad.jpg" width="600" height="1300"
+               data-i18n-attr="alt:p88.feat.keypad.alt"
                alt="번호 누르기 화면. 큰 번호판과 010-1234-5678처럼 끊어져 보이는 번호 표시.">
         </div>
         <div>
-          <h3>자리에 없는 번호는 직접</h3>
-          <p>
+          <h3 data-i18n="p88.feat.keypad.h3">자리에 없는 번호는 직접</h3>
+          <p data-i18n="p88.feat.keypad.p1">
             번호판이 큽니다. 누른 번호가 한 줄을 다 쓰고,
             010-1234-5678처럼 끊어져 보입니다.
           </p>
-          <p>
+          <p data-i18n="p88.feat.keypad.p2">
             119나 112 같은 <strong>급할 때 누를 번호</strong>도 카드 한 자리에 따로 둘 수 있습니다.
             쓰시는 나라에 맞는 번호를 고르시면 됩니다.
           </p>
@@ -200,16 +224,17 @@
       <div class="feature">
         <div class="feature-shot">
           <img src="image/screen-language.jpg" width="600" height="1300"
+               data-i18n-attr="alt:p88.feat.lang.alt"
                alt="처음 켤 때 나오는 화면. 한국어·English·日本語·中文을 비롯한 14개 언어 중에서 고릅니다.">
         </div>
         <div>
-          <h3>14개 언어로 씁니다</h3>
-          <p>
+          <h3 data-i18n="p88.feat.lang.h3">14개 언어로 씁니다</h3>
+          <p data-i18n="p88.feat.lang.p1">
             한국어, 영어, 일본어, 중국어, 스페인어, 프랑스어, 독일어, 이탈리아어,
             힌디어, 포르투갈어, 러시아어, 베트남어, 태국어, 인도네시아어.
             처음 켤 때 고르시고, 나중에 설정에서 언제든 바꾸실 수 있습니다.
           </p>
-          <p>
+          <p data-i18n="p88.feat.lang.p2">
             말이 다른 가족과 함께 사시거나, 외국에 계신 부모님께 드릴 때 쓰십시오.
             자주 쓰는 문자 문구도 그 나라 말로 들어 있습니다.
           </p>
@@ -222,8 +247,8 @@
   <section class="section section-board grain">
     <div class="container narrow">
       <div class="section-head center">
-        <h2>전화가 왔던 분은 표시가 남습니다</h2>
-        <p>
+        <h2 data-i18n="p88.ring.h2">전화가 왔던 분은 표시가 남습니다</h2>
+        <p data-i18n="p88.ring.p">
           나에게 전화했던 분의 카드에 표시가 붙고 테두리가 깜빡입니다.
           설정에서 켜야 동작하며, 88폰은 번호를 적기만 하고
           전화를 막거나 거절하지 않습니다.
@@ -236,50 +261,50 @@
   <section class="section section-tint" id="story">
     <div class="container narrow">
       <div class="section-head center">
-        <h2>왜 만들었는지</h2>
-        <p>88폰은 팔려고 기획한 앱이 아니라, 할머니 폰에 넣어 드리려고 만든 앱입니다.</p>
+        <h2 data-i18n="p88.story.h2">왜 만들었는지</h2>
+        <p data-i18n="p88.story.lead">88폰은 팔려고 기획한 앱이 아니라, 할머니 폰에 넣어 드리려고 만든 앱입니다.</p>
       </div>
 
       <article class="doc">
-        <p>
+        <p data-i18n="p88.story.p1">
           할머니는 눈이 점점 나빠지셨습니다. 어느 날부터 <strong>전화를 걸지 않으시고
           받기만 하셨습니다.</strong> 화면의 작은 글자가 보이지 않아, 연락처에서
           누가 누구인지 찾을 수가 없으셨기 때문입니다.
         </p>
-        <p>
+        <p data-i18n="p88.story.p2">
           폰 설정에서 글자 크기를 끝까지 키워 드렸습니다. 화면 확대도 켜 드렸습니다.
           그래도 할머니는 <strong>“그래도 잘 안 보인다”</strong>고 하셨습니다.
           글자만 커졌을 뿐, 찾아야 할 이름은 여전히 수백 개였고,
           글자를 키울수록 한 화면에 들어오는 이름은 오히려 줄었습니다.
           긴 이름은 중간에서 잘려 누구인지 더 알기 어려웠습니다.
         </p>
-        <p>
+        <p data-i18n="p88.story.p3">
           할머니는 스마트폰을 쓰셨지만, 실제로 쓰시는 기능은 전화 하나였습니다.
           지도도 사진첩도 쓰지 않으셨습니다. 그 하나가 어려우니 폰 전체가 어려운 물건이
           되어 버린 것이었습니다.
         </p>
-        <p>
+        <p data-i18n="p88.story.p4">
           그래서 <strong>전화 거는 일만 남긴 앱</strong>을 만들었습니다.
           연락처 목록을 없앴습니다. 화면에는 가족의 큰 사진과 큰 이름만 두었습니다.
           찾을 것이 없으면 못 찾을 일도 없습니다. 누르면 걸립니다.
         </p>
-        <p>
+        <p data-i18n="p88.story.p5">
           지금 할머니는 <strong>“글자가 커져서 잘 보인다”</strong>고 하십니다.
           그리고 먼저 전화를 거십니다. 그거면 됐습니다.
         </p>
 
-        <h2>전세계의 아들, 딸, 손자, 손녀분들께</h2>
-        <p>
+        <h2 data-i18n="p88.story.h2b">전세계의 아들, 딸, 손자, 손녀분들께</h2>
+        <p data-i18n="p88.story.p6">
           할아버지, 할머니께서 전화를 잘 안 거신다면, 걸기 싫으신 것이 아니라
           <strong>걸기 어려우신 것일 수 있습니다.</strong> 눈이 어두워지는 일은 누구에게나
           오지만, 그래서 전화를 못 걸게 되는 일까지 당연한 것은 아닙니다.
         </p>
-        <p>
+        <p data-i18n="p88.story.p7">
           88폰을 할아버지, 할머니 폰에 깔아 드리고, 자주 거시는 분들을 자리에 넣어
           드리세요. 명절이나 주말에 들르셨을 때 <strong>5분이면 끝납니다.</strong>
           그다음부터 할머니는 사진만 누르시면 됩니다.
         </p>
-        <p>
+        <p data-i18n="p88.story.p8">
           14개 언어로 쓸 수 있게 만든 것도 그래서입니다.
           눈이 어두워지는 일에는 국경이 없습니다.
         </p>
@@ -291,55 +316,55 @@
   <section class="section" id="price">
     <div class="container narrow">
       <div class="section-head center">
-        <h2>가격</h2>
-        <p>앱은 무료입니다. 전화 거는 일은 돈을 내지 않아도 그대로 하십니다.</p>
+        <h2 data-i18n="p88.price.h2">가격</h2>
+        <p data-i18n="p88.price.lead">앱은 무료입니다. 전화 거는 일은 돈을 내지 않아도 그대로 하십니다.</p>
       </div>
 
       <table class="price-table">
         <thead>
           <tr>
-            <th scope="col">항목</th>
-            <th scope="col">무료</th>
-            <th scope="col"><span class="price-amount" data-price>8,800원</span> 한 번</th>
+            <th scope="col" data-i18n="p88.price.th.item">항목</th>
+            <th scope="col" data-i18n="p88.price.th.free">무료</th>
+            <th scope="col" data-i18n="p88.price.th.paid"><span class="price-amount" data-price>8,800원</span> 한 번</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th scope="row">전화 걸기 · 문자 보내기</th>
-            <td data-label="무료">다 됩니다</td>
-            <td data-label="결제하면">같습니다</td>
+            <th scope="row" data-i18n="p88.price.r1.th">전화 걸기 · 문자 보내기</th>
+            <td data-label="무료" data-i18n-attr="data-label:p88.price.lbl.free" data-i18n="p88.price.r1.free">다 됩니다</td>
+            <td data-label="결제하면" data-i18n-attr="data-label:p88.price.lbl.paid" data-i18n="p88.price.r1.paid">같습니다</td>
           </tr>
           <tr>
-            <th scope="row">연락처 연동 · 전화 온 분 표시</th>
-            <td data-label="무료">다 됩니다</td>
-            <td data-label="결제하면">같습니다</td>
+            <th scope="row" data-i18n="p88.price.r2.th">연락처 연동 · 전화 온 분 표시</th>
+            <td data-label="무료" data-i18n-attr="data-label:p88.price.lbl.free" data-i18n="p88.price.r2.free">다 됩니다</td>
+            <td data-label="결제하면" data-i18n-attr="data-label:p88.price.lbl.paid" data-i18n="p88.price.r2.paid">같습니다</td>
           </tr>
           <tr>
-            <th scope="row">글자 크기 · 버튼 모양</th>
-            <td data-label="무료">다 됩니다</td>
-            <td data-label="결제하면">같습니다</td>
+            <th scope="row" data-i18n="p88.price.r3.th">글자 크기 · 버튼 모양</th>
+            <td data-label="무료" data-i18n-attr="data-label:p88.price.lbl.free" data-i18n="p88.price.r3.free">다 됩니다</td>
+            <td data-label="결제하면" data-i18n-attr="data-label:p88.price.lbl.paid" data-i18n="p88.price.r3.paid">같습니다</td>
           </tr>
           <tr>
-            <th scope="row">고정 자리</th>
-            <td data-label="무료">네 분</td>
-            <td data-label="결제하면"><strong>사실상 제한 없음</strong><br>(한 줄에 2칸부터 10칸까지)</td>
+            <th scope="row" data-i18n="p88.price.r4.th">고정 자리</th>
+            <td data-label="무료" data-i18n-attr="data-label:p88.price.lbl.free" data-i18n="p88.price.r4.free">네 분</td>
+            <td data-label="결제하면" data-i18n-attr="data-label:p88.price.lbl.paid" data-i18n="p88.price.r4.paid"><strong>사실상 제한 없음</strong><br>(한 줄에 2칸부터 10칸까지)</td>
           </tr>
           <tr>
-            <th scope="row">문자 문구</th>
-            <td data-label="무료">4가지</td>
-            <td data-label="결제하면"><strong>16가지 · 직접 고치기</strong></td>
+            <th scope="row" data-i18n="p88.price.r5.th">문자 문구</th>
+            <td data-label="무료" data-i18n-attr="data-label:p88.price.lbl.free" data-i18n="p88.price.r5.free">4가지</td>
+            <td data-label="결제하면" data-i18n-attr="data-label:p88.price.lbl.paid" data-i18n="p88.price.r5.paid"><strong>16가지 · 직접 고치기</strong></td>
           </tr>
           <tr>
-            <th scope="row">광고</th>
-            <td data-label="무료"><strong>없습니다</strong></td>
-            <td data-label="결제하면"><strong>없습니다</strong></td>
+            <th scope="row" data-i18n="p88.price.r6.th">광고</th>
+            <td data-label="무료" data-i18n-attr="data-label:p88.price.lbl.free" data-i18n="p88.price.r6.free"><strong>없습니다</strong></td>
+            <td data-label="결제하면" data-i18n-attr="data-label:p88.price.lbl.paid" data-i18n="p88.price.r6.paid"><strong>없습니다</strong></td>
           </tr>
         </tbody>
       </table>
 
       <div class="price-callout">
-        <p>한 번만 내시면 그대로 쭉 쓰십니다. 매달 빠져나가는 돈이 아닙니다.</p>
-        <p>돈을 내지 않으셔도 네 분을 자리에 놓고 전화와 문자를 그대로 하십니다.</p>
+        <p data-i18n="p88.price.c1">한 번만 내시면 그대로 쭉 쓰십니다. 매달 빠져나가는 돈이 아닙니다.</p>
+        <p data-i18n="p88.price.c2">돈을 내지 않으셔도 네 분을 자리에 놓고 전화와 문자를 그대로 하십니다.</p>
       </div>
     </div>
   </section>
@@ -348,7 +373,7 @@
   <section class="section section-tint" id="get">
     <div class="container">
       <div class="section-head center">
-        <h2>내려받기</h2>
+        <h2 data-i18n="p88.get.h2">내려받기</h2>
       </div>
 
       <div class="narrow" style="margin:0 auto">
@@ -357,20 +382,20 @@
             <circle cx="12" cy="12" r="9"/><path d="M12 7.5v5"/><circle cx="12" cy="16.3" r="1" fill="currentColor" stroke="none"/>
           </svg>
           <div>
-            <strong>곧 열립니다</strong>
-            <p>아직 구글 플레이에 올라가기 전입니다. 등록이 끝나면 아래 버튼과 QR 코드가 설치 화면으로 이어집니다.</p>
+            <strong data-i18n="p88.get.soon">곧 열립니다</strong>
+            <p data-i18n="p88.get.soonP">아직 구글 플레이에 올라가기 전입니다. 등록이 끝나면 아래 버튼과 QR 코드가 설치 화면으로 이어집니다.</p>
           </div>
         </div>
       </div>
 
       <div class="get">
         <div class="qr-wrap">
-          <div class="qr-box" data-qr="#qr-cap" role="img" aria-label="88폰 QR 코드"></div>
+          <div class="qr-box" data-qr="#qr-cap" role="img" aria-label="88폰 QR 코드" data-i18n-attr="aria-label:p88.get.qrLabel"></div>
           <p class="qr-cap" id="qr-cap"></p>
         </div>
         <div>
-          <h2>부모님 폰에 깔아 드리세요</h2>
-          <p>
+          <h2 data-i18n="p88.get.h2b">부모님 폰에 깔아 드리세요</h2>
+          <p data-i18n="p88.get.p">
             폰의 카메라를 켜고 왼쪽 QR 코드를 비추면 화면 위에 주소가 뜹니다.
             그 주소를 한 번 누르시면 설치 화면으로 갑니다.
           </p>
@@ -379,10 +404,10 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
               </svg>
-              <span data-store-label>구글 플레이에서 받기</span>
+              <span data-store-label data-i18n="c.store">구글 플레이에서 받기</span>
             </a>
           </div>
-          <p class="store-url"><strong>주소</strong> <span data-store-url-text></span></p>
+          <p class="store-url"><strong data-i18n="p88.get.addr">주소</strong> <span data-store-url-text></span></p>
         </div>
       </div>
     </div>
@@ -392,8 +417,8 @@
   <section class="section" id="faq">
     <div class="container narrow">
       <div class="section-head center">
-        <h2>자주 묻는 질문</h2>
-        <p>
+        <h2 data-i18n="p88.faq.h2">자주 묻는 질문</h2>
+        <p data-i18n="p88.faq.lead">
           폰 설정만으로 글씨를 키우는 방법은
           <a href="guide.html">부모님 폰 글씨 크게 만드는 법</a>에 따로 정리해 두었습니다.
         </p>
@@ -401,9 +426,9 @@
 
       <div class="faq">
         <div class="faq-item">
-          <button type="button" class="faq-q">정말 무료인가요?<span class="faq-mark" aria-hidden="true"></span></button>
+          <button type="button" class="faq-q"><span data-i18n="p88.faq.1.q">정말 무료인가요?</span><span class="faq-mark" aria-hidden="true"></span></button>
           <div class="faq-a">
-            <p>
+            <p data-i18n="p88.faq.1.a">
               네. 받아서 바로 쓰십니다. 무료로는 자주 거는 분 네 분을 큰 사진으로 놓고,
               전화와 문자를 모두 하실 수 있습니다. 광고는 무료로 쓰셔도 없습니다.
             </p>
@@ -411,9 +436,9 @@
         </div>
 
         <div class="faq-item">
-          <button type="button" class="faq-q">결제하면 무엇이 달라지나요?<span class="faq-mark" aria-hidden="true"></span></button>
+          <button type="button" class="faq-q"><span data-i18n="p88.faq.2.q">결제하면 무엇이 달라지나요?</span><span class="faq-mark" aria-hidden="true"></span></button>
           <div class="faq-a">
-            <p>
+            <p data-i18n="p88.faq.2.a">
               <span data-price>8,800원</span>을 한 번 내시면
               자리가 네 분에서 사실상 제한 없이 늘어나고,
               문자 문구가 4가지에서 16가지로 늘어납니다.
@@ -425,25 +450,25 @@
         </div>
 
         <div class="faq-item">
-          <button type="button" class="faq-q">부모님 연락처를 회사가 가져가나요?<span class="faq-mark" aria-hidden="true"></span></button>
+          <button type="button" class="faq-q"><span data-i18n="p88.faq.3.q">부모님 연락처를 회사가 가져가나요?</span><span class="faq-mark" aria-hidden="true"></span></button>
           <div class="faq-a">
-            <p>
+            <p data-i18n="p88.faq.3.a">
               아니요. 88폰은 서버가 없습니다. 연락처는 폰 안에서만 읽고, 어디로도 보내지 않습니다.
             </p>
           </div>
         </div>
 
         <div class="faq-item">
-          <button type="button" class="faq-q">아이폰에서도 되나요?<span class="faq-mark" aria-hidden="true"></span></button>
+          <button type="button" class="faq-q"><span data-i18n="p88.faq.4.q">아이폰에서도 되나요?</span><span class="faq-mark" aria-hidden="true"></span></button>
           <div class="faq-a">
-            <p>지금은 안드로이드만 됩니다.</p>
+            <p data-i18n="p88.faq.4.a">지금은 안드로이드만 됩니다.</p>
           </div>
         </div>
 
         <div class="faq-item">
-          <button type="button" class="faq-q">전화가 안 울리게 되지는 않나요?<span class="faq-mark" aria-hidden="true"></span></button>
+          <button type="button" class="faq-q"><span data-i18n="p88.faq.5.q">전화가 안 울리게 되지는 않나요?</span><span class="faq-mark" aria-hidden="true"></span></button>
           <div class="faq-a">
-            <p>
+            <p data-i18n="p88.faq.5.a">
               그런 일은 없습니다. "전화 온 분 알려주기"를 켜면 안드로이드가 통화 선별 권한을 묻는데,
               88폰은 번호를 적기만 하고 전화를 막거나 거절하지 않습니다.
               끄셔도 통화에는 지장이 없습니다.
@@ -452,9 +477,9 @@
         </div>
 
         <div class="faq-item">
-          <button type="button" class="faq-q">어르신이 설치하고 설정까지 하실 수 있나요?<span class="faq-mark" aria-hidden="true"></span></button>
+          <button type="button" class="faq-q"><span data-i18n="p88.faq.6.q">어르신이 설치하고 설정까지 하실 수 있나요?</span><span class="faq-mark" aria-hidden="true"></span></button>
           <div class="faq-a">
-            <p>
+            <p data-i18n="p88.faq.6.a">
               처음 한 번은 자녀분이 도와드리는 편이 좋습니다. 3가지만 고르면 끝납니다 —
               화면에 쓸 언어와 글자 크기, 자리에 넣을 가족, 자주 쓰실 문자 4가지.
               그다음부터 부모님은 사진만 누르시면 됩니다.
@@ -473,27 +498,27 @@
       <div>
         <div class="foot-brand">
           <img src="image/app-icon.png" alt="" width="36" height="36">
-          88폰
+          <span data-i18n="c.brand">88폰</span>
         </div>
-        <p>전화 거는 일만 남긴 전화 앱.<br>큰 사진을 누르면 바로 걸립니다.</p>
+        <p data-i18n="c.foot.tagline">전화 거는 일만 남긴 전화 앱.<br>큰 사진을 누르면 바로 걸립니다.</p>
       </div>
       <div>
-        <h4>바로 가기</h4>
+        <h4 data-i18n="c.foot.links">바로 가기</h4>
         <ul>
-          <li><a href="index.html">소개</a></li>
-          <li><a href="index.html#price">가격</a></li>
-          <li><a href="index.html#faq">자주 묻는 질문</a></li>
-          <li><a href="index.html#story">만든 이야기</a></li>
-          <li><a href="guide.html">부모님 폰 글씨 크게 하는 법</a></li>
-          <li><a href="review.html">후기 남기기</a></li>
-          <li><a href="feedback.html">개선 요청</a></li>
+          <li><a href="index.html" data-i18n="c.nav.about">소개</a></li>
+          <li><a href="index.html#price" data-i18n="c.nav.price">가격</a></li>
+          <li><a href="index.html#faq" data-i18n="c.nav.faq">자주 묻는 질문</a></li>
+          <li><a href="index.html#story" data-i18n="c.foot.story">만든 이야기</a></li>
+          <li><a href="guide.html" data-i18n="c.foot.guide">부모님 폰 글씨 크게 하는 법</a></li>
+          <li><a href="review.html" data-i18n="c.foot.review">후기 남기기</a></li>
+          <li><a href="feedback.html" data-i18n="c.foot.feedback">개선 요청</a></li>
         </ul>
       </div>
       <div>
-        <h4>문의 · 정책</h4>
+        <h4 data-i18n="c.foot.contact">문의 · 정책</h4>
         <ul>
-          <li><a href="#" data-support-email>문의 메일</a></li>
-          <li><a href="privacy.html">개인정보처리방침</a></li>
+          <li><a href="#" data-support-email data-i18n="c.foot.mail">문의 메일</a></li>
+          <li><a href="privacy.html" data-i18n="c.foot.privacy">개인정보처리방침</a></li>
           <li><a href="../">HaNull Studio</a></li>
         </ul>
       </div>
@@ -501,7 +526,7 @@
 
     <div class="biz" data-business></div>
 
-    <div class="foot-bottom">
+    <div class="foot-bottom" data-i18n="c.foot.copy">
       © <span data-year>2026</span> 88폰 · HaNull Studio
     </div>
   </div>
