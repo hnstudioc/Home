@@ -94,6 +94,15 @@ html[lang="ko"] .only-i18n { display: none !important; }
 }
 .lang-select:hover { background-color: rgba(255,255,255,.14); }
 .lang-select option { color: #241A10; background: #FFFFFF; }
+/* 좁은 화면: 상표와 언어 메뉴를 한 줄에, 메뉴 링크는 그 아래 한 줄에 */
+@media (max-width: 620px) {
+  .head-inner { padding-top: 6px; padding-bottom: 8px; }
+  .head-inner [data-lang-switcher] { order: 2; margin-left: auto; }
+  .head-inner .lang-select { max-width: 44vw; font-size: .9rem; padding: 8px 30px 8px 10px; }
+  .head-inner nav { order: 3; flex-basis: 100%; }
+  .head-links { flex-wrap: wrap; }
+  .head-links a { padding: 10px 12px; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
