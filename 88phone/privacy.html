@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-i18n-base="../i18n/" data-i18n-fallback="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>88폰 개인정보처리방침</title>
-<meta name="description" content="88폰 개인정보처리방침. 88폰은 개인정보를 수집하지 않으며 서버가 없습니다.">
+<title data-i18n="priv.title">88폰 개인정보처리방침</title>
+<meta name="description" data-i18n-attr="content:priv.desc" content="88폰 개인정보처리방침. 88폰은 개인정보를 수집하지 않으며 서버가 없습니다.">
 <meta name="theme-color" content="#4C3825">
 <link rel="icon" href="image/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="image/apple-touch-icon.png">
@@ -12,25 +12,27 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+<script src="../js/i18n.js"></script>
 </head>
 <body>
 
-<a class="skip-link" href="#main">본문 바로가기</a>
+<a class="skip-link" href="#main" data-i18n="c.skip">본문 바로가기</a>
 
 <header class="head grain">
   <div class="container head-inner">
     <a class="brand" href="index.html">
       <img src="image/app-icon.png" alt="" width="40" height="40">
-      88폰
+      <span data-i18n="c.brand">88폰</span>
     </a>
-    <nav aria-label="주요 메뉴">
+    <nav aria-label="주요 메뉴" data-i18n-attr="aria-label:c.nav.label">
       <ul class="head-links">
-        <li><a href="index.html">소개</a></li>
-        <li><a href="index.html#price">가격</a></li>
-        <li><a href="index.html#faq">자주 묻는 질문</a></li>
-        <li><a href="feedback.html">문의</a></li>
+        <li><a href="index.html" data-i18n="c.nav.about">소개</a></li>
+        <li><a href="index.html#price" data-i18n="c.nav.price">가격</a></li>
+        <li><a href="index.html#faq" data-i18n="c.nav.faq">자주 묻는 질문</a></li>
+        <li><a href="feedback.html" data-i18n="c.nav.contact">문의</a></li>
       </ul>
     </nav>
+    <div data-lang-switcher></div>
   </div>
 </header>
 
@@ -39,70 +41,73 @@
     <div class="container">
       <article class="doc">
 
-        <h1>88폰 개인정보처리방침</h1>
+        <h1 data-i18n="priv.h1">88폰 개인정보처리방침</h1>
 
         <div class="doc-meta">
-          <p><strong>시행일</strong> <span data-privacy-date>2026년 10월 13일</span></p>
+          <p><strong data-i18n="priv.effective">시행일</strong> <span data-privacy-date>2026년 10월 13일</span></p>
         </div>
 
-        <h2>1. 우리가 수집하는 개인정보</h2>
-        <p>
+        <!-- 한국어가 아닐 때만 보입니다: 번역본은 참고용, 한국어 원문이 기준 -->
+        <div class="notice only-i18n" data-i18n="priv.note" hidden></div>
+
+        <h2 data-i18n="priv.s1.h2">1. 우리가 수집하는 개인정보</h2>
+        <p data-i18n="priv.s1.p1">
           88폰은 개인정보를 수집하지 않습니다. 88폰에는 서버가 없으며,
           이용자의 어떤 정보도 외부로 전송하거나 저장하지 않습니다.
         </p>
 
-        <h2>2. 앱이 기기에서 사용하는 정보</h2>
-        <p>88폰은 다음 정보를 이용자의 기기 안에서만 읽고 사용합니다.</p>
+        <h2 data-i18n="priv.s2.h2">2. 앱이 기기에서 사용하는 정보</h2>
+        <p data-i18n="priv.s2.p1">88폰은 다음 정보를 이용자의 기기 안에서만 읽고 사용합니다.</p>
         <ul>
-          <li>
+          <li data-i18n="priv.s2.l1">
             <strong>연락처(선택)</strong> — 자리에 넣은 분의 이름·전화번호·사진을 화면에
             표시하기 위해 사용합니다. 앱은 연락처의 식별자와 마지막으로 확인한 이름·번호를
             기기 내부 저장소에만 보관합니다. 허용하지 않으셔도 휴대전화의 기본 연락처
             화면을 통해 한 분씩 고르실 수 있습니다.
           </li>
-          <li>
+          <li data-i18n="priv.s2.l2">
             <strong>전화 걸기(선택)</strong> — [전화 걸기]를 눌렀을 때 전화를 거는 데만 사용합니다.
             허용하지 않으시면 전화 앱에 번호만 입력해 드리고, 통화 버튼은 이용자가 누릅니다.
           </li>
-          <li>
+          <li data-i18n="priv.s2.l3">
             <strong>통화 선별 역할(선택)</strong> — 이용자가 직접 켠 경우에만, 걸려온 전화번호를
             기기 안에 기록하여 해당 연락처를 화면에 표시하는 데 사용합니다.
             통화를 차단하거나 거절하지 않으며, 통화 내용을 기록하지 않습니다.
           </li>
-          <li>
+          <li data-i18n="priv.s2.l4">
             <strong>사진(선택)</strong> — 카드에 넣을 사진을 촬영하거나 앨범에서 고르실 때,
             고르신 사진 한 장을 작게 줄여 앱 폴더에만 저장합니다. 휴대전화 연락처의 사진은
             변경되지 않으며, 앨범 전체를 읽지 않습니다.
           </li>
-          <li>
+          <li data-i18n="priv.s2.l5">
             <strong>설치된 앱 목록(선택)</strong> — 88폰을 홈 화면으로 사용하실 때만,
             다른 앱으로 이동하는 목록을 보여드리기 위해 앱 이름과 아이콘을 읽습니다.
             저장하거나 전송하지 않습니다.
           </li>
-          <li>
+          <li data-i18n="priv.s2.l6">
             <strong>문자</strong> — 88폰은 문자를 직접 보내지 않습니다. 고르신 문장을
             휴대전화의 문자 앱에 입력해 드릴 뿐이며, 전송 버튼은 이용자가 누릅니다.
             따라서 문자 전송 권한을 요구하지 않습니다.
           </li>
         </ul>
-        <p>위 정보는 모두 기기를 벗어나지 않습니다. 앱을 삭제하면 함께 사라집니다.</p>
+        <p data-i18n="priv.s2.p2">위 정보는 모두 기기를 벗어나지 않습니다. 앱을 삭제하면 함께 사라집니다.</p>
 
-        <h2>3. 백업</h2>
-        <p>
+        <h2 data-i18n="priv.s3.h2">3. 백업</h2>
+        <p data-i18n="priv.s3.p1">
           휴대전화를 바꾸거나 앱을 다시 설치하실 때 자리에 넣은 분과 설정이 복원되도록
           안드로이드의 자동 백업 기능을 사용합니다. 백업 자료는 이용자의 구글 계정
           백업 공간에 저장되며, 당사는 이 자료에 접근할 수 없습니다.
           휴대전화 설정에서 백업을 끄실 수 있습니다.
         </p>
 
-        <h2>4. 광고</h2>
-        <p>
+        <h2 data-i18n="priv.s4.h2">4. 광고</h2>
+        <p data-i18n="priv.s4.p1">
           88폰에는 광고가 없습니다. 광고를 표시하지 않으며, 광고 식별자를 읽거나
           이용 분석 도구를 사용하지 않습니다.
         </p>
 
-        <h2>5. 결제</h2>
-        <p>
+        <h2 data-i18n="priv.s5.h2">5. 결제</h2>
+        <p data-i18n="priv.s5.p1">
           연락처와 문구를 더 등록하는 결제는 구글 플레이를 통해 이루어지며,
           결제 정보는 구글이 처리합니다. 당사는 이용자의 결제수단 정보를 수집하거나
           보관하지 않습니다. 구글의 개인정보처리방침은
@@ -110,24 +115,24 @@
           참고하십시오.
         </p>
 
-        <h2>6. 이용자의 권리</h2>
-        <p>
+        <h2 data-i18n="priv.s6.h2">6. 이용자의 권리</h2>
+        <p data-i18n="priv.s6.p1">
           모든 정보가 이용자의 기기 안에 있으므로 열람·수정·삭제를 이용자가 직접
           하실 수 있습니다. 자리에 넣은 분을 빼시려면 카드를 누른 뒤 휴지통을,
           전체를 지우시려면 휴대전화 설정 &gt; 애플리케이션 &gt; 88폰 &gt; 저장공간 &gt;
           데이터 삭제를 이용하십시오. 권한은 같은 화면의 권한 메뉴에서 거두실 수 있습니다.
         </p>
 
-        <h2>7. 만 14세 미만 아동</h2>
-        <p>
+        <h2 data-i18n="priv.s7.h2">7. 만 14세 미만 아동</h2>
+        <p data-i18n="priv.s7.p1">
           88폰은 아동을 대상으로 하지 않으며, 아동의 개인정보를 의도적으로 수집하지 않습니다.
         </p>
 
-        <h2>8. 문의</h2>
+        <h2 data-i18n="priv.s8.h2">8. 문의</h2>
         <div data-privacy-contact></div>
 
-        <h2>9. 변경 고지</h2>
-        <p>
+        <h2 data-i18n="priv.s9.h2">9. 변경 고지</h2>
+        <p data-i18n="priv.s9.p1">
           이 방침이 변경되는 경우 이 페이지에 변경 내용과 시행일을 게시합니다.
         </p>
 
@@ -142,26 +147,26 @@
       <div>
         <div class="foot-brand">
           <img src="image/app-icon.png" alt="" width="36" height="36">
-          88폰
+          <span data-i18n="c.brand">88폰</span>
         </div>
-        <p>전화 거는 일만 남긴 전화 앱.<br>큰 사진을 누르면 바로 걸립니다.</p>
+        <p data-i18n="c.foot.tagline">전화 거는 일만 남긴 전화 앱.<br>큰 사진을 누르면 바로 걸립니다.</p>
       </div>
       <div>
-        <h4>바로 가기</h4>
+        <h4 data-i18n="c.foot.links">바로 가기</h4>
         <ul>
-          <li><a href="index.html">소개</a></li>
-          <li><a href="index.html#price">가격</a></li>
-          <li><a href="index.html#faq">자주 묻는 질문</a></li>
-          <li><a href="guide.html">부모님 폰 글씨 크게 하는 법</a></li>
-          <li><a href="review.html">후기 남기기</a></li>
-          <li><a href="feedback.html">개선 요청</a></li>
+          <li><a href="index.html" data-i18n="c.nav.about">소개</a></li>
+          <li><a href="index.html#price" data-i18n="c.nav.price">가격</a></li>
+          <li><a href="index.html#faq" data-i18n="c.nav.faq">자주 묻는 질문</a></li>
+          <li><a href="guide.html" data-i18n="c.foot.guide">부모님 폰 글씨 크게 하는 법</a></li>
+          <li><a href="review.html" data-i18n="c.foot.review">후기 남기기</a></li>
+          <li><a href="feedback.html" data-i18n="c.foot.feedback">개선 요청</a></li>
         </ul>
       </div>
       <div>
-        <h4>문의 · 정책</h4>
+        <h4 data-i18n="c.foot.contact">문의 · 정책</h4>
         <ul>
-          <li><a href="#" data-support-email>문의 메일</a></li>
-          <li><a href="privacy.html">개인정보처리방침</a></li>
+          <li><a href="#" data-support-email data-i18n="c.foot.mail">문의 메일</a></li>
+          <li><a href="privacy.html" data-i18n="c.foot.privacy">개인정보처리방침</a></li>
           <li><a href="../">HaNull Studio</a></li>
         </ul>
       </div>
@@ -169,13 +174,13 @@
 
     <div class="biz" data-business></div>
 
-    <div class="foot-bottom">
+    <div class="foot-bottom" data-i18n="c.foot.copy">
       © <span data-year>2026</span> 88폰 · HaNull Studio
     </div>
   </div>
 </footer>
 
-<script src="js/config.js"></script>
-<script src="js/site.js"></script>
+<script src="js/config.js?v=20261014"></script>
+<script src="js/site.js?v=20261014"></script>
 </body>
 </html>

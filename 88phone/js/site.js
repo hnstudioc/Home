@@ -1,5 +1,8 @@
 /* ============================================================
    88폰 — 공용 스크립트
+   ------------------------------------------------------------
+   화면에 찍는 문장은 전부 t('키', '한국어') 로 감싼다.
+   한국어가 아닐 때는 ../js/i18n.js 가 i18n/<lang>.json 에서 같은 키를 찾아 바꿔 준다.
    ============================================================ */
 (function () {
   'use strict';
@@ -7,11 +10,22 @@
   var cfg = window.SITE_CONFIG || {};
   var released = cfg.RELEASED === true;
 
+  function t(key, def, vars) {
+    if (window.I18N && I18N.t) {
+      var v = I18N.t(key, def, vars);
+      if (v != null) return v;
+    }
+    if (vars) def = String(def).replace(/\{(\w+)\}/g, function (m, k) { return vars[k] != null ? vars[k] : m; });
+    return def;
+  }
+
   function esc(s) {
     return String(s == null ? '' : s)
       .replace(/&/g, '&amp;').replace(/</g, '&lt;')
       .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
+
+  function init() {
 
   /* ---------- 1. 현재 쪽 메뉴 강조 ---------- */
   var page = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
@@ -48,7 +62,7 @@
     } else {
       el.setAttribute('aria-disabled', 'true');
       var label = el.querySelector('[data-store-label]');
-      if (label) label.textContent = '곧 열립니다';
+      if (label) label.textContent = t('s.soon', '곧 열립니다');
     }
   });
 
@@ -68,7 +82,7 @@
   document.querySelectorAll('[data-store-url-text]').forEach(function (el) {
     el.textContent = released && cfg.PLAY_STORE_URL
       ? cfg.PLAY_STORE_URL
-      : '스토어 등록이 끝나면 이곳에 주소가 나타납니다.';
+      : t('s.storeUrlPending', '스토어 등록이 끝나면 이곳에 주소가 나타납니다.');
   });
 
   // 출시 전 안내
@@ -76,9 +90,9 @@
     el.hidden = released;
   });
 
-  // 값
+  // 값 (한국어는 config 의 '8,800원', 다른 언어는 사전의 s.price 예: '₩8,800')
   document.querySelectorAll('[data-price]').forEach(function (el) {
-    if (cfg.UNLOCK_PRICE) el.textContent = cfg.UNLOCK_PRICE;
+    if (cfg.UNLOCK_PRICE) el.textContent = t('s.price', cfg.UNLOCK_PRICE);
   });
 
   // 문의 메일
@@ -90,7 +104,7 @@
 
   // 개인정보처리방침 시행일
   document.querySelectorAll('[data-privacy-date]').forEach(function (el) {
-    if (cfg.PRIVACY_DATE) el.textContent = cfg.PRIVACY_DATE;
+    if (cfg.PRIVACY_DATE) el.textContent = t('s.privacyDate', cfg.PRIVACY_DATE);
   });
 
   // 올해
@@ -103,46 +117,46 @@
      아직 값을 받지 못했으면 지어내지 않고 "준비 중"으로 둔다. */
   var biz = cfg.BUSINESS || {};
   var bizRows = [
-    ['상호', biz.name],
-    ['대표자', biz.ceo],
-    ['사업자등록번호', biz.regNo],
-    ['통신판매업 신고번호',
+    [t('s.biz.name', '상호'), biz.name],
+    [t('s.biz.ceo', '대표자'), biz.ceo],
+    [t('s.biz.regNo', '사업자등록번호'), biz.regNo],
+    [t('s.biz.mailOrder', '통신판매업 신고번호'),
       biz.mailOrder && biz.mailOrderBy
         ? biz.mailOrder + ' (' + biz.mailOrderBy + ')'
         : biz.mailOrder],
-    ['주소', biz.address],
-    ['전화', biz.phone]
+    [t('s.biz.address', '주소'), biz.address],
+    [t('s.biz.phone', '전화'), biz.phone]
   ].filter(function (r) { return r[1]; });
 
   document.querySelectorAll('[data-business]').forEach(function (el) {
-    var html = '<h4>사업자 정보</h4>';
+    var html = '<h4>' + esc(t('s.biz.title', '사업자 정보')) + '</h4>';
     if (bizRows.length) {
       html += '<dl>';
       bizRows.forEach(function (r) {
         html += '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>';
       });
       if (cfg.SUPPORT_EMAIL) {
-        html += '<dt>이메일</dt><dd>' + esc(cfg.SUPPORT_EMAIL) + '</dd>';
+        html += '<dt>' + esc(t('s.biz.email', '이메일')) + '</dt><dd>' + esc(cfg.SUPPORT_EMAIL) + '</dd>';
       }
       html += '</dl>';
     } else {
-      html += '<p class="todo">사업자 정보 등록 준비 중입니다.' +
-              (cfg.SUPPORT_EMAIL ? ' 문의는 ' + esc(cfg.SUPPORT_EMAIL) + ' 로 주세요.' : '') +
+      html += '<p class="todo">' + esc(t('s.biz.pending', '사업자 정보 등록 준비 중입니다.')) +
+              (cfg.SUPPORT_EMAIL ? ' ' + esc(t('s.biz.pendingContact', '문의는 {email} 로 주세요.', { email: cfg.SUPPORT_EMAIL })) : '') +
               '</p>';
     }
     el.innerHTML = html;
   });
 
-  // 개인정보처리방침 6조 문의처
+  // 개인정보처리방침 8조 문의처
   document.querySelectorAll('[data-privacy-contact]').forEach(function (el) {
     var lines = [];
-    if (biz.name) lines.push(esc(biz.name) + (biz.ceo ? ' / 대표자 ' + esc(biz.ceo) : ''));
+    if (biz.name) lines.push(esc(biz.name) + (biz.ceo ? ' / ' + esc(t('s.biz.ceo', '대표자')) + ' ' + esc(biz.ceo) : ''));
     if (biz.address) lines.push(esc(biz.address));
-    if (cfg.SUPPORT_EMAIL) lines.push('이메일: ' + esc(cfg.SUPPORT_EMAIL));
+    if (cfg.SUPPORT_EMAIL) lines.push(esc(t('s.biz.email', '이메일')) + ': ' + esc(cfg.SUPPORT_EMAIL));
     el.innerHTML = lines.length
       ? '<p>' + lines.join('<br>') + '</p>'
-      : '<p>이메일: ' + esc(cfg.SUPPORT_EMAIL || '') + '<br>' +
-        '<span style="color:#8E2F08">※ 상호·대표자·주소는 사업자 정보 확정 후 기재합니다.</span></p>';
+      : '<p>' + esc(t('s.biz.email', '이메일')) + ': ' + esc(cfg.SUPPORT_EMAIL || '') + '<br>' +
+        '<span style="color:#8E2F08">' + esc(t('s.priv.pendingNote', '※ 상호·대표자·주소는 사업자 정보 확정 후 기재합니다.')) + '</span></p>';
   });
 
   /* ---------- 5. QR 코드 ---------- */
@@ -151,12 +165,12 @@
     var target = released && cfg.PLAY_STORE_URL
       ? cfg.PLAY_STORE_URL
       : (cfg.SITE_URL || location.origin + '/');
-    QR88.render(el, target, { dark: '#241A10', light: '#FFFFFF', label: 'QR 코드: ' + target });
+    QR88.render(el, target, { dark: '#241A10', light: '#FFFFFF', label: t('s.qr.label', 'QR 코드: ') + target });
     var cap = document.querySelector(el.dataset.qr || '');
     if (cap) {
       cap.textContent = released
-        ? '카메라로 비추면 설치 화면이 열립니다'
-        : '카메라로 비추면 이 쪽이 열립니다';
+        ? t('s.qr.capReleased', '카메라로 비추면 설치 화면이 열립니다')
+        : t('s.qr.capPending', '카메라로 비추면 이 쪽이 열립니다');
     }
   });
 
@@ -198,7 +212,7 @@
       box.className = 'manual-copy';
       box.innerHTML =
         '<label class="manual-copy-label" for="manual-copy-text">' +
-        '아래 내용을 길게 눌러 전체 선택한 뒤 복사해 주세요.</label>' +
+        esc(t('s.form.manualLabel', '아래 내용을 길게 눌러 전체 선택한 뒤 복사해 주세요.')) + '</label>' +
         '<textarea class="textarea" id="manual-copy-text" readonly rows="6"></textarea>';
       form.insertBefore(box, form.querySelector('.status') || null);
     }
@@ -206,8 +220,9 @@
     var ta = box.querySelector('textarea');
     ta.value = text; ta.focus(); ta.select();
     showStatus(form, 'err',
-      '이 브라우저에서는 자동 복사가 막혀 있습니다. 아래 칸의 내용을 직접 복사해 ' +
-      (cfg.SUPPORT_EMAIL || '문의처') + ' 로 보내 주세요.');
+      t('s.form.manualErr',
+        '이 브라우저에서는 자동 복사가 막혀 있습니다. 아래 칸의 내용을 직접 복사해 {email} 로 보내 주세요.',
+        { email: cfg.SUPPORT_EMAIL || t('s.form.fallbackContact', '문의처') }));
   }
 
   function fallbackCopy(text, done, form) {
@@ -237,19 +252,21 @@
           missing = el.dataset.label; el.focus();
         }
       });
-      if (missing) { showStatus(form, 'err', missing + ' 항목을 채워 주세요.'); return; }
+      if (missing) { showStatus(form, 'err', t('s.form.missing', '{field} 항목을 채워 주세요.', { field: missing })); return; }
 
       var lines = collect(form);
-      if (!lines.length) { showStatus(form, 'err', '내용을 채워 주세요.'); return; }
+      if (!lines.length) { showStatus(form, 'err', t('s.form.empty', '내용을 채워 주세요.')); return; }
 
-      var body = lines.join('\n') + '\n\n— 88폰 홈페이지에서 보냄';
+      var langTag = (window.I18N && I18N.lang && I18N.lang !== 'ko') ? '\n' + 'Language: ' + I18N.lang : '';
+      var body = lines.join('\n') + '\n\n' + t('s.form.sentFrom', '— 88폰 홈페이지에서 보냄') + langTag;
       var href = 'mailto:' + encodeURIComponent(cfg.SUPPORT_EMAIL || '') +
         '?subject=' + encodeURIComponent('[' + subject + '] 88폰') +
         '&body=' + encodeURIComponent(body);
 
       showStatus(form, 'ok',
-        '메일 앱이 열립니다. 내용이 이미 적혀 있으니 그대로 보내기만 누르시면 됩니다. ' +
-        '메일 앱이 열리지 않으면 아래 "내용 복사하기"를 눌러 주세요.');
+        t('s.form.opening',
+          '메일 앱이 열립니다. 내용이 이미 적혀 있으니 그대로 보내기만 누르시면 됩니다. ' +
+          '메일 앱이 열리지 않으면 아래 "내용 복사하기"를 눌러 주세요.'));
       location.href = href;
     });
 
@@ -257,13 +274,13 @@
     if (copyBtn) {
       copyBtn.addEventListener('click', function () {
         var lines = collect(form);
-        if (!lines.length) { showStatus(form, 'err', '먼저 내용을 채워 주세요.'); return; }
+        if (!lines.length) { showStatus(form, 'err', t('s.form.fillFirst', '먼저 내용을 채워 주세요.')); return; }
         var text = lines.join('\n');
         var done = function () {
           hideManual(form);
           showStatus(form, 'ok',
-            '내용을 복사했습니다. 메일이나 문자에 붙여넣어 ' +
-            (cfg.SUPPORT_EMAIL || '문의처') + ' 로 보내 주세요.');
+            t('s.form.copied', '내용을 복사했습니다. 메일이나 문자에 붙여넣어 {email} 로 보내 주세요.',
+              { email: cfg.SUPPORT_EMAIL || t('s.form.fallbackContact', '문의처') }));
         };
         if (navigator.clipboard && navigator.clipboard.writeText) {
           navigator.clipboard.writeText(text).then(done, function () { fallbackCopy(text, done, form); });
@@ -284,4 +301,16 @@
     document.querySelectorAll('[data-builtin-form="' + el.dataset.externalForm + '"]')
       .forEach(function (f) { f.hidden = true; });
   });
+
+  /* ---------- 8. 번역본 안내 (개인정보처리방침) ---------- */
+  document.querySelectorAll('.only-i18n').forEach(function (el) {
+    var lang = (window.I18N && I18N.lang) || 'ko';
+    el.hidden = (lang === 'ko') || !el.innerHTML.trim();
+  });
+
+  } /* init */
+
+  /* 사전을 다 읽은 뒤에 그린다. i18n.js 가 없으면 바로 그린다. */
+  if (window.I18N && I18N.ready) I18N.ready.then(init);
+  else init();
 })();

@@ -78,6 +78,8 @@ body {
 html:not([lang="ko"]) body { word-break: normal; }
 /* 사전을 읽는 동안 한국어가 잠깐 비치지 않게 (최대 1.5초, i18n.js 가 푼다) */
 html.i18n-pending body { visibility: hidden; }
+/* 번역본 안내처럼 한국어가 아닐 때만 보이는 요소 */
+html[lang="ko"] .only-i18n { display: none !important; }
 
 /* 언어 고르기 — 머리말 오른쪽 */
 .lang-switch { display: inline-flex; align-items: center; flex: 0 0 auto; }
