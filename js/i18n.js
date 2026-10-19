@@ -12,7 +12,7 @@
 (function () {
   'use strict';
 
-  var VERSION = '1';
+  var VERSION = '2';
 
   /* 앱이 지원하는 14개 언어. 순서는 앱의 언어 고르기 화면과 같다. */
   var LANGS = [

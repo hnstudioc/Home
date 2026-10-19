@@ -24,7 +24,7 @@ window.PRODUCTS = [
     accent: '#A97E4C',
     /* status: 배지를 없애려면 null 로 두세요.
        tone 은 'live'(초록) · 'pending'(주황) · 'archived'(회색) 중 하나 */
-    status: { label: '곧 열립니다', tone: 'pending' }
+    status: { label: '서비스 중', tone: 'live' }
   },
 
   {
