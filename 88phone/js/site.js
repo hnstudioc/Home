@@ -66,6 +66,13 @@
     }
   });
 
+  // 공식 구글 플레이 배지 — 쪽 언어에 맞는 파일 (image/badges/<lang>.png)
+  document.querySelectorAll('[data-store-badge]').forEach(function (img) {
+    var lang = (window.I18N && I18N.lang) || 'ko';
+    img.src = 'image/badges/' + lang + '.png';
+    img.alt = t('c.store', '구글 플레이에서 받기');
+  });
+
   // 스토어 리뷰 링크
   document.querySelectorAll('[data-store-review-link]').forEach(function (el) {
     if (released && cfg.PLAY_STORE_REVIEW_URL) {

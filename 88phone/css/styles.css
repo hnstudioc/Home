@@ -72,6 +72,15 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* ============ 구글 플레이 공식 배지 ============
+   play.google.com/intl/ko/badges 에서 받은 파일을 손대지 않고 쓴다.
+   규정: 높이 40px 이상, 배지 높이의 1/4 이상 여백, 변형 금지. */
+.store-badge { display: inline-block; line-height: 0; border-radius: 8px; }
+.store-badge img { height: 80px; width: auto; display: block; }
+.store-badge[aria-disabled="true"] { display: none; }
+@media (max-width: 560px) { .store-badge img { height: 64px; } }
+.foot-legal { margin: 10px 0 0; font-size: .8rem; color: var(--on-board-2); opacity: .8; }
+
 /* ============ 다국어 ============
    한국어가 아닐 때는 단어 중간 줄바꿈 금지(keep-all)를 풀어 준다.
    (일본어·중국어·태국어는 keep-all 이면 줄이 안 바뀐다) */
