@@ -308,6 +308,37 @@
     el.hidden = (lang === 'ko') || !el.innerHTML.trim();
   });
 
+  /* ---------- 9. 소개 동영상 ----------
+     언어마다 영상이 따로 있다. 보시는 언어의 것을 골라 둔다.
+     누르기 전에는 표지 그림뿐이라 유튜브로 아무 요청도 가지 않는다 —
+     광고도 추적도 없다고 적어 둔 앱이니 소개 페이지도 그래야 한다. */
+  var PROMO = {
+    ko: '5uWU-0spupw', en: 'oVmXeo_tLKw', ja: '0iKlwDJJ7Ns', zh: 'Tz0aa9iq1Rc',
+    es: 'zPavR7s4S3k', fr: 'Yo_IrY5Fjg4', de: '1AHCnOzkIqU', it: '7Zi2FT0O4sY',
+    pt: 'p2nZVn64s3Q', ru: '0D1f9ibp-sI', hi: 'ZdaagPPTcZ4', th: 'AhM1BOAKF3Y',
+    vi: 'j_TcKFZ6554', id: 'jGytHR1SVfE'
+  };
+  (function () {
+    var btn = document.getElementById('video-play');
+    if (!btn) return;
+    var lang = (window.I18N && I18N.lang) || 'ko';
+    if (!PROMO[lang]) lang = 'en';
+    var poster = document.getElementById('video-poster');
+    if (poster) poster.src = 'image/promo-' + lang + '.jpg';
+
+    btn.addEventListener('click', function () {
+      var f = document.createElement('iframe');
+      /* nocookie 쪽으로 부른다. 재생하기 전까지는 쿠키가 남지 않는다. */
+      f.src = 'https://www.youtube-nocookie.com/embed/' + PROMO[lang] +
+              '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+      f.title = t('p88.video.h2', '13초만 보시면 압니다');
+      f.allow = 'autoplay; encrypted-media; picture-in-picture';
+      f.allowFullscreen = true;
+      f.setAttribute('loading', 'lazy');
+      btn.replaceWith(f);
+    }, { once: true });
+  })();
+
   } /* init */
 
   /* 사전을 다 읽은 뒤에 그린다. i18n.js 가 없으면 바로 그린다. */
