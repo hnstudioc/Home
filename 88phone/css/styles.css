@@ -76,9 +76,9 @@ body {
    play.google.com/intl/ko/badges 에서 받은 파일을 손대지 않고 쓴다.
    규정: 높이 40px 이상, 배지 높이의 1/4 이상 여백, 변형 금지. */
 .store-badge { display: inline-block; line-height: 0; border-radius: 8px; }
-.store-badge img { height: 80px; width: auto; display: block; }
+.store-badge img { height: 104px; width: auto; display: block; }
 .store-badge[aria-disabled="true"] { display: none; }
-@media (max-width: 560px) { .store-badge img { height: 64px; } }
+@media (max-width: 560px) { .store-badge img { height: 84px; } }
 .foot-legal { margin: 10px 0 0; font-size: .8rem; color: var(--on-board-2); opacity: .8; }
 
 /* ============ 다국어 ============
